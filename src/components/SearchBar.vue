@@ -5,7 +5,7 @@
 <template>
     <input type="text" placeholder="Sök...">
     <input type="submit" value="Search">
-    <h3>Suggestions:</h3>
+    <h2>Suggestions:</h2>
     <input type="submit" value="Learn Spanish">
     <input type="submit" value="Learn French">
     <input type="submit" value="Learn Italian">
