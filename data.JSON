@@ -1,0 +1,91 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Eva",
+      "email": "eva@example.com",
+      "password": "hashedpassword123",
+      "nativeLanguage": "Swedish",
+      "learningLanguages": [
+        { "language": "Spanish", "level": "Beginner" }
+      ],
+      "interests": ["travel", "music", "art"],
+      "bio": "Hej! Jag älskar att resa och vill lära mig spanska.",
+      "profilePicture": "eva_profile.jpg",
+      "matches": [2, 3],
+      "messages": [1001, 1002],
+      "challengesCompleted": [2001, 2002],
+      "badges": ["First Match", "Daily Streak 7 Days"]
+    },
+    {
+      "id": 2,
+      "name": "Carlos",
+      "email": "carlos@example.com",
+      "password": "hashedpassword456",
+      "nativeLanguage": "Spanish",
+      "learningLanguages": [
+        { "language": "Swedish", "level": "Intermediate" }
+      ],
+      "interests": ["music", "cooking"],
+      "bio": "Hola! Me gusta la música y quiero aprender sueco.",
+      "profilePicture": "carlos_profile.jpg",
+      "matches": [1],
+      "messages": [1003],
+      "challengesCompleted": [2003],
+      "badges": ["Language Explorer"]
+    }
+  ],
+
+  "messages": [
+    {
+      "id": 1001,
+      "fromUser": 1,
+      "toUser": 2,
+      "content": "Hola! Cómo estás?",
+      "timestamp": "2025-02-12T12:30:00Z",
+      "seen": true
+    },
+    {
+      "id": 1002,
+      "fromUser": 2,
+      "toUser": 1,
+      "content": "Hola Eva! Estoy bien, ¿y tú?",
+      "timestamp": "2025-02-12T12:32:00Z",
+      "seen": false
+    }
+  ],
+
+  "challenges": [
+    {
+      "id": 2001,
+      "title": "Introduce Yourself",
+      "description": "Send a message introducing yourself in your target language.",
+      "reward": "10 XP",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 2002,
+      "title": "Ask About Their Day",
+      "description": "Ask your match how their day is going in their native language.",
+      "reward": "15 XP",
+      "difficulty": "Medium"
+    }
+  ],
+
+  "games": [
+    {
+      "id": 3001,
+      "name": "Word Scramble",
+      "description": "Unscramble words in your target language!",
+      "difficulty": "Medium",
+      "rewards": "20 XP"
+    },
+    {
+      "id": 3002,
+      "name": "Translation Duel",
+      "description": "Challenge your match to translate words faster than you!",
+      "difficulty": "Hard",
+      "rewards": "30 XP"
+    }
+  ]
+}
