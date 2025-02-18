@@ -1,0 +1,14 @@
+@font-face {
+  font-family: Headerfont;
+  src: local('Crimson-Pro'), url(../public/Crimson-Pro.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: MyfontStandard;
+  src: local('Inter-standard'), url(../public/Inter-standard.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: MyfontItalic;
+  src: local('Inter-Italic'), url(../public/Inter-Italic.ttf) format('truetype');
+}
