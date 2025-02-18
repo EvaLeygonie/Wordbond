@@ -1,9 +1,3 @@
-* {
-  margin-top: 20px;
-  background: #FEF3E2;
-  font-family: MyFontStandard, sans-serif;
-}
-
 @font-face {
   font-family: HeaderFont;
   src: local('Crimson-Pro'), url(../public/Crimson-Pro.ttf) format('truetype');
@@ -19,16 +13,27 @@
   src: local('Inter-Italic'), url(../public/Inter-Italic.ttf) format('truetype');
 }
 
+* {
+  margin: 0;
+}
+
+body {
+  background: #FEF3E2;
+  font-family: MyFontStandard, sans-serif;
+}
+
 nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 100px;
+  height: 50px;
+  background: #fa812f;
+  margin: 10px 0;
 
   a {
     font-family: HeaderFont, serif;
     font-weight: 700;
-    color: #575555;
+    color: #fef3e2;
     text-decoration: none;
   }
 }
@@ -37,12 +42,11 @@ h1 {
   font-family: HeaderFont, serif;
   color: #575555;
   text-align: center;
+  margin-top: 10px;
 }
 
 p {
   color: #575555;
-  font-weight: 450;
-  font-size: 1em;
   text-align: center;
   margin-top: 4px;
 }
