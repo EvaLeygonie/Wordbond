@@ -1,4 +1,6 @@
-<script></script>
+<script setup>
+
+</script>
 
 <template>
   <p>chat med en person man matchat med</p>

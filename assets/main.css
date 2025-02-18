@@ -1,14 +1,48 @@
+* {
+  margin-top: 20px;
+  background: #FEF3E2;
+  font-family: MyFontStandard, sans-serif;
+}
+
 @font-face {
-  font-family: Headerfont;
+  font-family: HeaderFont;
   src: local('Crimson-Pro'), url(../public/Crimson-Pro.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: MyfontStandard;
+  font-family: MyFontStandard;
   src: local('Inter-standard'), url(../public/Inter-standard.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: MyfontItalic;
+  font-family: MyFontItalic;
   src: local('Inter-Italic'), url(../public/Inter-Italic.ttf) format('truetype');
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+
+  a {
+    font-family: HeaderFont, serif;
+    font-weight: 700;
+    color: #575555;
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-family: HeaderFont, serif;
+  color: #575555;
+  text-align: center;
+}
+
+p {
+  color: #575555;
+  font-weight: 450;
+  font-size: 1em;
+  text-align: center;
+  margin-top: 4px;
 }

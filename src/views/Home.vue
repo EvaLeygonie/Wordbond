@@ -1,4 +1,6 @@
-<script></script>
+<script setup>
+
+</script>
 
 <template>
   <p>Annonssida utan detaljer tills man loggat in</p>
