@@ -1,28 +1,28 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from "vue-router";
 
-import Home from './views/Home.vue'
-import LoginPage from './views/LoginPage.vue'
-import MyProfile from './views/MyProfile.vue'
-import ChatPage from './views/ChatPage.vue'
+import Home from "./views/Home.vue";
+import LoginPage from "./views/LoginPage.vue";
+import MyProfile from "./views/MyProfile.vue";
+import ChatPage from "./views/ChatPage.vue";
 
 export default createRouter({
   history: createWebHashHistory(),
   routes: [
     {
       component: Home,
-      path: '/'
+      path: "/",
     },
     {
       component: LoginPage,
-      path: '/login'
+      path: "/login",
     },
     {
       component: MyProfile,
-      path: '/myprofile'
+      path: "/myprofile",
     },
     {
       component: ChatPage,
-      path: '/chat'
+      path: "/chat",
     },
-  ]
-})
+  ],
+});
