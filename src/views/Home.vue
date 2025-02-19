@@ -1,11 +1,17 @@
 <script setup>
   import SearchBar from '../components/SearchBar.vue'
-  import UserCard from '../components/UserCard.vue'
+  import UserCards from '../components/UserCards.vue'
 </script>
 
 <template>
-  <h1>Find your language buddy!</h1>
+  <h1 class="title">Find your language buddy!</h1>
   <SearchBar />
-  <UserCard />
+  <UserCards />
 
 </template>
+
+<style>
+  .title {
+    padding: 1em;
+  }
+</style>
