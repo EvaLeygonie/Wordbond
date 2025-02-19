@@ -68,3 +68,19 @@ main {
   align-items: center;
   flex-direction: column;
 }
+
+.interest-container {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 40px;
+}
+
+.InterestTag {
+  margin: 5px;
+  padding: 10px;
+  background-color: #fa812f;
+  color: #fef3e2;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
