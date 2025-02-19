@@ -1,16 +1,17 @@
 @font-face {
   font-family: HeaderFont;
-  src: local('Crimson-Pro'), url(../public/Crimson-Pro.ttf) format('truetype');
+  src: local("Crimson-Pro"), url(../public/Crimson-Pro.ttf) format("truetype");
 }
 
 @font-face {
   font-family: MyFontStandard;
-  src: local('Inter-standard'), url(../public/Inter-standard.ttf) format('truetype');
+  src: local("Inter-standard"),
+    url(../public/Inter-standard.ttf) format("truetype");
 }
 
 @font-face {
   font-family: MyFontItalic;
-  src: local('Inter-Italic'), url(../public/Inter-Italic.ttf) format('truetype');
+  src: local("Inter-Italic"), url(../public/Inter-Italic.ttf) format("truetype");
 }
 
 * {
@@ -18,7 +19,7 @@
 }
 
 body {
-  background: #FEF3E2;
+  background: #fef3e2;
   font-family: MyFontStandard, sans-serif;
 }
 
@@ -49,4 +50,21 @@ p {
   color: #575555;
   text-align: center;
   margin-top: 4px;
+}
+
+/* style for profilePage*/
+
+.ProfileImage {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  border-radius: 47%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
