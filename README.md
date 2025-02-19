@@ -7,3 +7,16 @@
 #575555 - rgba(87, 85, 85, 0.5)
 
 linear-gradient(90deg, #fa4032, #fa812f, #fab12f, #fef3e2)
+
+# ChatPage
+
+- Placering/höjd
+- Skicka med username props
+- Spara meddelanden, local storage
+- Automatiskt svar när man skriver något?
+- Like? Translate?
+- Emojis
+- Responsiv design?
+- Hamburgare meny + logga?
+
+- Chat funktion efter att man loggat in + username skickas från meny + profil. en enda vän?

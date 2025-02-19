@@ -1,17 +1,16 @@
 @font-face {
   font-family: HeaderFont;
-  src: local("Crimson-Pro"), url(../public/Crimson-Pro.ttf) format("truetype");
+  src: local('Crimson-Pro'), url(../public/fonts/Crimson-Pro.ttf) format('truetype');
 }
 
 @font-face {
   font-family: MyFontStandard;
-  src: local("Inter-standard"),
-    url(../public/Inter-standard.ttf) format("truetype");
+  src: local('Inter-standard'), url(../public/fonts/Inter-standard.ttf) format('truetype');
 }
 
 @font-face {
   font-family: MyFontItalic;
-  src: local("Inter-Italic"), url(../public/Inter-Italic.ttf) format("truetype");
+  src: local('Inter-Italic'), url(../public/fonts/Inter-Italic.ttf) format('truetype');
 }
 
 * {
@@ -29,7 +28,7 @@ nav {
   justify-content: space-around;
   height: 50px;
   background: #fa812f;
-  margin: 10px 0;
+  margin: 0;
 
   a {
     font-family: HeaderFont, serif;
@@ -40,6 +39,13 @@ nav {
 }
 
 h1 {
+  font-family: HeaderFont, serif;
+  color: #575555;
+  text-align: center;
+  margin-top: 10px;
+}
+
+h2 {
   font-family: HeaderFont, serif;
   color: #575555;
   text-align: center;

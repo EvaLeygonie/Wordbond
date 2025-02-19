@@ -1,7 +1,12 @@
-<script setup></script>
+<script setup>
+  // const logoImage = new URL('../public/logo/wordbond.svg', import.meta.url).href
+</script>
 
 <template>
-  <h1>WordBond</h1>
+  <header>
+    <!-- <img :src="logoImage" alt="logo"> -->
+  </header>
+
   <nav>
     <RouterLink to="/">Matches</RouterLink>
     <RouterLink to="/login">Login</RouterLink>

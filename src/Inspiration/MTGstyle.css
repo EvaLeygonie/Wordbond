@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(90deg,  #1B1B1B, #E63946, #3A9D23, #0078BF, #EDE6DB);
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  padding-top: 40px;
+}
+
+@font-face {
+  font-family: MyFont;
+  src: url(Fino.ttf);
+}
+
+h1 {
+  font-family: MyFont, serif;
+  color: #EDE6DB;
+  text-align: center;
+  font-size: 3em;
+}
+
+h2 {
+  font-family: MyFont, serif;
+  color: #EDE6DB;
+  font-size: 1.8em;
+}
+
+h3 {
+  color: #EDE6DB;
+  font-weight: 500;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 2px;
+}
+
+p {
+  color: #EDE6DB;
+  font-weight: 450;
+  font-size: 1em;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/*=== HEADER ===*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background-color: #1B1B1B;
+
+    a {
+      text-decoration: none;
+      color: #EDE6DB;
+      font-size: 1.8em;
+      font-family: MyFont, serif;
+      padding: 0 20px;
+    }
+
+    img {
+      height: 40px;
+    }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+#logo_nav {
+  height: 80px;
+}
+
+/*=== HOMEPAGE ===*/
+
+#magic_introduction {
+  margin: 20px 0;
+  padding: 20px 100px;
+  text-align: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#magic_colors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.color_symbols {
+  width: 100px;
+  border-radius: 50px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 5px;
+}
+
+#magic_card_types {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 20px;
+}
+
+button {
+  text-decoration: none;
+  font-style: oblique;
+  font-weight: 600;
+  font-size: 1.1em;
+  background-color: #1B1B1B;
+  color: #EDE6DB;
+  padding: 8px 12px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin: 10px 5px;
+}
+
+/*=== CARD PAGE ===*/
+
+.filter_bar {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#card_colors_filter {
+  margin-bottom: 10px;
+}
+
+input {
+  margin-left: 8px;
+}
+
+#card_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.card_image {
+  border-radius: 10px;
+  width: 200px;
+  height: auto;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.text_div {
+  justify-content: space-between;
+  max-width: 200px;
+}
+
+.fav_icon {
+  height: 25px;
+  margin: 5px 10px 0 10px;
+}
+
+.card_name {
+  display: inline-block;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 3px;
+}
+
+/*=== FAVORITES PAGE ===*/
+
+#favorites_page {
+  margin-top: 30px;
+}
+
+#saved_cards {
+  float: left;
+  text-align: center;
+  width: 55vw;
+}
+
+#chart_stats {
+  float: left;
+  text-align: center;
+  width: 40vw;
+}
+
+#saved_favorites {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 20px 20px 20px 20px;
+}
+
+#my_chart {
+  margin-top: 20px;
+  max-width: 40vw;
+  max-height: 40vw;
+  padding: 20px 20px 20px 20px;
+}
+
+/*=== CITIES ===*/
+
+#form_cities {
+  margin: 20px;
+
+  input {
+    margin-bottom: 10px;
+  }
+}
+
+.city_list {
+  margin: 20px 0;
+  padding: 20px 100px;
+  text-align: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 1.2em;
+  font-weight: 300;
+  color: #EDE6DB;
+}

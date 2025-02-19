@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(90deg,  #B5828C, #E5989B, #FFB4A2, #FFCDB2, #C6DCBA);
+  font-family: MyFont, sans-serif;
+}
+
+@font-face {
+  font-family: Logofont;
+  src: local('Halu'), url(../public/Halu.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Titlefont;
+  src: local('CormorantGaramond'), url(../public/CormorantGaramond.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Myfont;
+  src: local('FiraSans'), url(../public/FiraSans.ttf) format('truetype');
+}
+
+/*=== HEADER ===*/
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  margin-bottom: 20px;
+  background-color: rgba(237, 230, 219, 0.5);
+
+  a {
+    font-family: TitleFont, serif;
+    font-weight: 700;
+    color: #1B1B1B;
+    text-decoration: none;
+    font-size: 1.7em;
+    padding: 0 20px;
+  }
+}
+
+h1 {
+  font-family: Logofont, serif;
+  color: #1B1B1B;
+  text-align: center;
+  font-size: 4em;
+}
+
+/*=== MAIN ===*/
+
+h2 {
+  font-family: TitleFont, serif;
+  color: #1B1B1B;
+  font-size: 2em;
+}
+
+p {
+  color: #1B1B1B;
+  font-weight: 450;
+  font-size: 1em;
+  text-align: center;
+  margin-top: 4px;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+
+button {
+  margin: 5px 10px;
+  padding: 10px 15px;
+  background-color: rgba(181, 130, 140, 0.7);
+  color: #1B1B1B;
+  font-weight: 600;
+  font-size: 1.1em;
+  border:  none;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  a {
+    text-decoration: none;
+    color: #1B1B1B;
+  }
+}
+
+.recipe-card {
+  display: flex;
+  text-align: center;
+  border: 2px solid #C6DCBA;
+  background:rgba(255, 205, 178, 0.5);
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  width: 80vw;
+  margin: auto;
+}
+
+.drink-image {
+  text-align: center;
+  margin-right: 40px;
+  width: 40vw;
+}
+
+.drink-recipe {
+  text-align: left;
+  width: 35vw;
+  p {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  h3 {
+    margin: 20px 0px 10px 0px;
+  }
+}
