@@ -19,4 +19,4 @@ linear-gradient(90deg, #fa4032, #fa812f, #fab12f, #fef3e2)
 - Responsiv design?
 - Hamburgare meny + logga?
 
-- Chat funktion efter att man loggat in + username skickas från meny + profil. en enda vän?
+- Chat funktion efter att man loggat in + username skickas från meny + profil med query params. En enda vän?

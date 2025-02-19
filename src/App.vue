@@ -11,7 +11,7 @@
     <RouterLink to="/">Matches</RouterLink>
     <RouterLink to="/login">Login</RouterLink>
     <RouterLink to="/myprofile">My Profile</RouterLink>
-    <RouterLink to="/chat">Chat</RouterLink>
+    <RouterLink :to="{path: '/chat', query: {language: 'Spanish', name: 'Tim'}}">Chat</RouterLink>
   </nav>
 
   <main>

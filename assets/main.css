@@ -52,6 +52,13 @@ h2 {
   margin-top: 10px;
 }
 
+h3 {
+  font-family: HeaderFont, serif;
+  color: #575555;
+  text-align: center;
+  margin-top: 10px;
+}
+
 p {
   color: #575555;
   text-align: center;

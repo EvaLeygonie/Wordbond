@@ -1,6 +1,12 @@
 <script setup>
   import { ref } from 'vue'
+  import { useRoute } from 'vue-router'
   import ChatBubble from '../components/ChatBubble.vue'
+
+  const route = useRoute()
+
+  const friendName = route.query.name
+  const language = route.query.language
 
   const messages = ref([
     { text: "Hola! Cómo estás?", isUser: false },
@@ -22,7 +28,7 @@
 </script>
 
 <template>
-  <h2>Username</h2>
+  <h3>Learn {{ language }} with {{ friendName }}</h3>
   <div class="chat-container">
     <div class="chat-box">
       <ChatBubble v-for="(msg, index) in messages" :key="index" :message="msg.text" :isUser="msg.isUser"/>
