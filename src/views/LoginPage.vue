@@ -1,4 +1,6 @@
 <script setup>
+const logoImage = new URL('../../public/logo/logo-orange.png', import.meta.url).href
+
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -19,15 +21,15 @@ const login = () => {
   <div class="login-container">
     <div class="login-box">
       <div class="logo-typ">
-        <img src="" alt="Logotyp" />
+        <img :src="logoImage" alt="logo">
       </div>
 
       <div class="input-box">
-        <input 
-          type="email" 
-          id="email" 
-          v-model="email" 
-          placeholder="Email..." 
+        <input
+          type="email"
+          id="email"
+          v-model="email"
+          placeholder="Email..."
           />
       </div>
 
