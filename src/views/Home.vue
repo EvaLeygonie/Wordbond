@@ -4,7 +4,8 @@
 </script>
 
 <template>
+  <h1>Find your language buddy!</h1>
   <SearchBar />
   <UserCard />
-  <p>Annonssida utan detaljer tills man loggat in</p>
+
 </template>
