@@ -1,16 +1,19 @@
 @font-face {
   font-family: HeaderFont;
-  src: local('Crimson-Pro'), url(../public/fonts/Crimson-Pro.ttf) format('truetype');
+  src: local("Crimson-Pro"),
+    url(../public/fonts/Crimson-Pro.ttf) format("truetype");
 }
 
 @font-face {
   font-family: MyFontStandard;
-  src: local('Inter-standard'), url(../public/fonts/Inter-standard.ttf) format('truetype');
+  src: local("Inter-standard"),
+    url(../public/fonts/Inter-standard.ttf) format("truetype");
 }
 
 @font-face {
   font-family: MyFontItalic;
-  src: local('Inter-Italic'), url(../public/fonts/Inter-Italic.ttf) format('truetype');
+  src: local("Inter-Italic"),
+    url(../public/fonts/Inter-Italic.ttf) format("truetype");
 }
 
 * {
@@ -66,45 +69,3 @@ p {
 }
 
 /* style for profilePage*/
-
-.FriendAvatarImage {
-  display: flex;
-  align-items: end;
-  justify-content: end;
-  margin: 30px;
-}
-
-.ProfileImage {
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  height: 150px;
-  border-radius: 47%;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.MainContainer {
-  margin-top: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex-direction: column;
-}
-
-.interest-container {
-  list-style-type: none;
-  padding: 0;
-  margin-left: 40px;
-}
-
-.InterestTag {
-  margin: 5px;
-  padding: 10px;
-  background-color: #fa812f;
-  color: #fef3e2;
-  border-radius: 5px;
-  font-weight: bold;
-  display: inline-block;
-}
