@@ -2,30 +2,39 @@
 export default {
   data() {
     return {
-      interests: ["Cooking", "Exercise", "Games", "Music", "Art", "Travel"],
+      interests: ["Cooking", "Travel"],
     };
   },
 };
 </script>
 
 <template>
-  <header class="FriendAvatarImage">Friend avatar</header>
+  <header class="ProfileHeader">
+    <img
+      alt="Profilbild"
+      src="/public\bilder\avatar_2.png"
+      class="ProfileFriend"
+    />
+  </header>
   <main class="MainContainer">
     <div class="ImageContainer">
       <img
         alt="Profilbild"
-        src="/public\bilder\11475221.jpg"
+        src="/public\bilder\avatar_3.png"
         class="ProfileImage"
       />
     </div>
-    <h1>Interests</h1>
+
+    <h3><span>LinguaLover</span></h3>
     <p class="ProfileText">
-      I speak <span>Swedish</span>. I want to learn <span>Italian</span>
+      I speak <span>English</span>. I want to learn <span>Spanish</span>
     </p>
+
     <p class="ProfileText">
-      Hi! I would love to learn Italian before my trip to Sicily this summer.
+      Hi! I would love to learn Spanish before my trip to Madrid this summer.
     </p>
     <p></p>
+    <h1>Interests</h1>
     <ul class="interest-container">
       <li class="InterestTag" v-for="interest in interests" :key="interest">
         {{ interest }}
@@ -38,16 +47,20 @@ export default {
 span {
   text-decoration: underline;
 }
-.FriendAvatarImage {
+.ProfileHeader {
   display: flex;
   align-items: end;
   justify-content: end;
   margin: 30px;
 }
 
+.ProfileFriend {
+  width: 80px;
+}
+
 .ProfileImage {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   display: flex;
   justify-content: center;
 
