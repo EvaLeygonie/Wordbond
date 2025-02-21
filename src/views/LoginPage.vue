@@ -1,5 +1,8 @@
 <script setup>
 const logoImage = new URL('../../public/logo/logo-orange.png', import.meta.url).href
+const faceBook = new URL('../../public/logo/facebook.png', import.meta.url).href
+const instaGram = new URL('../../public/logo/instagram.png', import.meta.url).href
+const google = new URL('../../public/logo/google.png', import.meta.url).href
 
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
@@ -50,18 +53,19 @@ const login = () => {
         <button type="button" @click="login">Login</button>
       </div>
 
-   <!---  /* <div class="alt-login">
-        Login with other
-        <a href="#"><img src="" alt="Facebook" class="social-logo"></a>
-        <a href="#"><img src="" alt="Instagram" class="social-logo"></a>
-        <a href="#"><img src="" alt="Google" class="social-logo"></a>
-      </div> -->
-
-      <div class="register-link">
+      <div class="alt-login">
+        <p>Or login with</p>
+        <div class="social-links">
+        <a href="#"><img :src="faceBook" alt="Facebook" class="social-logo"></a>
+        <a href="#"><img :src="instaGram" alt="Instagram" class="social-logo"></a>
+        <a href="#"><img :src="google" alt="Google" class="social-logo"></a>
+      </div>
+      </div> 
+    </div>
+    <div class="register-link">
         <p>Do you have an account?</p>
         <a href="#">Create an account!</a>
       </div>
-    </div>
   </div>
 </template>
 
@@ -71,23 +75,25 @@ const login = () => {
   justify-content: center;
   align-items: flex-start;
   height: 100vh;
-  padding-top: 40px;
+  padding-top: 20px;
+  position: relative;
 }
 
 .login-box {
   padding: 30px;
   border-radius: 8px;
   max-width: 400px;
+  position: relative;
 }
 
 .logo-typ {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .logo-typ img {
-  width: 150px;
+  width: 200px;
 }
 
 .input-box {
@@ -136,22 +142,26 @@ const login = () => {
 }
 
 .alt-login {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  text-align: center;
   margin-top: 10px;
 }
 
-.alt-login a {
+.alt-login p {
+  margin-bottom: 10px;
+  font-size: 0.8em;
+}
+
+.social-links {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .social-logo {
   width: 30px;
   height: 30px;
   object-fit: contain;
+  
 }
 
 .register-link {
