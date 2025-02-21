@@ -18,7 +18,7 @@
 }
 
 body {
-  background: #fef3e2;
+  background: #fef3e2 !important;
   font-family: MyFontStandard, sans-serif;
 }
 
