@@ -25,7 +25,7 @@ export default {
       />
     </div>
 
-    <h3><span>LinguaLover</span></h3>
+    <h1>LinguaLover</h1>
     <p class="ProfileText">
       I speak <span>English</span>. I want to learn <span>Spanish</span>
     </p>
@@ -34,7 +34,7 @@ export default {
       Hi! I would love to learn Spanish before my trip to Madrid this summer.
     </p>
     <p></p>
-    <h1>Interests</h1>
+    <h3>Interests</h3>
     <ul class="interest-container">
       <li class="InterestTag" v-for="interest in interests" :key="interest">
         {{ interest }}
@@ -55,7 +55,7 @@ span {
 }
 
 .ProfileFriend {
-  width: 80px;
+  width: 60px;
 }
 
 .ProfileImage {
