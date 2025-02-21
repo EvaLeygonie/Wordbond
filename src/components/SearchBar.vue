@@ -63,6 +63,7 @@ i {
     right: 5em;
     transform: scale(1.9);
     cursor: pointer;
+    color: #575555;
 }
 
 i:hover {
@@ -92,7 +93,7 @@ input[type='button']:hover {
     background-color: #fab12f;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1000px) {
     .language {
         margin: 0.7em;
         display: inline;

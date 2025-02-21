@@ -1,7 +1,7 @@
 [
     {
         "username": "LinguaLover",
-        "profile_picture": "https://example.com/profile1.jpg",
+        "profile_picture": "../public/bilder/avatar_3.png",
         "learning_language": "Spanish",
         "teaching_language": "English",
         "interests": [
@@ -12,7 +12,7 @@
     },
     {
         "username": "PolyglotPat",
-        "profile_picture": "https://example.com/profile2.jpg",
+        "profile_picture": "../public/bilder/avatar_2.png",
         "learning_language": "German",
         "teaching_language": "French",
         "interests": [
@@ -23,7 +23,7 @@
     },
     {
         "username": "WordWizard",
-        "profile_picture": "https://example.com/profile3.jpg",
+        "profile_picture": "../public/bilder/avatar_9.png",
         "learning_language": "Japanese",
         "teaching_language": "English",
         "interests": [
@@ -34,8 +34,8 @@
     },
     {
         "username": "TalkativeTim",
-        "profile_picture": "https://example.com/profile4.jpg",
-        "learning_language": "Italian",
+        "profile_picture": "../public/bilder/avatar_8.png",
+        "learning_language": "Swedish",
         "teaching_language": "Spanish",
         "interests": [
             "Sports",
@@ -45,7 +45,7 @@
     },
     {
         "username": "GrammarGuru",
-        "profile_picture": "https://example.com/profile5.jpg",
+        "profile_picture": "../public/bilder/avatar_6.png",
         "learning_language": "Korean",
         "teaching_language": "English",
         "interests": [
@@ -56,7 +56,7 @@
     },
     {
         "username": "ChatChad",
-        "profile_picture": "https://example.com/profile6.jpg",
+        "profile_picture": "../public/bilder/avatar_5.png",
         "learning_language": "Chinese",
         "teaching_language": "German",
         "interests": [
@@ -67,7 +67,7 @@
     },
     {
         "username": "VocabVince",
-        "profile_picture": "https://example.com/profile7.jpg",
+        "profile_picture": "../public/bilder/avatar_4.png",
         "learning_language": "Portuguese",
         "teaching_language": "Italian",
         "interests": [
@@ -78,7 +78,7 @@
     },
     {
         "username": "CultureChris",
-        "profile_picture": "https://example.com/profile8.jpg",
+        "profile_picture": "../public/bilder/avatar_9.png",
         "learning_language": "French",
         "teaching_language": "Korean",
         "interests": [
@@ -89,9 +89,9 @@
     },
     {
         "username": "LearnLily",
-        "profile_picture": "https://example.com/profile9.jpg",
+        "profile_picture": "../public/bilder/avatar_3.png",
         "learning_language": "Dutch",
-        "teaching_language": "Swedish",
+        "teaching_language": "French",
         "interests": [
             "Books",
             "Travel"
@@ -100,8 +100,8 @@
     },
     {
         "username": "BilingualBella",
-        "profile_picture": "https://example.com/profile10.jpg",
-        "learning_language": "Swedish",
+        "profile_picture": "../public/bilder/avatar_1.png",
+        "learning_language": "English",
         "teaching_language": "Spanish",
         "interests": [
             "Nature",
@@ -111,7 +111,7 @@
     },
     {
         "username": "FluentFelix",
-        "profile_picture": "https://example.com/profile11.jpg",
+        "profile_picture": "../public/bilder/avatar_5.png",
         "learning_language": "Russian",
         "teaching_language": "English",
         "interests": [
@@ -122,9 +122,9 @@
     },
     {
         "username": "ExpressEva",
-        "profile_picture": "https://example.com/profile12.jpg",
+        "profile_picture": "../public/bilder/avatar_2.png",
         "learning_language": "Turkish",
-        "teaching_language": "French",
+        "teaching_language": "Swedish",
         "interests": [
             "Painting",
             "Music"
@@ -133,7 +133,7 @@
     },
     {
         "username": "DuoDavid",
-        "profile_picture": "https://example.com/profile13.jpg",
+        "profile_picture": "../public/bilder/avatar_8.png",
         "learning_language": "Arabic",
         "teaching_language": "Mandarin",
         "interests": [
@@ -144,7 +144,7 @@
     },
     {
         "username": "LinguaLaura",
-        "profile_picture": "https://example.com/profile14.jpg",
+        "profile_picture": "../public/bilder/avatar_6.png",
         "learning_language": "Greek",
         "teaching_language": "Spanish",
         "interests": [
@@ -155,7 +155,7 @@
     },
     {
         "username": "ChattyCharlie",
-        "profile_picture": "https://example.com/profile15.jpg",
+        "profile_picture": "../public/bilder/avatar_7.png",
         "learning_language": "Hindi",
         "teaching_language": "Portuguese",
         "interests": [
