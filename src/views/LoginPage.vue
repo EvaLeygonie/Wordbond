@@ -10,7 +10,7 @@ const router = useRouter();
 
 const login = () => {
   if (email.value && password.value) {
-    router.push("/");
+    router.push("/MatchPage");
   } else {
     alert("Please enter both Email and Password.");
   }
