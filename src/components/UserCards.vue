@@ -76,7 +76,7 @@ h2 {
 }
 
 p {
-    font-size: 0.8em;
+    font-size: 0.9em;
     text-align: left;
     margin-top: 1em;
     margin-bottom: 0;
