@@ -13,12 +13,8 @@ const interests = ref(["Cooking", "Travel"]);
         query: { language: 'Spanish', name: 'TalkativeTim' },
       }"
     >
-      <img
-        alt="Profilbild"
-        src="/bilder/avatar_8.png"
-        class="ProfileFriend"
-      /> </RouterLink
-    >npm rundev
+      <img alt="Profilbild" src="/bilder/avatar_8.png" class="ProfileFriend" />
+    </RouterLink>
   </header>
 
   <main class="MainContainer">
@@ -57,13 +53,16 @@ span {
 }
 
 .ProfileFriend {
-  width: 60px;
+  width: 80px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.2);
+  margin: 5px;
 }
 
 .ProfileImage {
   width: 180px;
   height: 180px;
-  border-radius: 60%;
+  border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -89,6 +88,7 @@ span {
 }
 
 .InterestTag {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.2);
   margin: 5px;
   padding: 10px;
   background-color: #fa812f;
