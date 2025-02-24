@@ -13,7 +13,7 @@ function toggleMenu() {
 
 <template>
    <nav id="mobile_nav">
-      <i class="icon" @click="toggleMenu"></i>
+      <i :class="icon" @click="toggleMenu"></i>
   </nav>
 
   <div id="router_links" :style="{ display: blockOrNone }">
@@ -53,7 +53,7 @@ a {
 }
 
 i {
-  transform: scale(2.3);
+  transform: scale(2.6);
   color: #fef3e2;
   cursor: pointer;
   margin-right: 1em;
