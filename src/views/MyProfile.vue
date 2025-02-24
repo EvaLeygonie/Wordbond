@@ -1,29 +1,25 @@
-<script>
-export default {
-  data() {
-    return {
-      interests: ["Cooking", "Travel"],
-    };
-  },
-};
+<script setup>
+import { ref } from "vue";
+import { RouterLink } from "vue-router";
+
+const interests = ref(["Cooking", "Travel"]);
 </script>
 
 <template>
   <header class="ProfileHeader">
-    <RouterLink :to="{path: '/chat', query: {language: 'Spanish', name: 'TalkativeTim'}}">
-    <img
-      alt="Profilbild"
-      src="/public\bilder\avatar_8.png"
-      class="ProfileFriend"
-    /></RouterLink>
+    <RouterLink
+      :to="{
+        path: '/chat',
+        query: { language: 'Spanish', name: 'TalkativeTim' },
+      }"
+    >
+      <img alt="Profilbild" src="/bilder/avatar_8.png" class="ProfileFriend" />
+    </RouterLink>
   </header>
+
   <main class="MainContainer">
     <div class="ImageContainer">
-      <img
-        alt="Profilbild"
-        src="/public\bilder\avatar_3.png"
-        class="ProfileImage"
-      />
+      <img alt="Profilbild" src="/bilder/avatar_3.png" class="ProfileImage" />
     </div>
 
     <h1>LinguaLover</h1>
@@ -34,7 +30,7 @@ export default {
     <p class="ProfileText">
       Hi! I would love to learn Spanish before my trip to Madrid this summer.
     </p>
-    <p></p>
+
     <h3>Interests</h3>
     <ul class="interest-container">
       <li class="InterestTag" v-for="interest in interests" :key="interest">
@@ -44,10 +40,11 @@ export default {
   </main>
 </template>
 
-<style>
+<style scoped>
 span {
   text-decoration: underline;
 }
+
 .ProfileHeader {
   display: flex;
   align-items: end;
@@ -62,9 +59,6 @@ span {
 .ProfileImage {
   width: 180px;
   height: 180px;
-  display: flex;
-  justify-content: center;
-
   border-radius: 60%;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -75,7 +69,6 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-direction: column;
 }
 
