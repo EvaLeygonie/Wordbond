@@ -1,20 +1,20 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-import Home from "./views/Home.vue";
-import LoginPage from "./views/LoginPage.vue";
-import MyProfile from "./views/MyProfile.vue";
-import ChatPage from "./views/ChatPage.vue";
+import MatchPage from "./views/MatchPage.vue"
+import LoginPage from "./views/LoginPage.vue"
+import MyProfile from "./views/MyProfile.vue"
+import ChatPage from "./views/ChatPage.vue"
 
 export default createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      component: Home,
+      component: LoginPage,
       path: "/",
     },
     {
-      component: LoginPage,
-      path: "/login",
+      component: MatchPage,
+      path: "/matchpage",
     },
     {
       component: MyProfile,

@@ -1,93 +1,88 @@
 <script setup>
-// const logoImage = new URL('../public/logo/wordbond.svg', import.meta.url).href
 import { ref } from 'vue'
 
 let blockOrNone = ref('none')
 
 function toggleMenu() {
-    blockOrNone.value = blockOrNone.value === 'none' ? 'block' : 'none'
+  blockOrNone.value = blockOrNone.value === 'none' ? 'block' : 'none'
 }
 </script>
 
 <template>
-    <header>
-        <!-- <img :src="logoImage" alt="logo"> -->
-    </header>
+   <nav id="mobile_nav">
+      <i class="bi bi-list" @click="toggleMenu"></i>
+  </nav>
 
-    <nav id="mobile_nav">
-        <i class="bi bi-list" @click="toggleMenu"></i>
-    </nav>
+  <div id="router_links" :style="{ display: blockOrNone }">
+    <RouterLink to="/">Login</RouterLink>
+    <RouterLink to="/matchpage">Matches</RouterLink>
+    <RouterLink to="/myprofile">My Profile</RouterLink>
+    <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }">Chat</RouterLink>
+  </div>
 
-    <div id="router_links" :style="{ display: blockOrNone }">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/login">Login</RouterLink>
-        <RouterLink to="/myprofile">My Profile</RouterLink>
-        <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }">Chat</RouterLink>
-    </div>
+  <nav id="desktop_nav">
+    <RouterLink to="/">Login</RouterLink>
+    <RouterLink to="/matchpage">Matches</RouterLink>
+    <RouterLink to="/myprofile">My Profile</RouterLink>
+    <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }">Chat</RouterLink>
+  </nav>
 
-    <nav id="desktop_nav">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/login">Login</RouterLink>
-        <RouterLink to="/myprofile">My Profile</RouterLink>
-        <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }">Chat</RouterLink>
-    </nav>
-
-    <main>
-        <RouterView />
-    </main>
+  <main>
+    <RouterView />
+  </main>
 </template>
 
 <style scoped>
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 50px;
-    background: #fa812f;
-    margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+  background: #fa812f;
+  margin: 0;
 }
 
 a {
-    font-family: HeaderFont, serif;
-    font-weight: 700;
-    color: #fef3e2;
-    text-decoration: none;
+  font-family: HeaderFont, serif;
+  font-weight: 700;
+  color: #fef3e2;
+  text-decoration: none;
 }
 
 i {
-    transform: scale(2.3);
-    color: #fef3e2;
-    cursor: pointer;
-    margin-right: 1em;
+  transform: scale(2.3);
+  color: #fef3e2;
+  cursor: pointer;
+  margin-right: 1em;
 }
 
 #router_links a {
-    background-color: #fa812f;
-    display: block;
-    text-align: center;
-    padding-bottom: 1.5em;
-    font-size: 1.2em;
+  background-color: #fa812f;
+  display: block;
+  text-align: center;
+  padding-bottom: 1.5em;
+  font-size: 1.2em;
 }
 
 #mobile_nav {
-    justify-content: right;
+  justify-content: right;
 }
 
 #desktop_nav {
-    display: none;
+  display: none;
 }
 
 @media only screen and (min-width: 600px) {
-    #desktop_nav {
-        display: flex;
-    }
+  #desktop_nav {
+    display: flex;
+  }
 
-    #mobile_nav {
-        display: none;
-    }
+  #mobile_nav {
+    display: none;
+  }
 
-    #router_links a {
-      display: none;
-    }
+  #router_links a {
+  display: none;
+  }
 }
 </style>

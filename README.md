@@ -27,9 +27,14 @@ linear-gradient(90deg, #fa4032, #fa812f, #fab12f, #fef3e2)
 - Lägga till profilbild i stor view
 
 - Placering/höjd
+- Fixa inputfield på chatten med fixed position
 - Spara meddelanden, local storage
 - Automatiskt svar när man skriver något?
 - Like? Translate?
 - Emojis
 - Responsiv design?
 - Chat funktion efter att man loggat in + username skickas från meny + profil med query params. En enda vän
+
+# User test
+
+- Man ska kunna skriva in språk i sökfältet på språket man vill (i.e tyska)
