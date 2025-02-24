@@ -12,7 +12,7 @@ export default {
   <header class="ProfileHeader">
     <img
       alt="Profilbild"
-      src="/public\bilder\avatar_2.png"
+      src="/public\bilder\avatar_8.png"
       class="ProfileFriend"
     />
   </header>
@@ -27,7 +27,7 @@ export default {
 
     <h1>LinguaLover</h1>
     <p class="ProfileText">
-      I speak <span>English</span>. I want to learn <span>Spanish</span>
+      I speak <span>Swedish</span>. I want to learn <span>Spanish</span>
     </p>
 
     <p class="ProfileText">
