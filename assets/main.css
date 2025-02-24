@@ -25,22 +25,6 @@ body {
   font-family: MyFontStandard, sans-serif;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 50px;
-  background: #fa812f;
-  margin: 0;
-
-  a {
-    font-family: HeaderFont, serif;
-    font-weight: 700;
-    color: #fef3e2;
-    text-decoration: none;
-  }
-}
-
 h1 {
   font-family: HeaderFont, serif;
   color: #575555;
