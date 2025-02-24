@@ -8,15 +8,28 @@
 
 linear-gradient(90deg, #fa4032, #fa812f, #fab12f, #fef3e2)
 
+# Allmän
+
+- Hamburgare meny
+- Bestäm Font storlekar
+
+# Login page
+
+- Fixa ikoner (med bootstrap?)
+
+# Match page
+
+- Kartan
+
 # ChatPage
 
+- Länk name/språk till både profil & hem byt
+- Lägga till profilbild i stor view
+
 - Placering/höjd
-- Skicka med username props
 - Spara meddelanden, local storage
 - Automatiskt svar när man skriver något?
 - Like? Translate?
 - Emojis
 - Responsiv design?
-- Hamburgare meny + logga?
-
-- Chat funktion efter att man loggat in + username skickas från meny + profil med query params. En enda vän?
+- Chat funktion efter att man loggat in + username skickas från meny + profil med query params. En enda vän

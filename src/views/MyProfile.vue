@@ -10,11 +10,12 @@ export default {
 
 <template>
   <header class="ProfileHeader">
+    <RouterLink :to="{path: '/chat', query: {language: 'Spanish', name: 'TalkativeTim'}}">
     <img
       alt="Profilbild"
       src="/public\bilder\avatar_8.png"
       class="ProfileFriend"
-    />
+    /></RouterLink>
   </header>
   <main class="MainContainer">
     <div class="ImageContainer">
