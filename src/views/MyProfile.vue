@@ -13,8 +13,12 @@ const interests = ref(["Cooking", "Travel"]);
         query: { language: 'Spanish', name: 'TalkativeTim' },
       }"
     >
-      <img alt="Profilbild" src="/bilder/avatar_8.png" class="ProfileFriend" />
-    </RouterLink>
+      <img
+        alt="Profilbild"
+        src="/bilder/avatar_8.png"
+        class="ProfileFriend"
+      /> </RouterLink
+    >npm rundev
   </header>
 
   <main class="MainContainer">
