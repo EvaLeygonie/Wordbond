@@ -1,18 +1,18 @@
 [
     {
-        "username": "LinguaLover",
-        "profile_picture": "../public/bilder/avatar_3.png",
-        "learning_language": "Spanish",
-        "teaching_language": "Swedish",
+        "username": "MultiMia",
+        "profile_picture": "../public/bilder/avatar_2.png",
+        "learning_language": "French",
+        "teaching_language": "German",
         "interests": [
-            "Traveling",
-            "Cooking"
+            "Reading",
+            "Crocheting"
         ],
         "learning_method": "Games and exercises"
     },
     {
         "username": "PolyglotPat",
-        "profile_picture": "../public/bilder/avatar_2.png",
+        "profile_picture": "../public/bilder/avatar_6.png",
         "learning_language": "German",
         "teaching_language": "French",
         "interests": [
@@ -45,7 +45,7 @@
     },
     {
         "username": "GrammarGuru",
-        "profile_picture": "../public/bilder/avatar_6.png",
+        "profile_picture": "../public/bilder/avatar_1.png",
         "learning_language": "Korean",
         "teaching_language": "English",
         "interests": [
