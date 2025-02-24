@@ -78,7 +78,7 @@ input[type='text'] {
 
 input[type='button'] {
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 0.9em 1.1em 0.9em;
     color: #ffffff;
     background-color: #fa812f;
