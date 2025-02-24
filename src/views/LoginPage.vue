@@ -1,8 +1,5 @@
 <script setup>
 const logoImage = new URL('../../public/logo/logo-orange.png', import.meta.url).href
-const faceBook = new URL('../../public/logo/facebook.png', import.meta.url).href
-const instaGram = new URL('../../public/logo/instagram.png', import.meta.url).href
-const google = new URL('../../public/logo/google.png', import.meta.url).href
 
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
@@ -56,14 +53,20 @@ const login = () => {
       <div class="alt-login">
         <p>Or login with</p>
         <div class="social-links">
-        <a href="#"><img :src="faceBook" alt="Facebook" class="social-logo"></a>
-        <a href="#"><img :src="instaGram" alt="Instagram" class="social-logo"></a>
-        <a href="#"><img :src="google" alt="Google" class="social-logo"></a>
+          <a href="#" class="social-icon">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="bi bi-google"></i>
+          </a>
       </div>
       </div> 
     </div>
     <div class="register-link">
-        <p>Do you have an account?</p>
+        <p>Don't have an account?</p>
         <a href="#">Create an account!</a>
       </div>
   </div>
@@ -161,7 +164,10 @@ const login = () => {
   width: 30px;
   height: 30px;
   object-fit: contain;
-  
+}
+
+.social-icon {
+  color: #fa812f;
 }
 
 .register-link {
