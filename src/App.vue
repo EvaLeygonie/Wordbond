@@ -3,14 +3,17 @@ import { ref } from 'vue'
 
 let blockOrNone = ref('none')
 
+let icon = ref('bi bi-list')
+
 function toggleMenu() {
-  blockOrNone.value = blockOrNone.value === 'none' ? 'block' : 'none'
+    blockOrNone.value = blockOrNone.value === 'none' ? 'block' : 'none'
+    icon.value = icon.value === 'bi bi-list' ? 'bi bi-x' : 'bi bi-list'
 }
 </script>
 
 <template>
    <nav id="mobile_nav">
-      <i class="bi bi-list" @click="toggleMenu"></i>
+      <i class="icon" @click="toggleMenu"></i>
   </nav>
 
   <div id="router_links" :style="{ display: blockOrNone }">
