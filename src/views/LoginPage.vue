@@ -110,6 +110,10 @@ const login = () => {
   border-radius: 4px;
 }
 
+.input-box input:focus {
+  outline: 2px solid #fa812f;
+  }
+
 .forgot-password {
   display: flex;
   justify-content: center;
@@ -118,10 +122,12 @@ const login = () => {
 .forgot-password a {
   font-size: 0.8em;
   text-decoration: none;
+  color: black;
 }
 
 .forgot-password:hover {
   text-decoration: underline;
+  color: #fa812f;
 }
 
 .login-button {
@@ -185,9 +191,11 @@ const login = () => {
 .register-link a {
   font-size: 1em;
   text-decoration: none;
+  color: black;
 }
 
 .register-link a:hover {
   text-decoration: underline;
+  color: #fa812f;
 }
 </style>
