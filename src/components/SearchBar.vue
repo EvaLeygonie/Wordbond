@@ -5,6 +5,8 @@ const emit = defineEmits(['search'])
 
 const searchInput = ref('')
 
+const blockOrNone = ref('none')
+
 function clearInputField() {
     searchInput.value = ''
     sendData()
@@ -15,6 +17,18 @@ function setLanguage(language) {
     sendData()
 }
 
+function switchToBlock() {
+    if (searchInput.value !== '') {
+        blockOrNone.value = 'block'
+    } else {
+        blockOrNone.value = 'none'
+    }
+}
+
+function switchToNone() {
+    blockOrNone.value = 'none'
+}
+
 const sendData = () => {
     emit('search', searchInput.value)
 }
@@ -22,8 +36,8 @@ const sendData = () => {
 
 <template>
     <div class="input-group mb-3">
-        <input id="search_input" v-model="searchInput" type="text" @keyup.enter="sendData" placeholder="Search..." />
-        <i class="bi bi-x" @click="clearInputField"></i>
+        <input id="search_input" v-model="searchInput" type="text" @keyup.enter="sendData" @keyup="switchToBlock" placeholder="Search for language..." />
+        <i class="bi bi-x" @click="clearInputField(); switchToNone()" :style="{ display: blockOrNone }"></i>
         <input
             type="button"
             value="Search"

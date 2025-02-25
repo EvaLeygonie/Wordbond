@@ -7,7 +7,7 @@ const props = defineProps({
     searchString: String
 })
 
-fetch('../public/data/userData.JSON')
+fetch('/data/userData.JSON')
     .then((response) => response.json())
     .then((result) => {
         userData.value = result

@@ -1,19 +1,19 @@
 @font-face {
   font-family: HeaderFont;
   src: local("Crimson-Pro"),
-    url(../public/fonts/Crimson-Pro.ttf) format("truetype");
+    url(/fonts/Crimson-Pro.ttf) format("truetype");
 }
 
 @font-face {
   font-family: MyFontStandard;
   src: local("Inter-standard"),
-    url(../public/fonts/Inter-standard.ttf) format("truetype");
+    url(/fonts/Inter-standard.ttf) format("truetype");
 }
 
 @font-face {
   font-family: MyFontItalic;
   src: local("Inter-Italic"),
-    url(../public/fonts/Inter-Italic.ttf) format("truetype");
+    url(/fonts/Inter-Italic.ttf) format("truetype");
 }
 
 * {

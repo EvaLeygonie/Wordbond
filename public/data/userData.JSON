@@ -8,7 +8,8 @@
             "Reading",
             "Crocheting"
         ],
-        "learning_method": "Games and exercises"
+        "learning_method": "Games and exercises",
+        "quote": "Bonjour! I’m trying to learn French so I can finally order croissants without sounding like an imposter!"
     },
     {
         "username": "PolyglotPat",
@@ -19,7 +20,8 @@
             "Music",
             "History"
         ],
-        "learning_method": "Text chat"
+        "learning_method": "Text chat",
+        "quote": "Learning German so I can yell Schmetterling! with full confidence!"
     },
     {
         "username": "WordWizard",
@@ -30,7 +32,8 @@
             "Anime",
             "Technology"
         ],
-        "learning_method": "Voice messages"
+        "learning_method": "Voice messages",
+        "quote": "I want to understand anime without subtitles!"
     },
     {
         "username": "TalkativeTim",
@@ -41,7 +44,8 @@
             "Sports",
             "Photography"
         ],
-        "learning_method": "Games and exercises"
+        "learning_method": "Games and exercises",
+        "quote": "Trying to learn Swedish so I don’t mix up kanelbulle and knäckebröd ever again!"
     },
     {
         "username": "GrammarGuru",
@@ -52,18 +56,20 @@
             "Writing",
             "K-pop"
         ],
-        "learning_method": "Text chat"
+        "learning_method": "Text chat",
+        "quote": "K-pop pulled me in, now I need Korean skills so I actually understand what they’re singing!"
     },
     {
         "username": "ChatChad",
         "profile_picture": "/bilder/avatar_9.png",
-        "learning_language": "Chinese",
+        "learning_language": "Mandarin",
         "teaching_language": "German",
         "interests": [
             "Gaming",
             "Business"
         ],
-        "learning_method": "Games and exercises"
+        "learning_method": "Games and exercises",
+        "quote": "I want to learn Mandarin to prepare for my trip to China. So if you know Mandarin and want to learn German - send me a message!"
     },
     {
         "username": "VocabVince",
@@ -74,7 +80,8 @@
             "Dancing",
             "Food"
         ],
-        "learning_method": "Voice messages"
+        "learning_method": "Voice messages",
+        "quote": "Looking for a friend to visit in Lisbon in May!"
     },
     {
         "username": "CultureChris",
@@ -85,7 +92,8 @@
             "Art",
             "Movies"
         ],
-        "learning_method": "Text chat"
+        "learning_method": "Text chat",
+        "quote": "French movies just hit differently when you don’t need subtitles."
     },
     {
         "username": "LearnLily",
@@ -96,7 +104,8 @@
             "Books",
             "Travel"
         ],
-        "learning_method": "Voice messages"
+        "learning_method": "Voice messages",
+        "quote": "Travel goal: effortlessly order Dutch cheese without pointing at the menu."
     },
     {
         "username": "BilingualBella",
@@ -107,18 +116,20 @@
             "Nature",
             "Hiking"
         ],
-        "learning_method": "Games and exercises"
+        "learning_method": "Games and exercises",
+        "quote": "I want to master English so I don’t have to rely on Google Translate every five minutes."
     },
     {
         "username": "FluentFelix",
         "profile_picture": "/bilder/avatar_5.png",
         "learning_language": "Russian",
-        "teaching_language": "English",
+        "teaching_language": "Korean",
         "interests": [
             "Sports",
             "Technology"
         ],
-        "learning_method": "Text chat"
+        "learning_method": "Text chat",
+        "quote": "Hi! I want to learn russian to be able to speak with my relatives in Russia."
     },
     {
         "username": "ExpressEva",
@@ -129,7 +140,8 @@
             "Painting",
             "Music"
         ],
-        "learning_method": "Voice messages"
+        "learning_method": "Voice messages",
+        "quote": "I’m going to Ankara this summer and would like to get to know someone from the area."
     },
     {
         "username": "DuoDavid",
@@ -140,7 +152,8 @@
             "Photography",
             "Meditation"
         ],
-        "learning_method": "Text chat"
+        "learning_method": "Text chat",
+        "quote": "My Arabic grandmother’s cooking is legendary. If I want the recipes, I need to understand her instructions!"
     },
     {
         "username": "LinguaLaura",
@@ -151,7 +164,8 @@
             "History",
             "Culture"
         ],
-        "learning_method": "Voice messages'"
+        "learning_method": "Voice messages'",
+        "quote": "Greek history is fascinating, and I’d love to understand the ancient texts better."
     },
     {
         "username": "ChattyCharlie",
@@ -162,6 +176,7 @@
             "Cooking",
             "Dancing"
         ],
-        "learning_method": "Text chat"
+        "learning_method": "Text chat",
+        "quote": "I need Hindi skills so I can finally understand what my in-laws are saying about me!"
     }
 ]
