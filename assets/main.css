@@ -43,7 +43,7 @@ h3 {
   font-family: HeaderFont, serif;
   color: #575555;
   text-align: center;
-  margin-top: 10px;
+  padding: 20px;
 }
 
 p {

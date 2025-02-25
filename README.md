@@ -49,16 +49,22 @@ Default - App (375px)
 
 # ChatPage
 
-- Länk name/språk till både profil & hem byt
-- Lägga till profilbild i desktop view
-- Lägg till "toolbox" help brevid chatten för desktop
-- AI assistent, förslag på meningar, ordbibliotek?
+- Like + Emojis
+- Local storage => Spara meddelanden & ordbok
+  => Halva skärmen på desktop, modal på app?
+- Pinia eller reactive store?
 
-- Placering/höjd
-- Fixa inputfield på chatten med fixed position
-- Spara meddelanden, local storage
-- Automatiskt svar när man skriver något?
-- Like? Translate?
-- Emojis
-- Responsiv design?
+Responsiv design:
+
+- Lägga till profilbild i desktop view
+- Lägg till "toolbox" section brevid chatten
+- Spara meddelande => stjärna, läggs i toolbox
+
+- Koppla AI
+- Translate API
+- AI assistent, förslag på meningar?
+
+Koppla med resten:
+
 - Chat funktion efter att man loggat in + username skickas från meny + profil med query params. En enda vän
+- Länk name/språk till både profil & hem byt
