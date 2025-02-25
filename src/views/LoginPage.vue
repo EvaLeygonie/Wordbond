@@ -10,7 +10,7 @@ const router = useRouter();
 
 const login = () => {
   if (email.value && password.value) {
-    router.push("/MatchPage");
+    router.push("/findfriend");
   } else {
     alert("Please enter both Email and Password.");
   }
@@ -63,11 +63,11 @@ const login = () => {
             <i class="bi bi-google"></i>
           </a>
       </div>
-      </div> 
+      </div>
     </div>
     <div class="register-link">
         <p>Don't have an account?</p>
-        <a href="#">Create an account!</a>
+        <RouterLink to="/createprofile">Create an account!</RouterLink>
       </div>
   </div>
 </template>

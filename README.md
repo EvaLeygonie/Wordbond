@@ -8,14 +8,40 @@
 
 linear-gradient(90deg, #fa4032, #fa812f, #fab12f, #fef3e2)
 
+# Fonts
+
+- Crimson Pro - Titles
+- Inter Standard - Text
+- Inter Italic - Highlight text
+
+# Media Queries & Font storlekar
+
+Default - App (375px)
+
+- H1:
+- H2:
+- H3:
+- p:
+
+@media screen and (min-width: 500px)
+
+- H1:
+- H2:
+- H3:
+- p:
+
+@media screen and (min-width: 700px)
+
+- H1:
+- H2:
+- H3:
+- p:
+
 # Allmän
 
-- Hamburgare meny
+- Hamburgare meny: stängs när man klickar på en flik
+- Desktop: Highlighta fliken man är på
 - Bestäm Font storlekar
-
-# Login page
-
-- Fixa ikoner (med bootstrap?)
 
 # Match page
 
@@ -24,7 +50,9 @@ linear-gradient(90deg, #fa4032, #fa812f, #fab12f, #fef3e2)
 # ChatPage
 
 - Länk name/språk till både profil & hem byt
-- Lägga till profilbild i stor view
+- Lägga till profilbild i desktop view
+- Lägg till "toolbox" help brevid chatten för desktop
+- AI assistent, förslag på meningar, ordbibliotek?
 
 - Placering/höjd
 - Fixa inputfield på chatten med fixed position
@@ -34,7 +62,3 @@ linear-gradient(90deg, #fa4032, #fa812f, #fab12f, #fef3e2)
 - Emojis
 - Responsiv design?
 - Chat funktion efter att man loggat in + username skickas från meny + profil med query params. En enda vän
-
-# User test
-
-- Man ska kunna skriva in språk i sökfältet på språket man vill (i.e tyska)

@@ -14,7 +14,7 @@ function handleSearch(receivedInput) {
     <div>
         <h1 class="title">Find your language buddy!</h1>
         <SearchBar @search="handleSearch" />
-        <RouterLink to="/myprofile"><UserCards :search-string="searchString" /></RouterLink>
+        <RouterLink to="/otherprofile"><UserCards :search-string="searchString" /></RouterLink>
     </div>
     <footer>
         <a href="http://www.freepik.com">Avatars designed by Freepik</a>

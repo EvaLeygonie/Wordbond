@@ -20,14 +20,14 @@ function toggleMenu() {
 
   <div id="router_links" :style="{ display: blockOrNone }">
     <RouterLink to="/">Login</RouterLink>
-    <RouterLink to="/matchpage">Matches</RouterLink>
+    <RouterLink to="/findfriend">Find Friend</RouterLink>
     <RouterLink to="/myprofile">My Profile</RouterLink>
     <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }">Chat</RouterLink>
   </div>
 
   <nav id="desktop_nav">
     <RouterLink to="/">Login</RouterLink>
-    <RouterLink to="/matchpage">Matches</RouterLink>
+    <RouterLink to="/findfriend">Find Friend</RouterLink>
     <RouterLink to="/myprofile">My Profile</RouterLink>
     <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }">Chat</RouterLink>
   </nav>
