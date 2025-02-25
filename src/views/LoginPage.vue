@@ -125,7 +125,7 @@ const login = () => {
   color: black;
 }
 
-.forgot-password:hover {
+.forgot-password a:hover {
   text-decoration: underline;
   color: #fa812f;
 }
@@ -159,6 +159,7 @@ const login = () => {
 .alt-login p {
   margin-bottom: 10px;
   font-size: 0.8em;
+  color: black;
 }
 
 .social-links {
@@ -187,6 +188,7 @@ const login = () => {
 
 .register-link p {
   margin-bottom: 5px;
+  color: black;
 }
 
 .register-link a {
