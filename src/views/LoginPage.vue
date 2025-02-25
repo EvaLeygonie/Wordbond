@@ -176,6 +176,7 @@ const login = () => {
 
 .social-icon {
   color: #fa812f;
+  transform: scale(1.2);
 }
 
 .register-link {
