@@ -15,6 +15,7 @@ const interests = ref(["Cooking", "Travel"]);
     >
       <img alt="Profilbild" src="/bilder/avatar_8.png" class="ProfileFriend" />
     </RouterLink>
+    <p class="ChatText">Chat</p>
   </header>
 
   <main class="MainContainer">
@@ -47,9 +48,14 @@ span {
 
 .ProfileHeader {
   display: flex;
-  align-items: end;
-  justify-content: end;
+  align-items: flex-end;
+  justify-content: center;
   margin: 30px;
+  flex-direction: column;
+}
+
+.ChatText {
+  padding-right: 22px;
 }
 
 .ProfileFriend {
