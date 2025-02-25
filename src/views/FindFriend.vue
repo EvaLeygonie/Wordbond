@@ -16,9 +16,6 @@ function handleSearch(receivedInput) {
         <SearchBar @search="handleSearch" />
         <RouterLink to="/otherprofile"><UserCards :search-string="searchString" /></RouterLink>
     </div>
-    <footer>
-        <a href="http://www.freepik.com">Avatars designed by Freepik</a>
-    </footer>
 </template>
 
 <style scoped>
@@ -29,12 +26,6 @@ div {
 .title {
     padding: 1em;
     color: #575555;
-}
-
-footer {
-    margin-top: 2em;
-    padding: 2em;
-    background-color: #fa812f;
 }
 
 a {

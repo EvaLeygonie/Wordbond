@@ -13,85 +13,101 @@ function toggleMenu() {
 </script>
 
 <template>
-   <nav id="mobile_nav">
-      <img :src="logoWhite" alt="logo">
-      <i :class="icon" @click="toggleMenu"></i>
-  </nav>
+    <nav id="mobile_nav">
+        <img :src="logoWhite" alt="logo" />
+        <i :class="icon" @click="toggleMenu"></i>
+    </nav>
 
-  <div id="router_links" :style="{ display: blockOrNone }">
-    <RouterLink to="/" @click="toggleMenu">Login</RouterLink>
-    <RouterLink to="/findfriend" @click="toggleMenu">Find Friend</RouterLink>
-    <RouterLink to="/myprofile" @click="toggleMenu">My Profile</RouterLink>
-    <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }" @click="toggleMenu">Chat</RouterLink>
-  </div>
+    <div id="router_links" :style="{ display: blockOrNone }">
+        <RouterLink to="/" @click="toggleMenu">Login</RouterLink>
+        <RouterLink to="/findfriend" @click="toggleMenu">Find Friend</RouterLink>
+        <RouterLink to="/myprofile" @click="toggleMenu">My Profile</RouterLink>
+        <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }" @click="toggleMenu">Chat</RouterLink>
+    </div>
 
-  <nav id="desktop_nav">
-    <RouterLink to="/">Login</RouterLink>
-    <RouterLink to="/findfriend">Find Friend</RouterLink>
-    <RouterLink to="/myprofile">My Profile</RouterLink>
-    <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }">Chat</RouterLink>
-  </nav>
-
-  <main>
-    <RouterView />
-  </main>
+    <nav id="desktop_nav">
+        <RouterLink to="/">Login</RouterLink>
+        <RouterLink to="/findfriend">Find Friend</RouterLink>
+        <RouterLink to="/myprofile">My Profile</RouterLink>
+        <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }">Chat</RouterLink>
+    </nav>
+    <main>
+        <RouterView />
+    </main>
+    <footer>
+        <a href="http://www.freepik.com">Avatars designed by Freepik</a>
+    </footer>
 </template>
 
 <style scoped>
+main {
+  min-height: 33vh;
+}
+
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 50px;
-  background: #fa812f;
-  margin: 0;
-  img {
-    height: 45px;
-    padding-left: 5px;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    background: #fa812f;
+    margin: 0;
+    img {
+        height: 45px;
+        padding-left: 5px;
+    }
+}
+
+footer {
+    margin-top: 2em;
+    padding: 2em;
+    background-color: #fa812f;
+}
+
+footer a {
+    font-weight: normal;
 }
 
 a {
-  font-family: HeaderFont, serif;
-  font-weight: 700;
-  color: #fef3e2;
-  text-decoration: none;
+    font-family: HeaderFont, serif;
+    font-weight: 700;
+    color: #fef3e2;
+    text-decoration: none;
 }
 
 i {
-  transform: scale(2.6);
-  color: #fef3e2;
-  cursor: pointer;
-  margin-right: 1em;
+    transform: scale(2.6);
+    color: #fef3e2;
+    cursor: pointer;
+    margin-right: 1em;
 }
 
 #router_links a {
-  background-color: #fa812f;
-  display: block;
-  text-align: center;
-  padding-bottom: 1.5em;
-  font-size: 1.2em;
+    background-color: #fa812f;
+    display: block;
+    text-align: center;
+    padding-bottom: 1.5em;
+    font-size: 1.2em;
 }
 
 #mobile_nav {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 #desktop_nav {
-  display: none;
+    display: none;
 }
 
 @media screen and (min-width: 600px) {
-  #desktop_nav {
-    display: flex;
-  }
+    #desktop_nav {
+        display: flex;
+    }
 
-  #mobile_nav {
-    display: none;
-  }
+    #mobile_nav {
+        display: none;
+    }
 
-  #router_links a {
-  display: none;
-  }
+    #router_links a {
+        display: none;
+    }
 }
 </style>
