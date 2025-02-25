@@ -143,10 +143,11 @@ const login = () => {
   border: none;
   border-radius: 4px;
   font-size: 1em;
+  background-color: #fa812f;
 }
 
 .login-button button:hover {
-  background-color: #fa812f;
+  background-color: #fab12f;
   cursor: pointer;
 }
 
