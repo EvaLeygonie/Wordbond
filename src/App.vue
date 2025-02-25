@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+const logoWhite = new URL('../public/logo/logo-white.png', import.meta.url).href
 
 let blockOrNone = ref('none')
 
@@ -13,6 +14,7 @@ function toggleMenu() {
 
 <template>
    <nav id="mobile_nav">
+      <img :src="logoWhite" alt="logo">
       <i :class="icon" @click="toggleMenu"></i>
   </nav>
 
@@ -43,6 +45,10 @@ nav {
   height: 50px;
   background: #fa812f;
   margin: 0;
+  img {
+    height: 45px;
+    padding-left: 5px;
+  }
 }
 
 a {
@@ -68,7 +74,7 @@ i {
 }
 
 #mobile_nav {
-  justify-content: right;
+  justify-content: space-between;
 }
 
 #desktop_nav {
