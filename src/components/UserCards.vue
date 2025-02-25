@@ -82,13 +82,13 @@ p {
     margin-bottom: 0;
 }
 
-@media only screen and (min-width: 600px) {
+@media screen and (min-width: 600px) {
     section {
         grid-template-columns: 30vw 30vw;
     }
 }
 
-@media only screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
     section {
         grid-template-columns: 20vw 20vw 20vw;
     }

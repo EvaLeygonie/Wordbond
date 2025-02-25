@@ -22,7 +22,7 @@ const sendData = () => {
 
 <template>
     <div class="input-group mb-3">
-        <input v-model="searchInput" type="text" @keyup.enter="sendData" placeholder="Search for language, interests..." />
+        <input id="search_input" v-model="searchInput" type="text" @keyup.enter="sendData" placeholder="Search..." />
         <i class="bi bi-x" @click="clearInputField"></i>
         <input
             type="button"
@@ -93,7 +93,7 @@ input[type='button']:hover {
     background-color: #fab12f;
 }
 
-@media only screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
     .language {
         margin: 0.7em;
         display: inline;

@@ -19,10 +19,10 @@ function toggleMenu() {
   </nav>
 
   <div id="router_links" :style="{ display: blockOrNone }">
-    <RouterLink to="/">Login</RouterLink>
-    <RouterLink to="/matchpage">Matches</RouterLink>
-    <RouterLink to="/myprofile">My Profile</RouterLink>
-    <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }">Chat</RouterLink>
+    <RouterLink to="/" @click="toggleMenu">Login</RouterLink>
+    <RouterLink to="/matchpage" @click="toggleMenu">Matches</RouterLink>
+    <RouterLink to="/myprofile" @click="toggleMenu">My Profile</RouterLink>
+    <RouterLink :to="{ path: '/chat', query: { language: 'Spanish', name: 'TalkativeTim' } }" @click="toggleMenu">Chat</RouterLink>
   </div>
 
   <nav id="desktop_nav">
@@ -81,7 +81,7 @@ i {
   display: none;
 }
 
-@media only screen and (min-width: 600px) {
+@media screen and (min-width: 600px) {
   #desktop_nav {
     display: flex;
   }
