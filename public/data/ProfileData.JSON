@@ -1,42 +1,92 @@
 [
   {
-    "id": 1,
-    "username": "Maria123",
-    "email": "maria.svensson@example.com",
-    "nativeLanguage": "Swedish",
-    "learningLanguages": ["English", "French"],
-    "bio": "I love traveling and want to improve my French before my next trip to Paris!"
+    "username": "LingoLeo",
+    "profile_picture": "/bilder/avatar_10.png",
+    "learning_language": "Italian",
+    "teaching_language": "English",
+    "interests": ["Cooking", "Travel"],
+    "learning_method": "Voice messages",
+    "quote": "I want to learn Italian so I can impress my nonna with my pasta-making skills!"
   },
   {
-    "id": 2,
-    "username": "Carlos85",
-    "email": "carlos.rodriguez@example.com",
-    "nativeLanguage": "Spanish",
-    "learningLanguages": ["English", "Swedish"],
-    "bio": "I moved to Sweden and want to learn the language to communicate better with my colleagues."
+    "username": "SyntaxSven",
+    "profile_picture": "/bilder/avatar_11.png",
+    "learning_language": "Norwegian",
+    "teaching_language": "Danish",
+    "interests": ["Coding", "Hiking"],
+    "learning_method": "Text chat",
+    "quote": "Norwegian and Danish are close, but I still mix up words – time to fix that!"
   },
   {
-    "id": 3,
-    "username": "EmilyJ",
-    "email": "emily.johnson@example.com",
-    "nativeLanguage": "English",
-    "learningLanguages": ["Japanese", "Spanish"],
-    "bio": "I've always loved Japanese culture and want to read manga in its original language."
+    "username": "ChatterCeline",
+    "profile_picture": "/bilder/avatar_12.png",
+    "learning_language": "Spanish",
+    "teaching_language": "French",
+    "interests": ["Fashion", "Photography"],
+    "learning_method": "Games and exercises",
+    "quote": "I dream of strolling through Barcelona markets and actually understanding the locals!"
   },
   {
-    "id": 4,
-    "username": "YukiT",
-    "email": "yuki.tanaka@example.com",
-    "nativeLanguage": "Japanese",
-    "learningLanguages": ["English", "French"],
-    "bio": "I'm studying international relations and want to improve my language skills for future job opportunities."
+    "username": "MangaMax",
+    "profile_picture": "/bilder/avatar_13.png",
+    "learning_language": "Japanese",
+    "teaching_language": "German",
+    "interests": ["Manga", "Video games"],
+    "learning_method": "Voice messages",
+    "quote": "I want to read manga in Japanese without waiting for translations!"
   },
   {
-    "id": 5,
-    "username": "LucaM",
-    "email": "luca.moretti@example.com",
-    "nativeLanguage": "Italian",
-    "learningLanguages": ["German", "English"],
-    "bio": "I'm planning to study in Germany and want to improve my German."
+    "username": "TravelerTina",
+    "profile_picture": "/bilder/avatar_14.png",
+    "learning_language": "Greek",
+    "teaching_language": "English",
+    "interests": ["Travel", "History"],
+    "learning_method": "Text chat",
+    "quote": "Learning Greek so I can order souvlaki like a local on my next trip!"
+  },
+  {
+    "username": "CodeCarl",
+    "profile_picture": "/bilder/avatar_15.png",
+    "learning_language": "Russian",
+    "teaching_language": "Swedish",
+    "interests": ["Programming", "Chess"],
+    "learning_method": "Games and exercises",
+    "quote": "I’m fascinated by Russian culture and want to understand programming forums in Russian!"
+  },
+  {
+    "username": "MelodyMia",
+    "profile_picture": "/bilder/avatar_16.png",
+    "learning_language": "Portuguese",
+    "teaching_language": "English",
+    "interests": ["Music", "Dancing"],
+    "learning_method": "Voice messages",
+    "quote": "I love Brazilian music and want to sing along without butchering the lyrics!"
+  },
+  {
+    "username": "FilmFanatic",
+    "profile_picture": "/bilder/avatar_17.png",
+    "learning_language": "Korean",
+    "teaching_language": "Spanish",
+    "interests": ["Movies", "Theater"],
+    "learning_method": "Text chat",
+    "quote": "K-dramas are amazing, but I want to understand them without subtitles!"
+  },
+  {
+    "username": "BookwormBen",
+    "profile_picture": "/bilder/avatar_18.png",
+    "learning_language": "Dutch",
+    "teaching_language": "English",
+    "interests": ["Reading", "Writing"],
+    "learning_method": "Text chat",
+    "quote": "Dutch literature is intriguing – time to read it in the original language!"
+  },
+  {
+    "username": "ExplorerElias",
+    "profile_picture": "/bilder/avatar_19.png",
+    "learning_language": "Swahili",
+    "teaching_language": "French",
+    "interests": ["Hiking", "Wildlife"],
+    "learning_method": "Voice messages",
+    "quote": "Planning a trip to Africa and want to chat with locals in Swahili!"
   }
 ]
