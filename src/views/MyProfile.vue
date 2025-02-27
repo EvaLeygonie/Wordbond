@@ -1,9 +1,14 @@
 <script setup>
-  import { ref } from "vue";
-  import { RouterLink } from "vue-router";
+  import { ref } from 'vue'
+  import { RouterLink } from 'vue-router'
 
-  const interests = ref(["Cooking", "Travel"]);
-  const
+  const interests = ref(['Cooking', 'Travel'])
+  const username = ref('LinguaLover')
+  const teachingLanguage = ref('Swedish')
+  const learningLanguage = ref('Spanish')
+  const profileText = ref(
+    'Hi! I would love to learn Spanish before my trip to Madrid this summer.'
+  )
 </script>
 
 <template>
@@ -25,13 +30,14 @@
       <img alt="Profilbild" src="/bilder/avatar_3.png" class="ProfileImage" />
     </div>
 
-    <h1>LinguaLover</h1>
+    <h1>{{ username }}</h1>
     <p class="ProfileText">
-      I speak <span>Swedish</span>. I want to learn <span>Spanish</span>
+      I speak <span>{{ teachingLanguage }}</span
+      >. I want to learn <span>{{ learningLanguage }}</span>
     </p>
 
     <p class="ProfileText">
-      Hi! I would love to learn Spanish before my trip to Madrid this summer.
+      {{ profileText }}
     </p>
 
     <h3>Interests</h3>
@@ -40,6 +46,10 @@
         {{ interest }}
       </li>
     </ul>
+
+    <RouterLink to="/edit-profile"
+      ><button class="edit-button">Edit profile</button></RouterLink
+    >
   </main>
 </template>
 

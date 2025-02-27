@@ -1,38 +1,43 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from 'vue-router'
 
-import LoginPage from "./views/LoginPage.vue"
-import CreateProfile from "./views/CreateProfile.vue"
-import FindFriend from "./views/FindFriend.vue"
-import OtherProfile from "./views/OtherProfile.vue"
-import MyProfile from "./views/MyProfile.vue"
-import ChatPage from "./views/ChatPage.vue"
+import LoginPage from './views/LoginPage.vue'
+import CreateProfile from './views/CreateProfile.vue'
+import FindFriend from './views/FindFriend.vue'
+import OtherProfile from './views/OtherProfile.vue'
+import MyProfile from './views/MyProfile.vue'
+import ChatPage from './views/ChatPage.vue'
+import EditProfile from './components/EditProfile.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
   routes: [
     {
       component: LoginPage,
-      path: "/",
+      path: '/'
     },
     {
       component: CreateProfile,
-      path: "/createprofile",
+      path: '/createprofile'
     },
     {
       component: FindFriend,
-      path: "/findfriend",
+      path: '/findfriend'
     },
     {
       component: OtherProfile,
-      path: "/otherprofile",
+      path: '/otherprofile'
     },
     {
       component: MyProfile,
-      path: "/myprofile",
+      path: '/myprofile'
     },
     {
       component: ChatPage,
-      path: "/chat",
+      path: '/chat'
     },
-  ],
-});
+    {
+      component: EditProfile,
+      path: '/editprofile'
+    }
+  ]
+})
