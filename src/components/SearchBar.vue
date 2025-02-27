@@ -15,18 +15,15 @@ function clearInputField() {
 function setLanguage(language) {
     searchInput.value = language
     sendData()
+    toggleX()
 }
 
-function switchToBlock() {
+function toggleX() {
     if (searchInput.value !== '') {
         blockOrNone.value = 'block'
     } else {
         blockOrNone.value = 'none'
     }
-}
-
-function switchToNone() {
-    blockOrNone.value = 'none'
 }
 
 const sendData = () => {
@@ -36,8 +33,8 @@ const sendData = () => {
 
 <template>
     <div class="input-group mb-3">
-        <input id="search_input" v-model="searchInput" type="text" @keyup.enter="sendData" @keyup="switchToBlock" placeholder="Search for language..." />
-        <i class="bi bi-x" @click="clearInputField(); switchToNone()" :style="{ display: blockOrNone }"></i>
+        <input id="search_input" v-model="searchInput" type="text" @keyup.enter="sendData" @keyup="toggleX" placeholder="Search for language..." />
+        <i class="bi bi-x" @click="clearInputField(); toggleX()" :style="{ display: blockOrNone }"></i>
         <input
             type="button"
             value="Search"

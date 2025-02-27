@@ -28,13 +28,13 @@ const filteredUsers = computed(() => {
 <template>
     <section>
         <div v-for="user in filteredUsers">
-            <a href="">
+            <RouterLink :to="{ path: '/otherprofile', query: { name: user.username } }">
                 <img :src="user.profile_picture" :alt="user.username" />
                 <h2>{{ user.username }}</h2>
                 <p>Can teach: {{ user.teaching_language }}</p>
                 <p>Learning: {{ user.learning_language }}</p>
                 <p>Interests: {{ user.interests[0] }} & {{ user.interests[1] }}</p>
-            </a>
+            </RouterLink>
         </div>
     </section>
 </template>

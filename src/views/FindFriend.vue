@@ -14,7 +14,7 @@ function handleSearch(receivedInput) {
     <div>
         <h1 class="title">Find your language buddy!</h1>
         <SearchBar @search="handleSearch" />
-        <RouterLink to="/otherprofile"><UserCards :search-string="searchString" /></RouterLink>
+        <UserCards :search-string="searchString" />
     </div>
 </template>
 
