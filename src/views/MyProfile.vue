@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { RouterLink } from "vue-router";
 
 const interests = ref(["Cooking", "Travel"]);
+const
 </script>
 
 <template>
