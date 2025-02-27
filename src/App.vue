@@ -34,9 +34,6 @@ function toggleMenu() {
     <main>
         <RouterView />
     </main>
-    <footer>
-        <a href="http://www.freepik.com">Avatars designed by Freepik</a>
-    </footer>
 </template>
 
 <style scoped>
@@ -55,16 +52,6 @@ nav {
         height: 45px;
         padding-left: 5px;
     }
-}
-
-footer {
-    margin-top: 2em;
-    padding: 2em;
-    background-color: #fa812f;
-}
-
-footer a {
-    font-weight: normal;
 }
 
 a {

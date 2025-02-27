@@ -16,6 +16,9 @@ function handleSearch(receivedInput) {
         <SearchBar @search="handleSearch" />
         <UserCards :search-string="searchString" />
     </div>
+    <footer>
+        <a href="http://www.freepik.com">Avatars designed by Freepik</a>
+    </footer>
 </template>
 
 <style scoped>
@@ -37,5 +40,15 @@ a {
 
 a:hover {
     color: #5c5c5c;
+}
+
+footer {
+    margin-top: 2em;
+    padding: 2em;
+    background-color: #fa812f;
+}
+
+footer a {
+    font-weight: normal;
 }
 </style>
