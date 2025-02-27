@@ -2,31 +2,28 @@
   import { ref, nextTick } from 'vue'
   import { useRoute } from 'vue-router'
   import ChatBubble from '../components/ChatBubble.vue'
-<<<<<<< HEAD
-=======
-  import { useChatStore } from '../stores/chatStore'
 
->>>>>>> 8958435fca0d395a6ea3f3a0560987efdf13f61a
   const route = useRoute()
-  const chatStore = useChatStore()
 
   const friendName = route.query.name
   const language = route.query.language
   const chatBox = ref(null)
 
+  const messages = ref([
+    { text: 'Hola! Cómo estás?', isUser: false },
+    { text: 'Hej! Jag mår bra, själv?', isUser: true },
+    { text: 'Bra! kan lite svenska', isUser: false }
+  ])
+
   const newMessage = ref('')
 
   const sendMessage = () => {
-    // chatStore.clearChat()
-    // chatStore.addMessage('Hola! Cómo estás?', false)
-    // chatStore.addMessage('Hej! Jag mår bra, själv?', true)
-    // chatStore.addMessage('Bra! kan lite svenska', false)
     if (newMessage.value.trim() !== '') {
-      chatStore.addMessage(newMessage.value, true)
+      messages.value.push({ text: newMessage.value, isUser: true })
       newMessage.value = ''
       nextTick(scrollToBottom)
       setTimeout(() => {
-        chatStore.addMessage(':)', false)
+        messages.value.push({ text: ':)', isUser: false })
         nextTick(scrollToBottom)
       }, 1000)
     }
@@ -46,7 +43,7 @@
   <div class="chat-container">
     <div ref="chatBox" class="chat-box">
       <ChatBubble
-        v-for="(msg, index) in chatStore.messages"
+        v-for="(msg, index) in messages"
         :key="index"
         :message="msg.text"
         :is-user="msg.isUser"
