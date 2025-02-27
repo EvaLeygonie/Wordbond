@@ -2,11 +2,16 @@
   import { computed } from 'vue'
 
   const props = defineProps({
-    message: String,
-    isUser: Boolean,
+    message: {
+      type: String,
+      required: true
+    },
+    isUser: Boolean
   })
 
-const bubbleClass = computed(() => props.isUser? "chat-bubble user-message" : "chat-bubble other-message")
+  const bubbleClass = computed(() =>
+    props.isUser ? 'chat-bubble user-message' : 'chat-bubble other-message'
+  )
 </script>
 
 <template>
