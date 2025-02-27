@@ -104,9 +104,23 @@
     }
   }
 
+  .tools-section {
+    display: none;
+  }
+
   @media (min-width: 500px) {
   .chat-container {
     width: 90%;
+  }
+
+  .tools-section {
+    display: inline;
+    background: #fef3e2;
+    outline: 2px solid rgba(250, 64, 50, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    max-height: 70vh;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -119,15 +133,6 @@
 
   .chat-box {
     max-height: calc(85vh - 60px);
-  }
-
-  .tools-section {
-    background: #fef3e2;
-    outline: 2px solid rgba(250, 64, 50, 0.5);
-    padding: 15px;
-    border-radius: 10px;
-    max-height: 70vh;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
 }
 </style>
