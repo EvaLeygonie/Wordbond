@@ -9,7 +9,7 @@
   )
 
   const saveProfile = () => {
-    console.log('Profile saved', {
+    alert('Profile saved', {
       name: name.value,
       teachingLanguage: teachingLanguage.value,
       learningLanguage: learningLanguage.value,
@@ -35,6 +35,9 @@
     <textarea id="profileText" v-model="profileText" />
 
     <button @click="saveProfile">Save</button>
+    <RouterLink to="/myprofile"
+      ><button class="edit-button">Cancel</button></RouterLink
+    >
   </div>
 </template>
 
