@@ -1,36 +1,34 @@
 <script setup>
-const logoImage = new URL('../../public/logo/logo-orange.png', import.meta.url).href
+  const logoImage = new URL(
+    '../../public/logo/logo-orange.png',
+    import.meta.url
+  ).href
 
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+  import { ref } from 'vue'
+  import { useRouter } from 'vue-router'
 
-const email = ref("");
-const password = ref("");
-const router = useRouter();
+  const email = ref('')
+  const password = ref('')
+  const router = useRouter()
 
-const login = () => {
-  if (email.value && password.value) {
-    router.push("/findfriend");
-  } else {
-    alert("Please enter both Email and Password.");
+  const login = () => {
+    if (email.value && password.value) {
+      router.push('/findfriend')
+    } else {
+      alert('Please enter both Email and Password.')
+    }
   }
-};
 </script>
 
 <template>
   <div class="login-container">
     <div class="login-box">
       <div class="logo-typ">
-        <img :src="logoImage" alt="logo">
+        <img :src="logoImage" alt="logo" />
       </div>
 
       <div class="input-box">
-        <input
-          type="email"
-          id="email"
-          v-model="email"
-          placeholder="Email..."
-          />
+        <input type="email" id="email" v-model="email" placeholder="Email..." />
       </div>
 
       <div class="input-box">
@@ -54,152 +52,152 @@ const login = () => {
         <p>Or login with</p>
         <div class="social-links">
           <a href="#" class="social-icon">
-            <i class="bi bi-facebook"></i>
+            <i class="bi bi-facebook" />
           </a>
           <a href="#" class="social-icon">
-            <i class="bi bi-instagram"></i>
+            <i class="bi bi-instagram" />
           </a>
           <a href="#" class="social-icon">
-            <i class="bi bi-google"></i>
+            <i class="bi bi-google" />
           </a>
-      </div>
+        </div>
       </div>
     </div>
     <div class="register-link">
-        <p>Don't have an account?</p>
-        <RouterLink to="/createprofile">Create an account!</RouterLink>
-      </div>
+      <p>Don't have an account?</p>
+      <RouterLink to="/createprofile">Create an account!</RouterLink>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  padding-top: 20px;
-  position: relative;
-}
-
-.login-box {
-  padding: 30px;
-  border-radius: 8px;
-  max-width: 400px;
-  position: relative;
-}
-
-.logo-typ {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.logo-typ img {
-  width: 200px;
-}
-
-.input-box {
-  margin-bottom: 8px;
-}
-
-.input-box input {
-  width: 100%;
-  padding: 10px;
-  border: 1px;
-  border-radius: 4px;
-}
-
-.input-box input:focus {
-  outline: 2px solid #fa812f;
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding-top: 20px;
+    position: relative;
   }
 
-.forgot-password {
-  display: flex;
-  justify-content: center;
-}
+  .login-box {
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 400px;
+    position: relative;
+  }
 
-.forgot-password a {
-  font-size: 0.8em;
-  text-decoration: none;
-  color: black;
-}
+  .logo-typ {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
 
-.forgot-password a:hover {
-  text-decoration: underline;
-  color: #fa812f;
-}
+  .logo-typ img {
+    width: 200px;
+  }
 
-.login-button {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
+  .input-box {
+    margin-bottom: 8px;
+  }
 
-.login-button button {
-  width: 100px;
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-  font-size: 1em;
-  background-color: #fa812f;
-}
+  .input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px;
+    border-radius: 4px;
+  }
 
-.login-button button:hover {
-  background-color: #fab12f;
-  cursor: pointer;
-}
+  .input-box input:focus {
+    outline: 2px solid #fa812f;
+  }
 
-.alt-login {
-  text-align: center;
-  margin-top: 10px;
-}
+  .forgot-password {
+    display: flex;
+    justify-content: center;
+  }
 
-.alt-login p {
-  margin-bottom: 10px;
-  font-size: 0.8em;
-  color: black;
-}
+  .forgot-password a {
+    font-size: 0.8em;
+    text-decoration: none;
+    color: black;
+  }
 
-.social-links {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
+  .forgot-password a:hover {
+    text-decoration: underline;
+    color: #fa812f;
+  }
 
-.social-logo {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-}
+  .login-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
 
-.social-icon {
-  color: #fa812f;
-  transform: scale(1.2);
-}
+  .login-button button {
+    width: 100px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #fa812f;
+  }
 
-.register-link {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  text-align: left;
-  font-size: 0.8em;
-}
+  .login-button button:hover {
+    background-color: #fab12f;
+    cursor: pointer;
+  }
 
-.register-link p {
-  margin-bottom: 5px;
-  color: black;
-}
+  .alt-login {
+    text-align: center;
+    margin-top: 10px;
+  }
 
-.register-link a {
-  font-size: 1em;
-  text-decoration: none;
-  color: black;
-}
+  .alt-login p {
+    margin-bottom: 10px;
+    font-size: 0.8em;
+    color: black;
+  }
 
-.register-link a:hover {
-  text-decoration: underline;
-  color: #fa812f;
-}
+  .social-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .social-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  .social-icon {
+    color: #fa812f;
+    transform: scale(1.2);
+  }
+
+  .register-link {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    text-align: left;
+    font-size: 0.8em;
+  }
+
+  .register-link p {
+    margin-bottom: 5px;
+    color: black;
+  }
+
+  .register-link a {
+    font-size: 1em;
+    text-decoration: none;
+    color: black;
+  }
+
+  .register-link a:hover {
+    text-decoration: underline;
+    color: #fa812f;
+  }
 </style>
