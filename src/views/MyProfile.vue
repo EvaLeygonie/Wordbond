@@ -1,6 +1,7 @@
 <script setup>
   import { ref } from 'vue'
   import { RouterLink } from 'vue-router'
+  import EditProfile from '../components/editProfile.vue'
 
   const interests = ref(['Cooking', 'Travel'])
   const username = ref('LinguaLover')
@@ -47,7 +48,7 @@
       </li>
     </ul>
 
-    <RouterLink to="/edit-profile"
+    <RouterLink to="/editprofilepage"
       ><button class="edit-button">Edit profile</button></RouterLink
     >
   </main>

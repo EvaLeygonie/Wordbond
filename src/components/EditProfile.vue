@@ -37,3 +37,13 @@
     <button @click="saveProfile">Save</button>
   </div>
 </template>
+
+<style scoped>
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+</style>

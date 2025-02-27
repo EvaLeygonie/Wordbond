@@ -2,7 +2,6 @@
   import { ref, nextTick } from 'vue'
   import { useRoute } from 'vue-router'
   import ChatBubble from '../components/ChatBubble.vue'
-
   const route = useRoute()
 
   const friendName = route.query.name
