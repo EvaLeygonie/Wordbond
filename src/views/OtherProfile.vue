@@ -1,86 +1,141 @@
 <script setup>
-import { ref, computed, watchEffect } from 'vue'
-import { useRoute } from 'vue-router'
+  import { ref, computed, watchEffect } from 'vue'
+  import { useRoute } from 'vue-router'
 
-const route = useRoute()
-const username = computed(() => route.query.name)
-const userData = ref([])
-const selectedUser = ref(null)
-const request = ref('Send friend-request')
+  const route = useRoute()
+  const username = computed(() => route.query.name)
+  const userData = ref([])
+  const selectedUser = ref(null)
+  const request = ref('Send friend-request')
 
-fetch('/data/userData.JSON')
+  fetch('/data/userData.JSON')
     .then((response) => response.json())
     .then((result) => {
-        userData.value = result
-        selectedUser.value = userData.value.find((user) => user.username === username.value)
+      userData.value = result
+      selectedUser.value = userData.value.find(
+        (user) => user.username === username.value
+      )
     })
 
-function confirmation() {
+  function confirmation() {
     if (request.value === 'Send friend-request') {
-        alert(`${ selectedUser.value.username } has accepted your friend-request!`)
-        request.value = 'Send message'
+      alert(`${selectedUser.value.username} has accepted your friend-request!`)
+      request.value = 'Send message'
     } else {
-        alert('In progress')
+      alert('In progress')
     }
-}
+  }
 </script>
 
 <template>
-    <div id="frame" v-if="selectedUser">
-        <h1>{{ selectedUser.username }}</h1>
-        <div class="flexbox">
-            <div class="content">
-                <h2>"{{ selectedUser.quote }}"</h2>
-                <p>Can teach: {{ selectedUser.teaching_language }}</p>
-                <p>Learning: {{ selectedUser.learning_language }}</p>
-                <p>Interests: {{ selectedUser.interests[0] }} & {{ selectedUser.interests[1] }}</p>
-            </div>
-            <img class="content" :src="selectedUser.profile_picture" :alt="selectedUser.username" />
-        </div>
-        <input type="button" :value="request" @click="confirmation">
-    </div>
-    <div v-else>
-        <p>No user found.</p>
-    </div>
+  <RouterLink :to="{ path: '/findfriend' }"
+    ><i class="bi bi-arrow-left-short"
+  /></RouterLink>
+  <div id="frame" v-if="selectedUser">
+    <h1>{{ selectedUser.username }}</h1>
+    <p id="age">Age: {{ selectedUser.age }}</p>
+    <img :src="selectedUser.profile_picture" :alt="selectedUser.username" />
+    <p>
+      I speak <b>{{ selectedUser.teaching_language }}</b> and want to learn
+      <b>{{ selectedUser.learning_language }}</b>
+    </p>
+    <h2>Interests:</h2>
+    <p>
+      <span class="interests">{{ selectedUser.interests[0] }}</span>
+      <span class="interests">{{ selectedUser.interests[1] }}</span>
+    </p>
+    <h2>"{{ selectedUser.quote }}"</h2>
+    <input
+      id="request_button"
+      type="button"
+      :value="request"
+      @click="confirmation"
+    />
+  </div>
+  <div v-else>
+    <p>No user found.</p>
+  </div>
 </template>
 
 <style scoped>
-#frame {
+  p,
+  h2,
+  h1 {
+    color: #575555;
+  }
+
+  #frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: auto;
-    margin-top: 2.5em;
+    margin-top: 3em;
     margin-bottom: 3em;
-    width: 60vw;
+    width: 90vw;
     background-color: #ffffff;
     padding: 3em;
     border-radius: 20px;
-}
+  }
 
-.flexbox {
-    display: flex;
-}
-
-.content {
-    margin: auto;
-}
-
-img {
+  img {
     padding: 1em;
-    width: 30vw;
-}
+    width: 70%;
+  }
 
-h1 {
-    margin: 0.3em;
+  h1 {
     text-align: center;
-}
+  }
 
-h2 {
-    text-align: left;
-}
+  #age {
+    margin: 0.1em;
+  }
 
-p {
+  .interests {
+    color: #ffffff;
+    background-color: #fab12f;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 0.6em 0.9em 0.6em;
+    margin-top: 0;
+    margin-left: 0.4em;
+    margin-bottom: 1em;
+  }
+
+  h2 {
+    margin-top: 1.3em;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  p {
     font-size: 0.9em;
-    text-align: left;
-    margin-top: 1em;
+    margin-top: 0.5em;
     margin-bottom: 0;
-}
+  }
+
+  i {
+    position: absolute;
+    font-size: 4em;
+    color: #fa812f;
+    margin-left: 0.7em;
+  }
+
+  i:hover {
+    color: #fab12f;
+  }
+
+  input {
+    margin-top: 0.7em;
+    border: none;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 0.6em 0.9em 0.6em;
+    color: #ffffff;
+    background-color: #fa812f;
+    font-size: 0.9em;
+  }
+
+  input:hover {
+    background-color: #fab12f;
+  }
 </style>

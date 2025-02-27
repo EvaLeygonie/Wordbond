@@ -1,181 +1,151 @@
 [
     {
         "username": "MultiMia",
+        "age": "24",
         "profile_picture": "/bilder/avatar_2.png",
         "learning_language": "French",
         "teaching_language": "German",
-        "interests": [
-            "Reading",
-            "Crocheting"
-        ],
+        "interests": ["Reading", "Crocheting"],
         "learning_method": "Games and exercises",
         "quote": "Bonjour! I’m trying to learn French so I can finally order croissants without sounding like an imposter!"
     },
     {
         "username": "PolyglotPat",
+        "age": "58",
         "profile_picture": "/bilder/avatar_1.png",
         "learning_language": "German",
         "teaching_language": "French",
-        "interests": [
-            "Music",
-            "History"
-        ],
+        "interests": ["Music", "History"],
         "learning_method": "Text chat",
         "quote": "Learning German so I can yell Schmetterling with full confidence!"
     },
     {
         "username": "WordWizard",
+        "age": "33",
         "profile_picture": "/bilder/avatar_5.png",
         "learning_language": "Japanese",
         "teaching_language": "English",
-        "interests": [
-            "Anime",
-            "Technology"
-        ],
+        "interests": ["Anime", "Technology"],
         "learning_method": "Voice messages",
         "quote": "I want to understand anime without subtitles!"
     },
     {
         "username": "TalkativeTim",
+        "age": "29",
         "profile_picture": "/bilder/avatar_8.png",
         "learning_language": "Swedish",
         "teaching_language": "Spanish",
-        "interests": [
-            "Sports",
-            "Photography"
-        ],
+        "interests": ["Sports", "Photography"],
         "learning_method": "Games and exercises",
         "quote": "Trying to learn Swedish so I don’t mix up kanelbulle and knäckebröd ever again!"
     },
     {
         "username": "GrammarGuru",
+        "age": "21",
         "profile_picture": "/bilder/avatar_3.png",
         "learning_language": "Korean",
         "teaching_language": "English",
-        "interests": [
-            "Writing",
-            "K-pop"
-        ],
+        "interests": ["Writing", "K-pop"],
         "learning_method": "Text chat",
         "quote": "K-pop pulled me in, now I need Korean skills so I actually understand what they’re singing!"
     },
     {
         "username": "ChatChad",
+        "age": "40",
         "profile_picture": "/bilder/avatar_9.png",
         "learning_language": "Mandarin",
         "teaching_language": "German",
-        "interests": [
-            "Gaming",
-            "Business"
-        ],
+        "interests": ["Gaming", "Business"],
         "learning_method": "Games and exercises",
         "quote": "I want to learn Mandarin to prepare for my trip to China. So if you know Mandarin and want to learn German - send me a message!"
     },
     {
         "username": "VocabVince",
+        "age": "26",
         "profile_picture": "/bilder/avatar_4.png",
         "learning_language": "Portuguese",
         "teaching_language": "Italian",
-        "interests": [
-            "Dancing",
-            "Food"
-        ],
+        "interests": ["Dancing", "Food"],
         "learning_method": "Voice messages",
         "quote": "Looking for a friend to visit in Lisbon in May!"
     },
     {
         "username": "CultureChris",
+        "age": "18",
         "profile_picture": "/bilder/avatar_7.png",
         "learning_language": "French",
         "teaching_language": "Korean",
-        "interests": [
-            "Art",
-            "Movies"
-        ],
+        "interests": ["Art", "Movies"],
         "learning_method": "Text chat",
         "quote": "French movies just hit differently when you don’t need subtitles."
     },
     {
         "username": "LearnLily",
+        "age": "38",
         "profile_picture": "/bilder/avatar_6.png",
         "learning_language": "Dutch",
         "teaching_language": "French",
-        "interests": [
-            "Books",
-            "Travel"
-        ],
+        "interests": ["Books", "Travel"],
         "learning_method": "Voice messages",
         "quote": "Travel goal: effortlessly order Dutch cheese without pointing at the menu."
     },
     {
         "username": "BilingualBella",
+        "age": "47",
         "profile_picture": "/bilder/avatar_1.png",
         "learning_language": "English",
         "teaching_language": "Spanish",
-        "interests": [
-            "Nature",
-            "Hiking"
-        ],
+        "interests": ["Nature", "Hiking"],
         "learning_method": "Games and exercises",
         "quote": "I want to master English so I don’t have to rely on Google Translate every five minutes."
     },
     {
         "username": "FluentFelix",
+        "age": "20",
         "profile_picture": "/bilder/avatar_5.png",
         "learning_language": "Russian",
         "teaching_language": "Korean",
-        "interests": [
-            "Sports",
-            "Technology"
-        ],
+        "interests": ["Sports", "Technology"],
         "learning_method": "Text chat",
         "quote": "Hi! I want to learn russian to be able to speak with my relatives in Russia."
     },
     {
         "username": "ExpressEva",
+        "age": "25",
         "profile_picture": "/bilder/avatar_2.png",
         "learning_language": "Turkish",
         "teaching_language": "Swedish",
-        "interests": [
-            "Painting",
-            "Music"
-        ],
+        "interests": ["Painting", "Music"],
         "learning_method": "Voice messages",
         "quote": "I’m going to Ankara this summer and would like to get to know someone from the area."
     },
     {
         "username": "DuoDavid",
+        "age": "19",
         "profile_picture": "/bilder/avatar_8.png",
         "learning_language": "Arabic",
         "teaching_language": "Mandarin",
-        "interests": [
-            "Photography",
-            "Meditation"
-        ],
+        "interests": ["Photography", "Meditation"],
         "learning_method": "Text chat",
         "quote": "My Arabic grandmother’s cooking is legendary. If I want the recipes, I need to understand her instructions!"
     },
     {
         "username": "LinguaLaura",
+        "age": "33",
         "profile_picture": "/bilder/avatar_6.png",
         "learning_language": "Greek",
         "teaching_language": "Spanish",
-        "interests": [
-            "History",
-            "Culture"
-        ],
+        "interests": ["History", "Culture"],
         "learning_method": "Voice messages'",
         "quote": "Greek history is fascinating, and I’d love to understand the ancient texts better."
     },
     {
         "username": "ChattyCharlie",
+        "age": "30",
         "profile_picture": "/bilder/avatar_9.png",
         "learning_language": "Hindi",
         "teaching_language": "Portuguese",
-        "interests": [
-            "Cooking",
-            "Dancing"
-        ],
+        "interests": ["Cooking", "Dancing"],
         "learning_method": "Text chat",
         "quote": "I need Hindi skills so I can finally understand what my in-laws are saying about me!"
     }

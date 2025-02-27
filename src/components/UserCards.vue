@@ -1,96 +1,107 @@
 <script setup>
-import { ref, computed } from 'vue'
+  import { ref, computed } from 'vue'
 
-const userData = ref([])
+  const userData = ref([])
 
-const props = defineProps({
-    searchString: String
-})
+  const props = defineProps({
+    searchString: {
+      type: String,
+      default: ''
+    }
+  })
 
-fetch('/data/userData.JSON')
+  fetch('/data/userData.JSON')
     .then((response) => response.json())
     .then((result) => {
-        userData.value = result
+      userData.value = result
     })
 
-const filteredUsers = computed(() => {
+  const filteredUsers = computed(() => {
     if (!props.searchString) return userData.value
     return userData.value.filter(
-        (user) =>
-            user.teaching_language.toLowerCase().includes(props.searchString.toLowerCase()) ||
-            user.interests[0].toLowerCase().includes(props.searchString.toLowerCase()) ||
-            user.interests[1].toLowerCase().includes(props.searchString.toLowerCase()) ||
-            user.username.toLowerCase().includes(props.searchString.toLowerCase())
+      (user) =>
+        user.teaching_language
+          .toLowerCase()
+          .includes(props.searchString.toLowerCase()) ||
+        user.interests[0]
+          .toLowerCase()
+          .includes(props.searchString.toLowerCase()) ||
+        user.interests[1]
+          .toLowerCase()
+          .includes(props.searchString.toLowerCase()) ||
+        user.username.toLowerCase().includes(props.searchString.toLowerCase())
     )
-})
+  })
 </script>
 
 <template>
-    <section>
-        <div v-for="user in filteredUsers">
-            <RouterLink :to="{ path: '/otherprofile', query: { name: user.username } }">
-                <img :src="user.profile_picture" :alt="user.username" />
-                <h2>{{ user.username }}</h2>
-                <p>Can teach: {{ user.teaching_language }}</p>
-                <p>Learning: {{ user.learning_language }}</p>
-                <p>Interests: {{ user.interests[0] }} & {{ user.interests[1] }}</p>
-            </RouterLink>
-        </div>
-    </section>
+  <section>
+    <div v-for="user in filteredUsers" :key="user.username">
+      <RouterLink
+        :to="{ path: '/otherprofile', query: { name: user.username } }"
+      >
+        <img :src="user.profile_picture" :alt="user.username" />
+        <h2>{{ user.username }}</h2>
+        <p>Can teach: {{ user.teaching_language }}</p>
+        <p>Learning: {{ user.learning_language }}</p>
+        <p>Interests: {{ user.interests[0] }} & {{ user.interests[1] }}</p>
+      </RouterLink>
+    </div>
+  </section>
 </template>
 
 <style scoped>
-img {
+  img {
     width: 100%;
     margin-bottom: 1em;
-}
+  }
 
-img:hover {
+  img:hover {
     transform: scale(1.05);
     transition: transform 0.5s 150ms;
-}
+  }
 
-section {
+  section {
     padding: 2em;
     display: grid;
     grid-template-columns: 60vw;
     margin: auto;
     width: fit-content;
     gap: 2em;
-}
+  }
 
-div {
+  div {
     background-color: #ffffff;
     padding: 2em;
     border-radius: 20px;
-}
+  }
 
-a {
+  a {
     text-decoration: none;
     color: #575555;
-}
+  }
 
-h2 {
+  h2 {
     font-size: 1.1em;
     text-align: left;
-}
+  }
 
-p {
+  p {
     font-size: 0.9em;
     text-align: left;
     margin-top: 1em;
     margin-bottom: 0;
-}
+  }
 
-@media screen and (min-width: 600px) {
+  @media screen and (min-width: 600px) {
     section {
-        grid-template-columns: 30vw 30vw;
+      grid-template-columns: 30vw 30vw;
     }
-}
+  }
 
-@media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1000px) {
     section {
-        grid-template-columns: 20vw 20vw 20vw;
+      grid-template-columns: 20vw 20vw 20vw;
     }
-}
+  }
 </style>
