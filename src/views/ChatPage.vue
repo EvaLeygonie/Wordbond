@@ -2,12 +2,14 @@
   import { ref, nextTick } from 'vue'
   import { useRoute } from 'vue-router'
   import ChatBubble from '../components/ChatBubble.vue'
+  import { useChatStore } from '../stores/chatStore'
 
   const route = useRoute()
 
   const friendName = route.query.name
   const language = route.query.language
   const chatBox = ref(null)
+  const chatStore = useChatStore()
 
   const messages = ref([
     { text: 'Hola! Cómo estás?', isUser: false },
