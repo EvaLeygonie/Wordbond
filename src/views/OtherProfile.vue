@@ -7,6 +7,7 @@
   const userData = ref([])
   const selectedUser = ref(null)
   const request = ref('Send friend-request')
+  const activeLink = ref(false)
 
   fetch('/data/userData.JSON')
     .then((response) => response.json())
@@ -19,10 +20,9 @@
 
   function confirmation() {
     if (request.value === 'Send friend-request') {
-      alert(`${selectedUser.value.username} has accepted your friend-request!`)
+      alert(`${selectedUser.value.username} accepted your friend request!`)
       request.value = 'Send message'
-    } else {
-      alert('In progress')
+      activeLink.value = true
     }
   }
 </script>
@@ -31,29 +31,45 @@
   <RouterLink :to="{ path: '/findfriend' }"
     ><i class="bi bi-arrow-left-short"
   /></RouterLink>
-  <div id="frame" v-if="selectedUser">
-    <h1>{{ selectedUser.username }}</h1>
-    <p id="age">Age: {{ selectedUser.age }}</p>
+  <div id="frame">
+    <div id="title">
+      <h1>{{ selectedUser.username }}</h1>
+      <p id="age">Age: {{ selectedUser.age }}</p>
+    </div>
     <img :src="selectedUser.profile_picture" :alt="selectedUser.username" />
-    <p>
-      I speak <b>{{ selectedUser.teaching_language }}</b> and want to learn
-      <b>{{ selectedUser.learning_language }}</b>
-    </p>
-    <h2>Interests:</h2>
-    <p>
-      <span class="interests">{{ selectedUser.interests[0] }}</span>
-      <span class="interests">{{ selectedUser.interests[1] }}</span>
-    </p>
-    <h2>"{{ selectedUser.quote }}"</h2>
+    <div id="languages">
+      <h2>Languages</h2>
+      <p>
+        I speak <b>{{ selectedUser.teaching_language }}</b> and want to learn
+        <b>{{ selectedUser.learning_language }}</b>
+      </p>
+    </div>
+    <div id="interests">
+      <h2>Interests</h2>
+      <p id="languages_paragraph">
+        <span class="interests">{{ selectedUser.interests[0] }}</span>
+        <span class="interests">{{ selectedUser.interests[1] }}</span>
+      </p>
+    </div>
+    <h2 id="quote">"{{ selectedUser.quote }}"</h2>
+    <RouterLink
+      v-if="activeLink"
+      :to="{
+        path: '/chat',
+        query: {
+          name: selectedUser.username,
+          language: selectedUser.teaching_language
+        }
+      }"
+      ><input class="request_button" type="button" :value="request"
+    /></RouterLink>
     <input
-      id="request_button"
+      v-else
+      class="request_button"
       type="button"
       :value="request"
-      @click="confirmation"
+      @click="confirmation()"
     />
-  </div>
-  <div v-else>
-    <p>No user found.</p>
   </div>
 </template>
 
@@ -65,29 +81,27 @@
   }
 
   #frame {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    width: 90vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+    place-items: center;
+    margin: 0em 1.5em 3em;
     background-color: #ffffff;
-    padding: 3em;
     border-radius: 20px;
+    padding: 2em 2em 4.8em;
   }
 
   img {
-    padding: 1em;
     width: 70%;
+    margin: auto;
   }
 
   h1 {
     text-align: center;
   }
 
-  #age {
-    margin: 0.1em;
+  #languages_paragraph {
+    margin-top: 1em;
   }
 
   .interests {
@@ -96,28 +110,22 @@
     font-weight: bold;
     border-radius: 20px;
     padding: 0.6em 0.9em 0.6em;
-    margin-top: 0;
     margin-left: 0.4em;
-    margin-bottom: 1em;
   }
 
   h2 {
-    margin-top: 1.3em;
     font-size: 1.2em;
-    margin-bottom: 1em;
   }
 
   p {
     font-size: 0.9em;
-    margin-top: 0.5em;
-    margin-bottom: 0;
+    margin-bottom: 0.2em;
   }
 
   i {
-    position: absolute;
+    margin-left: 0.2em;
     font-size: 4em;
     color: #fa812f;
-    margin-left: 0.7em;
   }
 
   i:hover {
@@ -133,9 +141,56 @@
     color: #ffffff;
     background-color: #fa812f;
     font-size: 0.9em;
+    width: fit-content;
   }
 
   input:hover {
     background-color: #fab12f;
+  }
+
+  @media screen and (min-width: 600px) {
+    #title {
+      grid-area: title;
+    }
+    img {
+      grid-area: img;
+    }
+    #languages {
+      grid-area: languages;
+    }
+    #interests {
+      grid-area: interests;
+    }
+    #quote {
+      grid-area: quote;
+    }
+    #request_button {
+      grid-area: request_button;
+    }
+
+    #frame {
+      margin: 0em 5em 5em;
+      gap: 1em;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'title interests'
+        'img quote'
+        'languages request_button';
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    #frame {
+      margin: 0em 12em 5em;
+      grid-template-areas:
+        'title languages'
+        'img interests'
+        'img quote'
+        'img request_button';
+    }
+
+    #languages {
+      padding-top: 5em;
+    }
   }
 </style>
