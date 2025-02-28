@@ -11,17 +11,15 @@
   const chatBox = ref(null)
   const chatStore = useChatStore()
 
-  const messages = ref([
-    { text: 'Hola! Cómo estás?', isUser: false },
-    { text: 'Hej! Jag mår bra, själv?', isUser: true },
-    { text: 'Bra! kan lite svenska', isUser: false }
-  ])
-
   const newMessage = ref('')
 
   const sendMessage = () => {
+    // chatStore.clearChat()
+    // chatStore.addMessage('Hola! Cómo estás?', false)
+    // chatStore.addMessage('Hej! Jag mår bra, själv?', true)
+    // chatStore.addMessage('Bra! kan lite svenska', false)
     if (newMessage.value.trim() !== '') {
-      messages.value.push({ text: newMessage.value, isUser: true })
+      chatStore.addMessage(':)', false)
       newMessage.value = ''
       nextTick(scrollToBottom)
       setTimeout(() => {
@@ -45,7 +43,7 @@
   <div class="chat-container">
     <div ref="chatBox" class="chat-box">
       <ChatBubble
-        v-for="(msg, index) in messages"
+        v-for="(msg, index) in chatStore.messages"
         :key="index"
         :message="msg.text"
         :is-user="msg.isUser"
