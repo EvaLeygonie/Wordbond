@@ -8,6 +8,7 @@
   const selectedUser = ref(null)
   const request = ref('Send friend-request')
   const activeLink = ref(false)
+  const currentFriend = ref(localStorage.getItem('currentFriend'))
 
   fetch('/data/userData.JSON')
     .then((response) => response.json())
@@ -19,12 +20,35 @@
     })
 
   function confirmation() {
-    if (request.value === 'Send friend-request') {
+    if (!selectedUser.value) return
+
+    if (
+      currentFriend.value &&
+      currentFriend.value !== selectedUser.value.username
+    ) {
+      alert(
+        `You are already friends with ${currentFriend.value}. You can only have one friend at a time.`
+      )
+    } else {
       alert(`${selectedUser.value.username} accepted your friend request!`)
       request.value = 'Send message'
+      currentFriend.value = selectedUser.value.username
       activeLink.value = true
+      localStorage.setItem('currentFriend', selectedUser.value.username)
     }
   }
+
+  watchEffect(() => {
+    if (selectedUser.value) {
+      if (currentFriend.value === selectedUser.value.username) {
+        request.value = 'Send message'
+        activeLink.value = true
+      } else {
+        request.value = 'Send friend-request'
+        activeLink.value = false
+      }
+    }
+  })
 </script>
 
 <template>
