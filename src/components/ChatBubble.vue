@@ -16,7 +16,19 @@
 
 <template>
   <div :class="bubbleClass">
+    <RouterLink
+      :to="{
+        path: '/otherprofile',
+        query: { name: 'TalkativeTim' }
+        //Link to userStore friend
+      }"
+    >
+      <img v-if="!isUser" alt="Profilbild" src="/public\bilder\avatar_8.png" />
+      <!-- v-bind source to stored friend + add prop -->
+    </RouterLink>
     {{ message }}
+    <img v-if="isUser" alt="Profilbild" src="/public\bilder\avatar_3.png" />
+    <!-- v-bind source to stored user + add prop -->
   </div>
 </template>
 
@@ -29,6 +41,10 @@
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     word-wrap: break-word;
+    align-items: center;
+    img {
+      max-height: 20px;
+    }
   }
 
   .user-message {

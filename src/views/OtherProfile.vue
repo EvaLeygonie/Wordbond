@@ -8,6 +8,7 @@
   const selectedUser = ref(null)
   const request = ref('Send friend-request')
   const activeLink = ref(false)
+  const currentFriend = ref(localStorage.getItem('currentFriend'))
 
   fetch('/data/userData.JSON')
     .then((response) => response.json())
@@ -19,11 +20,40 @@
     })
 
   function confirmation() {
-    if (request.value === 'Send friend-request') {
+    if (!selectedUser.value) return
+
+    if (
+      currentFriend.value &&
+      currentFriend.value !== selectedUser.value.username
+    ) {
+      alert(
+        `You can only have one friend at a time. Your current friend is ${currentFriend.value}`
+      )
+    } else {
       alert(`${selectedUser.value.username} accepted your friend request!`)
       request.value = 'Send message'
+      currentFriend.value = selectedUser.value.username
       activeLink.value = true
+      localStorage.setItem('currentFriend', selectedUser.value.username)
     }
+  }
+
+  watchEffect(() => {
+    if (selectedUser.value) {
+      if (currentFriend.value === selectedUser.value.username) {
+        request.value = 'Send message'
+        activeLink.value = true
+      } else {
+        request.value = 'Send friend-request'
+        activeLink.value = false
+      }
+    }
+  })
+
+  function removeFriend() {
+    localStorage.clear()
+    request.value = 'Send friend-request'
+    activeLink.value = false
   }
 </script>
 
@@ -52,17 +82,19 @@
       </p>
     </div>
     <h2 id="quote">"{{ selectedUser.quote }}"</h2>
-    <RouterLink
-      v-if="activeLink"
-      :to="{
-        path: '/chat',
-        query: {
-          name: selectedUser.username,
-          language: selectedUser.teaching_language
-        }
-      }"
-      ><input class="request_button" type="button" :value="request"
-    /></RouterLink>
+    <div v-if="activeLink">
+      <RouterLink
+        :to="{
+          path: '/chat',
+          query: {
+            name: selectedUser.username,
+            language: selectedUser.teaching_language
+          }
+        }"
+        ><input class="request_button" type="button" :value="request"
+      /></RouterLink>
+      <input type="button" value="Remove friend" @click="removeFriend()" />
+    </div>
     <input
       v-else
       class="request_button"
@@ -134,6 +166,7 @@
 
   input {
     margin-top: 0.7em;
+    margin-left: 0.4em;
     border: none;
     font-weight: bold;
     border-radius: 30px;
