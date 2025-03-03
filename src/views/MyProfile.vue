@@ -1,59 +1,18 @@
 <script setup>
-  import { ref } from 'vue'
-  import { RouterLink } from 'vue-router'
   import { useUserStore } from '../stores/userStore'
 
   const userStore = useUserStore()
-
-  const interests = ref(['Cooking', 'Travel'])
-  const username = ref('LinguaLover')
-  const teachingLanguage = ref('Swedish')
-  const learningLanguage = ref('Spanish')
-  const profileText = ref(
-    'Hi! I would love to learn Spanish before my trip to Madrid this summer.'
-  )
 </script>
 
 <template>
-  <header class="ProfileHeader">
-    <RouterLink
-      :to="{
-        path: '/chat',
-        query: { language: 'Spanish', name: 'TalkativeTim' }
-      }"
-    >
-      <img alt="Profilbild" src="/bilder/avatar_8.png" class="ProfileFriend" />
-    </RouterLink>
-    <p class="ChatText">Chat</p>
-    <h1 class="ProfileText">My Profil</h1>
-  </header>
+  <div>
+    <h2>Min profil</h2>
+    <p><strong>Namn:</strong> {{ userStore.user.name }}</p>
+    <p><strong>Email:</strong> {{ userStore.user.email }}</p>
+    <p><strong>Om mig:</strong> {{ userStore.user.bio }}</p>
 
-  <main class="MainContainer">
-    <div class="ImageContainer">
-      <img alt="Profilbild" src="/bilder/avatar_3.png" class="ProfileImage" />
-    </div>
-
-    <h1>{{ userstore.username }}</h1>
-    <p class="ProfileText">
-      I speak <span>{{ teachingLanguage }}</span
-      >. I want to learn <span>{{ learningLanguage }}</span>
-    </p>
-
-    <p class="ProfileText">
-      {{ profileText }}
-    </p>
-
-    <h3>Interests</h3>
-    <ul class="interest-container">
-      <li class="InterestTag" v-for="interest in interests" :key="interest">
-        {{ interest }}
-      </li>
-    </ul>
-
-    <RouterLink to="/editprofilepage"
-      ><button class="edit-button">Edit profile</button></RouterLink
-    >
-  </main>
+    <router-link to="/EditProfilePage">Redigera profil</router-link>
+  </div>
 </template>
 
 <style scoped>

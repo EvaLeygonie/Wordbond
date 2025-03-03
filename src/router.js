@@ -6,7 +6,7 @@ import FindFriend from './views/FindFriend.vue'
 import OtherProfile from './views/OtherProfile.vue'
 import MyProfile from './views/MyProfile.vue'
 import ChatPage from './views/ChatPage.vue'
-import editProfilepage from './views/editProfilepage.vue'
+import editProfilepage from './views/EditProfilePage.vue'
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -36,7 +36,7 @@ export default createRouter({
       path: '/chat'
     },
     {
-      component: editProfilepage,
+      component: EditProfilePage,
       path: '/editprofilepage'
     }
   ]

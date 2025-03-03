@@ -1,10 +1,16 @@
 import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
-export const useUserStore = defineStore('user', {
-  //Kolla chatStore.js för att se hur man använder loclaStorage!
+export const useUserStore = defineStore('user', () => {
+  const user = ref({
+    name: 'LinguaLover',
+    email: 'lingualover@example.com',
+    bio: 'Hi! I love learning languages.'
+  })
+
+  function updateProfile(updatedUser) {
+    user.value = { ...user.value, ...updatedUser }
+  }
+
+  return { user, updateProfile }
 })
-
-// Lägg till på views där ni ska använda:
-
-// import { useUserStore } from '../stores/userStore'
-// const chatStore = useChatStore()
