@@ -1,8 +1,11 @@
 <script setup>
   import { ref } from 'vue'
   import { useRouter } from 'vue-router'
+  import { useProfileStore } from '../stores/profileStore'
 
   const router = useRouter()
+  const profileStore = useProfileStore()
+
   const name = ref('')
   const age = ref('')
   const bio = ref('')
@@ -32,8 +35,8 @@
         hobby: hobby.value,
         interests: interests.value
       }
-      console.log(profileData)
-      router.push('/FindFriend')
+      profileStore.useProfile(profileData)
+      router.push('/MyProfile')
     } else {
       alert('Please fill in everything')
     }
