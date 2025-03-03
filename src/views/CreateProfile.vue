@@ -46,77 +46,99 @@
 </script>
 
 <template>
-  <div class="profile-box">
-    <h2>Create your profile!</h2>
+  <div class="profile-container">
+    <div class="profile-box">
+      <h2>Create your profile!</h2>
 
-    <label>Name:</label>
-    <input type="text" v-model="name" placeholder="Name..." required />
+      <label>Name:</label>
+      <input type="text" v-model="name" placeholder="Name..." required />
 
-    <label>Age:</label>
-    <input type="text" v-model="age" placeholder="Age..." required />
+      <label>Age:</label>
+      <input type="text" v-model="age" placeholder="Age..." required />
 
-    <label>Choose your interests:</label>
-    <div class="chooseInterests">
-      <label
-        v-for="interest in [
-          'Travel',
-          'Music',
-          'Gaming',
-          'Cooking',
-          'Reading',
-          'Sports'
-        ]"
-        :key="interest"
-      >
-        <input type="checkbox" v-model="interests" :value="interest" />
-        {{ interest }}
-      </label>
-    </div>
-
-    <label>Biograph:</label>
-    <textarea v-model="bio" placeholder="Tell me something about you :)" />
-
-    <label>Choose your Avatar:</label>
-    <div class="avatar-dropdown">
-      <div class="get-avatar" @click="dropDown = !dropDown">
-        <img
-          v-if="chosenAvatar"
-          :src="`/bilder/${chosenAvatar}`"
-          alt="Avatar"
-        />
+      <label>Choose your interests:</label>
+      <div class="chooseInterests">
+        <label
+          v-for="interest in [
+            'Travel',
+            'Music',
+            'Gaming',
+            'Cooking',
+            'Reading',
+            'Sports'
+          ]"
+          :key="interest"
+        >
+          <input type="checkbox" v-model="interests" :value="interest" />
+          {{ interest }}
+        </label>
       </div>
-      <div v-if="dropDown" class="dropdown-menu">
-        <img
-          v-for="avatar in avatarPicture"
-          :key="avatar"
-          :src="`/bilder/${avatar}`"
-          :alt="avatar"
-          @click="getAvatar(avatar)"
-        />
+
+      <label>Biograph:</label>
+      <textarea
+        v-model="bio"
+        placeholder="Tell me something about yourself :)"
+      />
+
+      <div class="avatar-dropdown">
+        <div class="get-avatar" @click="dropDown = !dropDown">
+          <img
+            v-if="chosenAvatar"
+            :src="`/bilder/${chosenAvatar}`"
+            alt="Avatar"
+          />
+          <span v-else class="avatar-standard">Choose your Avatar!</span>
+        </div>
+        <div v-if="dropDown" class="dropdown-menu">
+          <img
+            v-for="avatar in avatarPicture"
+            :key="avatar"
+            :src="`/bilder/${avatar}`"
+            :alt="avatar"
+            @click="getAvatar(avatar)"
+          />
+        </div>
+      </div>
+
+      <div class="profile-button">
+        <button @click="createdProfile">Create Profile!</button>
       </div>
     </div>
-
-    <button @click="createdProfile">Create Profile!</button>
   </div>
 </template>
 
 <style scoped>
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
   .profile-box {
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+    text-align: center;
   }
 
   h2 {
     margin-top: 20px;
   }
 
+  label {
+    font-weight: bold;
+  }
+
   .chooseInterests {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-bottom: 10px;
-    margin-top: 5px;
+    align-items: center;
   }
 
   .avatar-dropdown {
@@ -145,11 +167,34 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    border: 2px;
   }
 
   .dropdown-menu img {
     width: 40px;
     height: 40px;
-    object-fit: cover;
+  }
+
+  .avatar-standard {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .profile-button {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-button button {
+    width: 100px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #fa812f;
+  }
+
+  .profile-button button:hover {
+    cursor: pointer;
+    background-color: #fab12f;
   }
 </style>
