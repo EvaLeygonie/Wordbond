@@ -5,7 +5,9 @@ export const useUserStore = defineStore('user', () => {
   const user = ref({
     name: 'LinguaLover',
     email: 'lingualover@example.com',
-    bio: 'Hi! I love learning languages.'
+    bio: 'Hi! I love learning languages.',
+    LearningLanguage: 'Spanish',
+    TeachingLanguage: 'English'
   })
 
   function updateProfile(updatedUser) {
