@@ -1,7 +1,9 @@
 <script setup>
   import { ref } from 'vue'
   import { RouterLink } from 'vue-router'
-  import EditProfile from '../components/editProfile.vue'
+  import { useUserStore } from '../stores/userStore'
+
+  const userStore = useUserStore()
 
   const interests = ref(['Cooking', 'Travel'])
   const username = ref('LinguaLover')
@@ -31,7 +33,7 @@
       <img alt="Profilbild" src="/bilder/avatar_3.png" class="ProfileImage" />
     </div>
 
-    <h1>{{ username }}</h1>
+    <h1>{{ userstore.username }}</h1>
     <p class="ProfileText">
       I speak <span>{{ teachingLanguage }}</span
       >. I want to learn <span>{{ learningLanguage }}</span>
