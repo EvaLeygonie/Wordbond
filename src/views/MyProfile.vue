@@ -11,7 +11,7 @@
     <p><strong>Email:</strong> {{ userStore.user.email }}</p>
     <p><strong>Om mig:</strong> {{ userStore.user.bio }}</p>
 
-    <router-link to="/EditProfilePage">Redigera profil</router-link>
+    <router-link to="/EditProfile">Redigera profil</router-link>
   </div>
 </template>
 

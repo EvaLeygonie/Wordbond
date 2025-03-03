@@ -1,6 +1,6 @@
 <script setup>
   import { ref } from 'vue'
-  import { useUserStore } from '/stores/userStore.js'
+  import { useUserStore } from '../stores/userStore'
   import { useRouter } from 'vue-router'
 
   const userStore = useUserStore()
@@ -11,7 +11,7 @@
 
   const saveChanges = () => {
     userStore.updateProfile(editedUser.value)
-    router.push('/profile') // Navigera tillbaka till profilsidan
+    router.push('/Myprofile') // Navigera tillbaka till profilsidan
   }
 </script>
 
