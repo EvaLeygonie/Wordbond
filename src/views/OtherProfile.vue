@@ -27,7 +27,7 @@
       currentFriend.value !== selectedUser.value.username
     ) {
       alert(
-        `You are already friends with ${currentFriend.value}. You can only have one friend at a time.`
+        `You can only have one friend at a time. Your current friend is ${currentFriend.value}`
       )
     } else {
       alert(`${selectedUser.value.username} accepted your friend request!`)
@@ -49,6 +49,12 @@
       }
     }
   })
+
+  function removeFriend() {
+    localStorage.clear()
+    request.value = 'Send friend-request'
+    activeLink.value = false
+  }
 </script>
 
 <template>
@@ -76,17 +82,19 @@
       </p>
     </div>
     <h2 id="quote">"{{ selectedUser.quote }}"</h2>
-    <RouterLink
-      v-if="activeLink"
-      :to="{
-        path: '/chat',
-        query: {
-          name: selectedUser.username,
-          language: selectedUser.teaching_language
-        }
-      }"
-      ><input class="request_button" type="button" :value="request"
-    /></RouterLink>
+    <div v-if="activeLink">
+      <RouterLink
+        :to="{
+          path: '/chat',
+          query: {
+            name: selectedUser.username,
+            language: selectedUser.teaching_language
+          }
+        }"
+        ><input class="request_button" type="button" :value="request"
+      /></RouterLink>
+      <input type="button" value="Remove friend" @click="removeFriend()" />
+    </div>
     <input
       v-else
       class="request_button"
@@ -158,6 +166,7 @@
 
   input {
     margin-top: 0.7em;
+    margin-left: 0.4em;
     border: none;
     font-weight: bold;
     border-radius: 30px;
