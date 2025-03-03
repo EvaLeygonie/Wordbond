@@ -6,7 +6,21 @@
 </script>
 
 <template>
-  <header><h2>Min profil</h2></header>
+  <header>
+    <h2>Min profil</h2>
+
+    <RouterLink
+      :to="{
+        path: '/chat',
+        query: { language: 'Spanish', name: 'TalkativeTim' }
+      }"
+    >
+      <img
+        alt="Profilbild"
+        src="/public\bilder\avatar_8.png"
+        class="ProfileFriend"
+    /></RouterLink>
+  </header>
   <main>
     <img :src="avatarUrl" alt="Avatar" class="ProfileImage" />
 
@@ -21,22 +35,8 @@
       <strong>Language I can teach : </strong>
       {{ userStore.user.TeachingLanguage }}
     </p>
-    <h3>Interests</h3>
 
     <router-link to="/EditProfile">Redigera profil</router-link>
-    <header class="ProfileHeader">
-      <RouterLink
-        :to="{
-          path: '/chat',
-          query: { language: 'Spanish', name: 'TalkativeTim' }
-        }"
-      >
-        <img
-          alt="Profilbild"
-          src="/public\bilder\avatar_8.png"
-          class="ProfileFriend"
-      /></RouterLink>
-    </header>
 
     <main>
       <div>
@@ -47,19 +47,20 @@
           class="ProfileImage"
         />
       </div> -->
-
-        <h2>Min profil</h2>
-        <p><strong>Namn:</strong> {{ userStore.user.name }}</p>
-        <p><strong>Email:</strong> {{ userStore.user.email }}</p>
-        <p><strong>Om mig:</strong> {{ userStore.user.bio }}</p>
-
-        <router-link to="/EditProfile">Redigera profil</router-link>
       </div>
     </main>
   </main>
 </template>
 
 <style scoped>
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+  }
   span {
     text-decoration: underline;
   }
@@ -93,7 +94,9 @@
     width: 50px;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.2);
-    margin: 5px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
   }
 
   .ProfileImage {
