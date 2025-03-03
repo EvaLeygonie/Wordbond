@@ -2,12 +2,14 @@
   import { ref, nextTick } from 'vue'
   import { useRoute } from 'vue-router'
   import ChatBubble from '../components/ChatBubble.vue'
+  import NoMatchChat from '../components/NoMatchChat.vue'
   import { useChatStore } from '../stores/chatStore'
 
   const route = useRoute()
 
   const friendName = route.query.name
   const language = route.query.language
+  //Update with userStore
   const chatBox = ref(null)
   const chatStore = useChatStore()
 
@@ -39,7 +41,19 @@
 </script>
 
 <template>
-  <h3>Learn {{ language }} with {{ friendName }}</h3>
+  <!-- <NoMatchChat v-if="!friendMatch" />
+  <div v-else>
+    Link to userStore + add prop/ref for friendMatch? -->
+  <RouterLink
+    :to="{
+      path: '/otherprofile',
+      query: { name: 'TalkativeTim' }
+      //Change to userStore update
+    }"
+  >
+    <h3>Learn {{ language }} with {{ friendName }}</h3>
+    <!-- Change to userStore update -->
+  </RouterLink>
   <div class="chat-container">
     <div ref="chatBox" class="chat-box">
       <ChatBubble
@@ -59,6 +73,7 @@
       <button @click="sendMessage">Send</button>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <style scoped>
@@ -107,6 +122,15 @@
       cursor: pointer;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
+  }
+
+  a {
+    text-decoration: none;
+    color: #575555;
+  }
+
+  a:hover {
+    color: #fa4032;
   }
 
   .tools-section {
