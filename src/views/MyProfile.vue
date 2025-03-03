@@ -5,14 +5,38 @@
 </script>
 
 <template>
-  <div>
-    <h2>Min profil</h2>
-    <p><strong>Namn:</strong> {{ userStore.user.name }}</p>
-    <p><strong>Email:</strong> {{ userStore.user.email }}</p>
-    <p><strong>Om mig:</strong> {{ userStore.user.bio }}</p>
+  <header class="ProfileHeader">
+    <RouterLink
+      :to="{
+        path: '/chat',
+        query: { language: 'Spanish', name: 'TalkativeTim' }
+      }"
+    >
+      <img
+        alt="Profilbild"
+        src="/public\bilder\avatar_8.png"
+        class="ProfileFriend"
+    /></RouterLink>
+  </header>
 
-    <router-link to="/EditProfile">Redigera profil</router-link>
-  </div>
+  <main>
+    <div>
+      <!-- <div class="ImageContainer">
+        <img
+          alt="Profilbild"
+          src="/public\bilder\avatar_3.png"
+          class="ProfileImage"
+        />
+      </div> -->
+
+      <h2>Min profil</h2>
+      <p><strong>Namn:</strong> {{ userStore.user.name }}</p>
+      <p><strong>Email:</strong> {{ userStore.user.email }}</p>
+      <p><strong>Om mig:</strong> {{ userStore.user.bio }}</p>
+
+      <router-link to="/EditProfile">Redigera profil</router-link>
+    </div>
+  </main>
 </template>
 
 <style scoped>
