@@ -7,10 +7,25 @@
 
   let icon = ref('bi bi-list')
 
+  const currentFriend = ref(localStorage.getItem('currentFriend'))
+
+  const selectedUser = ref(null)
+
+  const userData = ref([])
+
   function toggleMenu() {
     blockOrNone.value = blockOrNone.value === 'none' ? 'block' : 'none'
     icon.value = icon.value === 'bi bi-list' ? 'bi bi-x' : 'bi bi-list'
   }
+
+  fetch('/data/userData.JSON')
+    .then((response) => response.json())
+    .then((result) => {
+      userData.value = result
+      selectedUser.value = userData.value.find(
+        (user) => user.username === currentFriend.value
+      )
+    })
 </script>
 
 <template>
@@ -21,28 +36,28 @@
     <i :class="icon" @click="toggleMenu" />
   </nav>
 
-  <div id="router_links" :style="{ display: blockOrNone }">
+  <div id="router_links" :style="{ display: blockOrNone }" v-if="selectedUser">
     <RouterLink to="/" @click="toggleMenu">Login</RouterLink>
     <RouterLink to="/findfriend" @click="toggleMenu">Find Friend</RouterLink>
     <RouterLink to="/myprofile" @click="toggleMenu">My Profile</RouterLink>
     <RouterLink
       :to="{
         path: '/chat',
-        query: { language: 'Spanish', name: 'TalkativeTim' }
+        query: { language: selectedUser.teaching_language, name: currentFriend }
       }"
       @click="toggleMenu"
       >Chat</RouterLink
     >
   </div>
 
-  <nav id="desktop_nav">
+  <nav id="desktop_nav" v-if="selectedUser">
     <RouterLink to="/">Login</RouterLink>
     <RouterLink to="/findfriend">Find Friend</RouterLink>
     <RouterLink to="/myprofile">My Profile</RouterLink>
     <RouterLink
       :to="{
         path: '/chat',
-        query: { language: 'Spanish', name: 'TalkativeTim' }
+        query: { language: selectedUser.teaching_language, name: currentFriend }
       }"
       >Chat</RouterLink
     >

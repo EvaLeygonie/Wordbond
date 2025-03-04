@@ -61,7 +61,7 @@
   <RouterLink :to="{ path: '/findfriend' }"
     ><i class="bi bi-arrow-left-short"
   /></RouterLink>
-  <div id="frame">
+  <div id="frame" v-if="selectedUser">
     <div id="title">
       <h1>{{ selectedUser.username }}</h1>
       <p id="age">Age: {{ selectedUser.age }}</p>

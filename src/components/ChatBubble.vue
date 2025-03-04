@@ -1,5 +1,8 @@
 <script setup>
-  import { computed } from 'vue'
+  import { ref, computed } from 'vue'
+  const currentFriend = ref(localStorage.getItem('currentFriend'))
+  const selectedUser = ref(null)
+  const userData = ref([])
 
   const props = defineProps({
     message: {
@@ -12,6 +15,15 @@
   const bubbleClass = computed(() =>
     props.isUser ? 'chat-bubble user-message' : 'chat-bubble other-message'
   )
+
+  fetch('/data/userData.JSON')
+    .then((response) => response.json())
+    .then((result) => {
+      userData.value = result
+      selectedUser.value = userData.value.find(
+        (user) => user.username === currentFriend.value
+      )
+    })
 </script>
 
 <template>
@@ -19,15 +31,19 @@
     <RouterLink
       :to="{
         path: '/otherprofile',
-        query: { name: 'TalkativeTim' }
+        query: { name: currentFriend }
         //Link to userStore friend
       }"
     >
-      <img v-if="!isUser" alt="Profilbild" src="/public\bilder\avatar_8.png" />
+      <img
+        v-if="!isUser && selectedUser"
+        alt="Profilbild"
+        :src="selectedUser.profile_picture"
+      />
       <!-- v-bind source to stored friend + add prop -->
     </RouterLink>
     {{ message }}
-    <img v-if="isUser" alt="Profilbild" src="/public\bilder\avatar_3.png" />
+    <img v-if="isUser" alt="Profilbild" src="/public/bilder/avatar_3.png" />
     <!-- v-bind source to stored user + add prop -->
   </div>
 </template>
