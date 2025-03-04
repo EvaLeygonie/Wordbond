@@ -10,8 +10,9 @@
   const editedUser = ref({ ...profileStore.profile })
 
   const saveChanges = () => {
-    profileStore.updateProfile(editedProfile.value)
+    profileStore.updateProfile(editedUser.value)
     router.push('/Myprofile') // Navigera tillbaka till profilsidan
+    console.log(saveChanges)
   }
 </script>
 
@@ -20,14 +21,14 @@
     <h2>Redigera profil</h2>
     <form @submit.prevent="saveChanges">
       <label>Username:</label>
-      <input v-model="editedUser.userName" type="text" />
+      <input v-model="editedUser.name" type="text" />
 
       <label>Password:</label>
       <input v-model="editedUser.password" type="password" />
 
       <label>Biografi:</label>
       <textarea v-model="editedUser.bio" />
-      <label>Choose your interests:</label>
+      <label>Interests:</label>
       <div class="chooseInterests">
         <label
           v-for="interest in [
@@ -40,7 +41,11 @@
           ]"
           :key="interest"
         >
-          <input type="checkbox" v-model="interests" :value="interest" />
+          <input
+            type="checkbox"
+            v-model="editedUser.interests"
+            :value="interest"
+          />
           {{ interest }}
         </label>
 
