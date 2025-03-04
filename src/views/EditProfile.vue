@@ -26,7 +26,7 @@
       <label>Password:</label>
       <input v-model="editedUser.password" type="password" />
 
-      <label>Biografi:</label>
+      <label>Biography:</label>
       <textarea v-model="editedUser.bio" />
       <label>Interests:</label>
       <div class="chooseInterests">
