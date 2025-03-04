@@ -42,8 +42,9 @@
       <strong>Language I can teach</strong>:
       {{ userStore.user.TeachingLanguage }}
     </p>
-
-    <router-link to="/EditProfile">Redigera profil</router-link>
+    <div class="EditButton">
+      <router-link to="/EditProfile">Redigera profil</router-link>
+    </div>
 
     <main>
       <div>
@@ -143,5 +144,17 @@
     border-radius: 5px;
     font-weight: bold;
     display: inline-block;
+  }
+  .EditButton {
+    border-radius: 20px;
+    border-color: #fa812f;
+    background-color: #fa812f;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
   }
 </style>
