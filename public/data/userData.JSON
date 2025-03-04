@@ -2,7 +2,7 @@
     {
         "username": "MultiMia",
         "age": "24",
-        "profile_picture": "/bilder/avatar_2.png",
+        "profile_picture": "/src/bilder/avatar_2.png",
         "learning_language": "French",
         "teaching_language": "German",
         "interests": ["Reading", "Crocheting"],
@@ -12,7 +12,7 @@
     {
         "username": "PolyglotPat",
         "age": "58",
-        "profile_picture": "/bilder/avatar_1.png",
+        "profile_picture": "/src/bilder/avatar_1.png",
         "learning_language": "German",
         "teaching_language": "French",
         "interests": ["Music", "History"],
@@ -22,7 +22,7 @@
     {
         "username": "WordWizard",
         "age": "33",
-        "profile_picture": "/bilder/avatar_5.png",
+        "profile_picture": "/src/bilder/avatar_5.png",
         "learning_language": "Japanese",
         "teaching_language": "English",
         "interests": ["Anime", "Technology"],
@@ -32,7 +32,7 @@
     {
         "username": "TalkativeTim",
         "age": "29",
-        "profile_picture": "/bilder/avatar_8.png",
+        "profile_picture": "/src/bilder/avatar_8.png",
         "learning_language": "Swedish",
         "teaching_language": "Spanish",
         "interests": ["Sports", "Photography"],
@@ -42,7 +42,7 @@
     {
         "username": "GrammarGuru",
         "age": "21",
-        "profile_picture": "/bilder/avatar_3.png",
+        "profile_picture": "/src/bilder/avatar_3.png",
         "learning_language": "Korean",
         "teaching_language": "English",
         "interests": ["Writing", "K-pop"],
@@ -52,7 +52,7 @@
     {
         "username": "ChatChad",
         "age": "40",
-        "profile_picture": "/bilder/avatar_9.png",
+        "profile_picture": "/src/bilder/avatar_9.png",
         "learning_language": "Mandarin",
         "teaching_language": "German",
         "interests": ["Gaming", "Business"],
@@ -62,7 +62,7 @@
     {
         "username": "VocabVince",
         "age": "26",
-        "profile_picture": "/bilder/avatar_4.png",
+        "profile_picture": "/src/bilder/avatar_4.png",
         "learning_language": "Portuguese",
         "teaching_language": "Italian",
         "interests": ["Dancing", "Food"],
@@ -72,7 +72,7 @@
     {
         "username": "CultureChris",
         "age": "18",
-        "profile_picture": "/bilder/avatar_7.png",
+        "profile_picture": "/src/bilder/avatar_7.png",
         "learning_language": "French",
         "teaching_language": "Korean",
         "interests": ["Art", "Movies"],
@@ -82,7 +82,7 @@
     {
         "username": "LearnLily",
         "age": "38",
-        "profile_picture": "/bilder/avatar_6.png",
+        "profile_picture": "/src/bilder/avatar_6.png",
         "learning_language": "Dutch",
         "teaching_language": "French",
         "interests": ["Books", "Travel"],
@@ -92,7 +92,7 @@
     {
         "username": "BilingualBella",
         "age": "47",
-        "profile_picture": "/bilder/avatar_1.png",
+        "profile_picture": "/src/bilder/avatar_1.png",
         "learning_language": "English",
         "teaching_language": "Spanish",
         "interests": ["Nature", "Hiking"],
@@ -102,7 +102,7 @@
     {
         "username": "FluentFelix",
         "age": "20",
-        "profile_picture": "/bilder/avatar_5.png",
+        "profile_picture": "/src/bilder/avatar_5.png",
         "learning_language": "Russian",
         "teaching_language": "Korean",
         "interests": ["Sports", "Technology"],
@@ -112,7 +112,7 @@
     {
         "username": "ExpressEva",
         "age": "25",
-        "profile_picture": "/bilder/avatar_2.png",
+        "profile_picture": "/src/bilder/avatar_2.png",
         "learning_language": "Turkish",
         "teaching_language": "Swedish",
         "interests": ["Painting", "Music"],
@@ -122,7 +122,7 @@
     {
         "username": "DuoDavid",
         "age": "19",
-        "profile_picture": "/bilder/avatar_8.png",
+        "profile_picture": "/src/bilder/avatar_8.png",
         "learning_language": "Arabic",
         "teaching_language": "Mandarin",
         "interests": ["Photography", "Meditation"],
@@ -132,7 +132,7 @@
     {
         "username": "LinguaLaura",
         "age": "33",
-        "profile_picture": "/bilder/avatar_6.png",
+        "profile_picture": "/src/bilder/avatar_6.png",
         "learning_language": "Greek",
         "teaching_language": "Spanish",
         "interests": ["History", "Culture"],
@@ -142,7 +142,7 @@
     {
         "username": "ChattyCharlie",
         "age": "30",
-        "profile_picture": "/bilder/avatar_9.png",
+        "profile_picture": "/src/bilder/avatar_9.png",
         "learning_language": "Hindi",
         "teaching_language": "Portuguese",
         "interests": ["Cooking", "Dancing"],

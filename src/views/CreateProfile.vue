@@ -95,7 +95,7 @@
         <div class="get-avatar" @click="dropDown = !dropDown">
           <img
             v-if="chosenAvatar"
-            :src="`/bilder/${chosenAvatar}`"
+            :src="`/src/bilder/${chosenAvatar}`"
             alt="Avatar"
           />
           <span v-else class="avatar-standard">Choose your Avatar!</span>
@@ -104,7 +104,7 @@
           <img
             v-for="avatar in avatarPicture"
             :key="avatar"
-            :src="`/bilder/${avatar}`"
+            :src="`/src/bilder/${avatar}`"
             :alt="avatar"
             @click="getAvatar(avatar)"
           />

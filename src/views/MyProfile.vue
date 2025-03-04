@@ -1,12 +1,28 @@
 <script setup>
+  import { ref, onMounted } from 'vue'
   import { useProfileStore } from '../stores/profileStore'
   import { useUserStore } from '../stores/userStore'
+  import { useFriendStore } from '../stores/friendStore'
 
+  const friendStore = useFriendStore()
+  const selectedUser = ref(null)
+  const userData = ref([])
   const profileStore = useProfileStore()
   const userStore = useUserStore()
   const avatarUrl = profileStore.profile.avatar
-    ? `/bilder/${profileStore.profile.avatar}`
-    : '/bilder/avatar_3.png'
+    ? `/src/bilder/${profileStore.profile.avatar}`
+    : '/src/bilder/avatar_3.png'
+
+  onMounted(() => {
+    fetch('/data/userData.JSON')
+      .then((response) => response.json())
+      .then((result) => {
+        userData.value = result
+        selectedUser.value = userData.value.find(
+          (user) => user.username === friendStore.currentFriend
+        )
+      })
+  })
 </script>
 
 <template>
@@ -14,14 +30,18 @@
     <h2>My Profile</h2>
 
     <RouterLink
+      v-if="selectedUser"
       :to="{
         path: '/chat',
-        query: { language: 'Spanish', name: 'TalkativeTim' }
+        query: {
+          name: friendStore.currentFriend,
+          language: selectedUser.teaching_language
+        }
       }"
     >
       <img
         alt="Profilbild"
-        src="/src\bilder\avatar_8.png"
+        :src="selectedUser.profile_picture"
         class="ProfileFriend"
     /></RouterLink>
   </header>

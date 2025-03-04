@@ -4,7 +4,6 @@
   import ChatBubble from '../components/ChatBubble.vue'
   import NoMatchChat from '../components/NoMatchChat.vue'
   import { useChatStore } from '../stores/chatStore'
-  const currentFriend = ref(localStorage.getItem('currentFriend'))
 
   const route = useRoute()
 
@@ -48,7 +47,7 @@
   <RouterLink
     :to="{
       path: '/otherprofile',
-      query: { name: currentFriend }
+      query: { name: friendName }
       //Change to userStore update
     }"
   >

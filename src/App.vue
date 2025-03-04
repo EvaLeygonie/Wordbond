@@ -1,13 +1,13 @@
 <script setup>
   import { ref } from 'vue'
+  import { useFriendStore } from './stores/friendStore'
   const logoWhite = new URL('../public/logo/logo-white.png', import.meta.url)
     .href
 
   let blockOrNone = ref('none')
-
   let icon = ref('bi bi-list')
 
-  const currentFriend = ref(localStorage.getItem('currentFriend'))
+  const friendStore = useFriendStore()
 
   const selectedUser = ref(null)
 
@@ -23,7 +23,7 @@
     .then((result) => {
       userData.value = result
       selectedUser.value = userData.value.find(
-        (user) => user.username === currentFriend.value
+        (user) => user.username === friendStore.currentFriend
       )
     })
 </script>
@@ -43,7 +43,10 @@
     <RouterLink
       :to="{
         path: '/chat',
-        query: { language: selectedUser.teaching_language, name: currentFriend }
+        query: {
+          language: selectedUser.teaching_language,
+          name: friendStore.currentFriend
+        }
       }"
       @click="toggleMenu"
       >Chat</RouterLink
@@ -57,7 +60,10 @@
     <RouterLink
       :to="{
         path: '/chat',
-        query: { language: selectedUser.teaching_language, name: currentFriend }
+        query: {
+          language: selectedUser.teaching_language,
+          name: friendStore.currentFriend
+        }
       }"
       >Chat</RouterLink
     >

@@ -1,6 +1,9 @@
 <script setup>
   import { ref, computed, watchEffect } from 'vue'
   import { useTranslationStore } from '../stores/translationStore'
+  import { useFriendStore } from '../stores/friendStore'
+
+  const friendStore = useFriendStore()
 
   const props = defineProps({
     message: {
@@ -23,7 +26,6 @@
     translatedMessage.value = await translationStore.translate(props.message)
   }
 
-  const currentFriend = ref(localStorage.getItem('currentFriend'))
   const selectedUser = ref(null)
   const userData = ref([])
 
@@ -33,7 +35,7 @@
       .then((result) => {
         userData.value = result
         selectedUser.value = userData.value.find(
-          (user) => user.username === currentFriend.value
+          (user) => user.username === friendStore.currentFriend
         )
       })
   })
@@ -44,7 +46,7 @@
     <RouterLink
       :to="{
         path: '/otherprofile',
-        query: { name: currentFriend }
+        query: { name: friendStore.currentFriend }
       }"
     >
       <img

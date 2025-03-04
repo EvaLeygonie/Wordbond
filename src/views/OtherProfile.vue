@@ -1,6 +1,7 @@
 <script setup>
   import { ref, computed, watchEffect } from 'vue'
   import { useRoute } from 'vue-router'
+  import { useFriendStore } from '../stores/friendStore'
 
   const route = useRoute()
   const username = computed(() => route.query.name)
@@ -8,7 +9,7 @@
   const selectedUser = ref(null)
   const request = ref('Send friend-request')
   const activeLink = ref(false)
-  const currentFriend = ref(localStorage.getItem('currentFriend'))
+  const friendStore = useFriendStore()
 
   fetch('/data/userData.JSON')
     .then((response) => response.json())
@@ -23,24 +24,23 @@
     if (!selectedUser.value) return
 
     if (
-      currentFriend.value &&
-      currentFriend.value !== selectedUser.value.username
+      friendStore.currentFriend &&
+      friendStore.currentFriend !== selectedUser.value.username
     ) {
       alert(
-        `You can only have one friend at a time. Your current friend is ${currentFriend.value}`
+        `You can only have one friend at a time. Your current friend is ${friendStore.currentFriend}`
       )
     } else {
       alert(`${selectedUser.value.username} accepted your friend request!`)
       request.value = 'Send message'
-      currentFriend.value = selectedUser.value.username
+      friendStore.addFriend(selectedUser.value.username)
       activeLink.value = true
-      localStorage.setItem('currentFriend', selectedUser.value.username)
     }
   }
 
   watchEffect(() => {
     if (selectedUser.value) {
-      if (currentFriend.value === selectedUser.value.username) {
+      if (friendStore.currentFriend === selectedUser.value.username) {
         request.value = 'Send message'
         activeLink.value = true
       } else {
@@ -51,7 +51,7 @@
   })
 
   function removeFriend() {
-    localStorage.clear()
+    friendStore.removeFriend()
     request.value = 'Send friend-request'
     activeLink.value = false
   }
