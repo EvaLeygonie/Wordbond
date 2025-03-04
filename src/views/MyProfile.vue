@@ -28,21 +28,23 @@
   <main>
     <img :src="avatarUrl" alt="Avatar" class="ProfileImage" />
 
-    <p><strong>Username:</strong> {{ profileStore.profile.name }}</p>
-    <p><strong>Biograph:</strong> {{ profileStore.profile.bio }}</p>
+    <p><strong>Username</strong>: {{ profileStore.profile.name }}</p>
+    <p><strong>Biography</strong>: {{ profileStore.profile.bio }}</p>
     <p>
-      <strong>Interests:</strong>{{ profileStore.profile.interests.join(', ') }}
+      <strong>Interests</strong>:
+      {{ profileStore.profile.interests.join(', ') }}
     </p>
     <p>
-      <strong>Language I want to learn:</strong>
+      <strong>Language I want to learn</strong>:
       {{ userStore.user.LearningLanguage }}
     </p>
     <p>
-      <strong>Language I can teach : </strong>
+      <strong>Language I can teach</strong>:
       {{ userStore.user.TeachingLanguage }}
     </p>
-
-    <router-link to="/EditProfile">Redigera profil</router-link>
+    <div class="EditButton">
+      <router-link to="/EditProfile">Redigera profil</router-link>
+    </div>
 
     <main>
       <div>
@@ -142,5 +144,17 @@
     border-radius: 5px;
     font-weight: bold;
     display: inline-block;
+  }
+  .EditButton {
+    border-radius: 20px;
+    border-color: #fa812f;
+    background-color: #fa812f;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
   }
 </style>
