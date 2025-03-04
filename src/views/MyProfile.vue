@@ -21,7 +21,7 @@
     >
       <img
         alt="Profilbild"
-        src="/public\bilder\avatar_8.png"
+        src="/src\bilder\avatar_8.png"
         class="ProfileFriend"
     /></RouterLink>
   </header>
@@ -49,7 +49,7 @@
         <!-- <div class="ImageContainer">
         <img
           alt="Profilbild"
-          src="/public\bilder\avatar_3.png"
+          src="/src\bilder\avatar_3.png"
           class="ProfileImage"
         />
       </div> -->

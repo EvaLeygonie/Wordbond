@@ -1,8 +1,6 @@
 <script setup>
-  import { ref, computed } from 'vue'
-  const currentFriend = ref(localStorage.getItem('currentFriend'))
-  const selectedUser = ref(null)
-  const userData = ref([])
+  import { ref, computed, watchEffect } from 'vue'
+  import { useTranslationStore } from '../stores/translationStore'
 
   const props = defineProps({
     message: {
@@ -16,14 +14,29 @@
     props.isUser ? 'chat-bubble user-message' : 'chat-bubble other-message'
   )
 
-  fetch('/data/userData.JSON')
-    .then((response) => response.json())
-    .then((result) => {
-      userData.value = result
-      selectedUser.value = userData.value.find(
-        (user) => user.username === currentFriend.value
-      )
-    })
+  const translationStore = useTranslationStore()
+  const translatedMessage = ref(null)
+  const isTranslated = ref(false)
+
+  const translateMessage = async () => {
+    isTranslated.value = true
+    translatedMessage.value = await translationStore.translate(props.message)
+  }
+
+  const currentFriend = ref(localStorage.getItem('currentFriend'))
+  const selectedUser = ref(null)
+  const userData = ref([])
+
+  watchEffect(() => {
+    fetch('/data/userData.JSON')
+      .then((response) => response.json())
+      .then((result) => {
+        userData.value = result
+        selectedUser.value = userData.value.find(
+          (user) => user.username === currentFriend.value
+        )
+      })
+  })
 </script>
 
 <template>
@@ -32,7 +45,6 @@
       :to="{
         path: '/otherprofile',
         query: { name: currentFriend }
-        //Link to userStore friend
       }"
     >
       <img
@@ -40,10 +52,18 @@
         alt="Profilbild"
         :src="selectedUser.profile_picture"
       />
-      <!-- v-bind source to stored friend + add prop -->
     </RouterLink>
+
     {{ message }}
-    <img v-if="isUser" alt="Profilbild" src="/public/bilder/avatar_3.png" />
+
+    <div id="translate-message" v-if="!isUser">
+      🌍
+      <button v-if="!isTranslated" @click="translateMessage(message)">
+        Translate
+      </button>
+      <span v-if="isTranslated">{{ translatedMessage }}</span>
+    </div>
+    <img v-if="isUser" alt="Profilbild" src="/src/bilder/avatar_3.png" />
     <!-- v-bind source to stored user + add prop -->
   </div>
 </template>
@@ -73,5 +93,21 @@
     color: #000;
     background: rgba(250, 177, 47, 0.9);
     align-self: flex-start;
+  }
+
+  #translate-message {
+    padding-top: 5px;
+    margin-left: 2px;
+  }
+
+  button {
+    border-radius: 50px;
+    border: none;
+    background: #fab12f;
+    color: rgba(87, 85, 85, 0.7);
+  }
+
+  button:hover {
+    color: #fef3e2;
   }
 </style>
