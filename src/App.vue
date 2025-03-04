@@ -15,7 +15,9 @@
 
 <template>
   <nav id="mobile_nav">
-    <img :src="logoWhite" alt="logo" />
+    <RouterLink to="/findfriend">
+      <img :src="logoWhite" alt="logo" />
+    </RouterLink>
     <i :class="icon" @click="toggleMenu" />
   </nav>
 
