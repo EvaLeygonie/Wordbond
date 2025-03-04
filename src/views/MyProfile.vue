@@ -1,13 +1,17 @@
 <script setup>
+  import { useProfileStore } from '../stores/profileStore'
   import { useUserStore } from '../stores/userStore'
 
+  const profileStore = useProfileStore()
   const userStore = useUserStore()
-  const avatarUrl = '/bilder/avatar_3.png'
+  const avatarUrl = profileStore.profile.avatar
+    ? `/bilder/${profileStore.profile.avatar}`
+    : '/bilder/avatar_3.png'
 </script>
 
 <template>
   <header>
-    <h2>Min profil</h2>
+    <h2>My Profile</h2>
 
     <RouterLink
       :to="{
@@ -24,9 +28,11 @@
   <main>
     <img :src="avatarUrl" alt="Avatar" class="ProfileImage" />
 
-    <p><strong>Namn:</strong> {{ userStore.user.name }}</p>
-    <p><strong>Email:</strong> {{ userStore.user.email }}</p>
-    <p><strong>Biograph:</strong> {{ userStore.user.bio }}</p>
+    <p><strong>Username:</strong> {{ profileStore.profile.name }}</p>
+    <p><strong>Biograph:</strong> {{ profileStore.profile.bio }}</p>
+    <p>
+      <strong>Interests:</strong>{{ profileStore.profile.interests.join(', ') }}
+    </p>
     <p>
       <strong>Language I want to learn:</strong>
       {{ userStore.user.LearningLanguage }}

@@ -1,16 +1,16 @@
 <script setup>
   import { ref } from 'vue'
-  import { useUserStore } from '../stores/userStore'
+  import { useProfileStore } from '../stores/profileStore'
   import { useRouter } from 'vue-router'
 
-  const userStore = useUserStore()
+  const profileStore = useProfileStore()
   const router = useRouter()
 
   // Kopiera användardata så vi inte uppdaterar direkt innan sparning
-  const editedUser = ref({ ...userStore.user })
+  const editedUser = ref({ ...profileStore.profile })
 
   const saveChanges = () => {
-    userStore.updateProfile(editedUser.value)
+    profileStore.updateProfile(editedProfile.value)
     router.push('/Myprofile') // Navigera tillbaka till profilsidan
   }
 </script>
@@ -19,11 +19,11 @@
   <div class="EditProfile">
     <h2>Redigera profil</h2>
     <form @submit.prevent="saveChanges">
-      <label>Namn:</label>
-      <input v-model="editedUser.name" type="text" />
+      <label>Username:</label>
+      <input v-model="editedUser.userName" type="text" />
 
-      <label>Email:</label>
-      <input v-model="editedUser.email" type="email" />
+      <label>Password:</label>
+      <input v-model="editedUser.password" type="password" />
 
       <label>Biografi:</label>
       <textarea v-model="editedUser.bio" />

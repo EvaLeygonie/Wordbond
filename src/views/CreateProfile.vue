@@ -7,10 +7,10 @@
   const profileStore = useProfileStore()
 
   const name = ref('')
+  const password = ref('')
   const age = ref('')
   const bio = ref('')
   const chosenAvatar = ref('')
-  const hobby = ref('')
   const interests = ref([])
   const dropDown = ref(false)
 
@@ -29,10 +29,10 @@
     if (name.value && age.value && chosenAvatar.value) {
       const profileData = {
         name: name.value,
+        password: password.value,
         age: age.value,
         bio: bio.value,
         avatar: chosenAvatar.value,
-        hobby: hobby.value,
         interests: interests.value
       }
       profileStore.useProfile(profileData)
@@ -53,8 +53,16 @@
     <div class="profile-box">
       <h2>Create your profile!</h2>
 
-      <label>Name:</label>
+      <label>Username:</label>
       <input type="text" v-model="name" placeholder="Name..." required />
+
+      <label>Password:</label>
+      <input
+        type="password"
+        v-model="password"
+        placeholder="Password..."
+        required
+      />
 
       <label>Age:</label>
       <input type="text" v-model="age" placeholder="Age..." required />
