@@ -117,10 +117,6 @@
     justify-content: space-between;
   }
 
-  #desktop_nav {
-    display: none;
-  }
-
   @media screen and (min-width: 600px) {
     #desktop_nav {
       display: flex;
