@@ -87,7 +87,7 @@
     align-items: center;
     position: relative;
     width: 100%;
-    padding: 20px;
+    padding-top: 150px;
   }
   span {
     text-decoration: underline;
@@ -96,7 +96,7 @@
   main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
   }
 
@@ -166,15 +166,18 @@
     display: inline-block;
   }
   .EditButton {
-    border-radius: 20px;
-    border-color: #fa812f;
+    width: 130px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
     background-color: #fa812f;
-    width: 120px;
-    height: 30px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    font-size: 15px;
+  }
+  a {
+    color: black;
   }
 </style>
