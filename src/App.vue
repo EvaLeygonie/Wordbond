@@ -1,5 +1,5 @@
 <script setup>
-  import { ref } from 'vue'
+  import { ref, watch } from 'vue'
   import { useFriendStore } from './stores/friendStore'
   const logoWhite = new URL('../public/logo/logo-white.png', import.meta.url)
     .href
@@ -18,14 +18,20 @@
     icon.value = icon.value === 'bi bi-list' ? 'bi bi-x' : 'bi bi-list'
   }
 
-  fetch('/data/userData.JSON')
-    .then((response) => response.json())
-    .then((result) => {
-      userData.value = result
-      selectedUser.value = userData.value.find(
-        (user) => user.username === friendStore.currentFriend
-      )
-    })
+  watch(
+    friendStore,
+    () => {
+      fetch('/data/userData.JSON')
+        .then((response) => response.json())
+        .then((result) => {
+          userData.value = result
+          selectedUser.value = userData.value.find(
+            (user) => user.username === friendStore.currentFriend
+          )
+        })
+    },
+    { immediate: true }
+  )
 </script>
 
 <template>
@@ -36,7 +42,7 @@
     <i :class="icon" @click="toggleMenu" />
   </nav>
 
-  <div id="router_links" :style="{ display: blockOrNone }" v-if="selectedUser">
+  <div id="router_links" :style="{ display: blockOrNone }">
     <RouterLink to="/" @click="toggleMenu">Login</RouterLink>
     <RouterLink to="/findfriend" @click="toggleMenu">Find Friend</RouterLink>
     <RouterLink to="/myprofile" @click="toggleMenu">My Profile</RouterLink>
@@ -44,7 +50,7 @@
       :to="{
         path: '/chat',
         query: {
-          language: selectedUser.teaching_language,
+          language: selectedUser ? selectedUser.teaching_language : '',
           name: friendStore.currentFriend
         }
       }"
@@ -53,7 +59,7 @@
     >
   </div>
 
-  <nav id="desktop_nav" v-if="selectedUser">
+  <nav id="desktop_nav">
     <RouterLink to="/">Login</RouterLink>
     <RouterLink to="/findfriend">Find Friend</RouterLink>
     <RouterLink to="/myprofile">My Profile</RouterLink>
@@ -61,7 +67,7 @@
       :to="{
         path: '/chat',
         query: {
-          language: selectedUser.teaching_language,
+          language: selectedUser ? selectedUser.teaching_language : '',
           name: friendStore.currentFriend
         }
       }"
