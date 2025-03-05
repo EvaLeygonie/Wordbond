@@ -87,7 +87,7 @@
     align-items: center;
     position: relative;
     width: 100%;
-    padding-top: 150px;
+    margin-top: 30px;
   }
   span {
     text-decoration: underline;
@@ -98,13 +98,14 @@
     flex-direction: column;
     justify-content: end;
     align-items: center;
+    margin-top: 20px;
   }
 
   .ProfileHeader {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    margin: 30px;
+
     flex-direction: column;
   }
 

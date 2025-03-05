@@ -48,18 +48,38 @@
           />
           {{ interest }}
         </label>
-
-        <button type="submit">Spara</button>
       </div>
     </form>
+    <div class="SaveButtonContainer">
+      <button class="SaveButton" type="submit">Spara</button>
+    </div>
   </div>
 </template>
 
 <style>
+  main {
+    margin-top: 30px;
+  }
+
   form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+
+  .SaveButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .SaveButton {
+    width: 100px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #fa812f;
   }
 </style>
