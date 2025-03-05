@@ -119,6 +119,10 @@
     font-size: 1.2em;
   }
 
+  #desktop_nav {
+    display: none;
+  }
+
   #mobile_nav {
     justify-content: space-between;
   }
