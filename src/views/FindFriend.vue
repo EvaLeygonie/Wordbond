@@ -1,54 +1,54 @@
 <script setup>
-import { ref } from 'vue'
-import SearchBar from '../components/SearchBar.vue'
-import UserCards from '../components/UserCards.vue'
+  import { ref } from 'vue'
+  import SearchBar from '../components/SearchBar.vue'
+  import UserCards from '../components/UserCards.vue'
 
-const searchString = ref('')
+  const searchString = ref('')
 
-function handleSearch(receivedInput) {
+  function handleSearch(receivedInput) {
     searchString.value = receivedInput
-}
+  }
 </script>
 
 <template>
-    <div>
-        <h1 class="title">Find your language buddy!</h1>
-        <SearchBar @search="handleSearch" />
-        <UserCards :search-string="searchString" />
-    </div>
-    <footer>
-        <a href="http://www.freepik.com">Avatars designed by Freepik</a>
-    </footer>
+  <div>
+    <h1 class="title">Find your language buddy!</h1>
+    <SearchBar @search="handleSearch" />
+    <UserCards :search-string="searchString" />
+  </div>
+  <footer>
+    <a href="http://www.freepik.com">Avatars designed by Freepik</a>
+  </footer>
 </template>
 
 <style scoped>
-div {
+  div {
     min-height: 100vh;
-}
+  }
 
-.title {
+  .title {
     padding: 1em;
     color: #575555;
-}
+  }
 
-a {
+  a {
     font-family: MyFontStandard, sans-serif;
     text-decoration: none;
     color: #ffffff;
     font-size: 0.8em;
-}
+  }
 
-a:hover {
+  a:hover {
     color: #5c5c5c;
-}
+  }
 
-footer {
+  footer {
     margin-top: 2em;
     padding: 2em;
     background-color: #fa812f;
-}
+  }
 
-footer a {
+  footer a {
     font-weight: normal;
-}
+  }
 </style>

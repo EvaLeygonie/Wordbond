@@ -1,15 +1,20 @@
 <script setup>
   import { ref, computed, watchEffect } from 'vue'
-  import { useRoute } from 'vue-router'
+  import { useRoute, useRouter } from 'vue-router'
   import { useFriendStore } from '../stores/friendStore'
 
   const route = useRoute()
+  const router = useRouter()
   const username = computed(() => route.query.name)
   const userData = ref([])
   const selectedUser = ref(null)
   const request = ref('Send friend-request')
   const activeLink = ref(false)
   const friendStore = useFriendStore()
+
+  function goBack() {
+    router.go(-1)
+  }
 
   fetch('/data/userData.JSON')
     .then((response) => response.json())
@@ -58,9 +63,7 @@
 </script>
 
 <template>
-  <RouterLink :to="{ path: '/findfriend' }"
-    ><i class="bi bi-arrow-left-short"
-  /></RouterLink>
+  <i class="bi bi-arrow-left-short" @click="goBack" />
   <div id="frame" v-if="selectedUser">
     <div id="title">
       <h1>{{ selectedUser.username }}</h1>
@@ -158,6 +161,7 @@
     margin-left: 0.2em;
     font-size: 4em;
     color: #fa812f;
+    cursor: pointer;
   }
 
   i:hover {

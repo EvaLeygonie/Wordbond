@@ -7,7 +7,8 @@
         "teaching_language": "German",
         "interests": ["Reading", "Crocheting"],
         "learning_method": "Games and exercises",
-        "quote": "Bonjour! I’m trying to learn French so I can finally order croissants without sounding like an imposter!"
+        "quote": "Bonjour! I’m trying to learn French so I can finally order croissants without sounding like an imposter!",
+        "greeting": "Hey! Wie läuft’s?"
     },
     {
         "username": "PolyglotPat",
@@ -17,7 +18,8 @@
         "teaching_language": "French",
         "interests": ["Music", "History"],
         "learning_method": "Text chat",
-        "quote": "Learning German so I can yell Schmetterling with full confidence!"
+        "quote": "Learning German so I can yell Schmetterling with full confidence!",
+        "greeting": "Bonjour! Quel est votre niveau en français? Un peu, beaucoup?"
     },
     {
         "username": "WordWizard",
@@ -27,7 +29,8 @@
         "teaching_language": "English",
         "interests": ["Anime", "Technology"],
         "learning_method": "Voice messages",
-        "quote": "I want to understand anime without subtitles!"
+        "quote": "I want to understand anime without subtitles!",
+        "greeting": "Hey! Excited to have a new language buddy!"
     },
     {
         "username": "TalkativeTim",
@@ -37,7 +40,8 @@
         "teaching_language": "Spanish",
         "interests": ["Sports", "Photography"],
         "learning_method": "Games and exercises",
-        "quote": "Trying to learn Swedish so I don’t mix up kanelbulle and knäckebröd ever again!"
+        "quote": "Trying to learn Swedish so I don’t mix up kanelbulle and knäckebröd ever again!",
+        "greeting": "¡Hola! ¿Qué tal?"
     },
     {
         "username": "GrammarGuru",
@@ -47,7 +51,8 @@
         "teaching_language": "English",
         "interests": ["Writing", "K-pop"],
         "learning_method": "Text chat",
-        "quote": "K-pop pulled me in, now I need Korean skills so I actually understand what they’re singing!"
+        "quote": "K-pop pulled me in, now I need Korean skills so I actually understand what they’re singing!",
+        "greeting": "Hello! How are you?"
     },
     {
         "username": "ChatChad",
@@ -57,7 +62,8 @@
         "teaching_language": "German",
         "interests": ["Gaming", "Business"],
         "learning_method": "Games and exercises",
-        "quote": "I want to learn Mandarin to prepare for my trip to China. So if you know Mandarin and want to learn German - send me a message!"
+        "quote": "I want to learn Mandarin to prepare for my trip to China. So if you know Mandarin and want to learn German - send me a message!",
+        "greeting": "Hey! Schön, einen neuen Sprachbuddy zu haben!"
     },
     {
         "username": "VocabVince",
@@ -67,7 +73,8 @@
         "teaching_language": "Italian",
         "interests": ["Dancing", "Food"],
         "learning_method": "Voice messages",
-        "quote": "Looking for a friend to visit in Lisbon in May!"
+        "quote": "Looking for a friend to visit in Lisbon in May!",
+        "greeting": "Ehi! Parli italiano come un vero maestro o stai ancora lottando con 'pizza' e 'ciao'?"
     },
     {
         "username": "CultureChris",
@@ -77,7 +84,8 @@
         "teaching_language": "Korean",
         "interests": ["Art", "Movies"],
         "learning_method": "Text chat",
-        "quote": "French movies just hit differently when you don’t need subtitles."
+        "quote": "French movies just hit differently when you don’t need subtitles.",
+        "greeting": "안녕! 어떻게 지내? (Annyeong! Eotteoke jinae?)"
     },
     {
         "username": "LearnLily",
@@ -87,7 +95,8 @@
         "teaching_language": "French",
         "interests": ["Books", "Travel"],
         "learning_method": "Voice messages",
-        "quote": "Travel goal: effortlessly order Dutch cheese without pointing at the menu."
+        "quote": "Travel goal: effortlessly order Dutch cheese without pointing at the menu.",
+        "greeting": "Salut! T’as fait quoi de beau aujourd’hui?"
     },
     {
         "username": "BilingualBella",
@@ -97,7 +106,8 @@
         "teaching_language": "Spanish",
         "interests": ["Nature", "Hiking"],
         "learning_method": "Games and exercises",
-        "quote": "I want to master English so I don’t have to rely on Google Translate every five minutes."
+        "quote": "I want to master English so I don’t have to rely on Google Translate every five minutes.",
+        "greeting": "¡Hola! ¿Cuál es tu comida favorita?"
     },
     {
         "username": "FluentFelix",
@@ -107,7 +117,8 @@
         "teaching_language": "Korean",
         "interests": ["Sports", "Technology"],
         "learning_method": "Text chat",
-        "quote": "Hi! I want to learn russian to be able to speak with my relatives in Russia."
+        "quote": "Hi! I want to learn russian to be able to speak with my relatives in Russia.",
+        "greeting": "안녕! 오늘 날씨 어때? (Annyeong! Oneul nalssi eottae?)"
     },
     {
         "username": "ExpressEva",
@@ -117,7 +128,8 @@
         "teaching_language": "Swedish",
         "interests": ["Painting", "Music"],
         "learning_method": "Voice messages",
-        "quote": "I’m going to Ankara this summer and would like to get to know someone from the area."
+        "quote": "I’m going to Ankara this summer and would like to get to know someone from the area.",
+        "greeting": "Hej! Hur har din dag varit?"
     },
     {
         "username": "DuoDavid",
@@ -127,7 +139,8 @@
         "teaching_language": "Mandarin",
         "interests": ["Photography", "Meditation"],
         "learning_method": "Text chat",
-        "quote": "My Arabic grandmother’s cooking is legendary. If I want the recipes, I need to understand her instructions!"
+        "quote": "My Arabic grandmother’s cooking is legendary. If I want the recipes, I need to understand her instructions!",
+        "greeting": "你好！今天过得怎么样? (Nǐ hǎo! Jīntiān guò de zěnme yàng?)"
     },
     {
         "username": "LinguaLaura",
@@ -137,7 +150,8 @@
         "teaching_language": "Spanish",
         "interests": ["History", "Culture"],
         "learning_method": "Voice messages'",
-        "quote": "Greek history is fascinating, and I’d love to understand the ancient texts better."
+        "quote": "Greek history is fascinating, and I’d love to understand the ancient texts better.",
+        "greeting": "¡Buenos días! ¿Como te llamas?"
     },
     {
         "username": "ChattyCharlie",
@@ -147,6 +161,7 @@
         "teaching_language": "Portuguese",
         "interests": ["Cooking", "Dancing"],
         "learning_method": "Text chat",
-        "quote": "I need Hindi skills so I can finally understand what my in-laws are saying about me!"
+        "quote": "I need Hindi skills so I can finally understand what my in-laws are saying about me!",
+        "greeting": "Oi, você já foi a Portugal alguma vez?"
     }
 ]
