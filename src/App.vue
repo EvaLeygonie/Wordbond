@@ -11,8 +11,6 @@
 
   const selectedUser = ref(null)
 
-  const userData = ref([])
-
   function toggleMenu() {
     blockOrNone.value = blockOrNone.value === 'none' ? 'block' : 'none'
     icon.value = icon.value === 'bi bi-list' ? 'bi bi-x' : 'bi bi-list'
@@ -21,14 +19,11 @@
   watch(
     friendStore,
     () => {
-      fetch('/data/userData.JSON')
-        .then((response) => response.json())
-        .then((result) => {
-          userData.value = result
-          selectedUser.value = userData.value.find(
-            (user) => user.username === friendStore.currentFriend
-          )
+      if (friendStore.currentFriend) {
+        friendStore.fetchFriend(friendStore.currentFriend).then((result) => {
+          selectedUser.value = result
         })
+      }
     },
     { immediate: true }
   )
@@ -80,10 +75,6 @@
 </template>
 
 <style scoped>
-  main {
-    min-height: 33vh;
-  }
-
   nav {
     display: flex;
     align-items: center;
