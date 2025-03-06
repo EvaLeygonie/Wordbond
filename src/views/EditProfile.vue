@@ -25,6 +25,8 @@
 
       <label>Password:</label>
       <input v-model="editedUser.password" type="password" />
+      <label>Age</label>
+      <input v-model="editedUser.age" type="text" />
 
       <label>Biography:</label>
       <textarea v-model="editedUser.bio" />

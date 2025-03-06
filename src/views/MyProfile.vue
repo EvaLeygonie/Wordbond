@@ -49,6 +49,7 @@
     <img :src="avatarUrl" alt="Avatar" class="ProfileImage" />
 
     <p><strong>Username</strong>: {{ profileStore.profile.name }}</p>
+    <p><strong>Age</strong>: {{ profileStore.profile.age }}</p>
     <p><strong>Biography</strong>: {{ profileStore.profile.bio }}</p>
     <p>
       <strong>Interests</strong>:
