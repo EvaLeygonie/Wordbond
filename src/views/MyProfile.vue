@@ -27,8 +27,6 @@
 
 <template>
   <header>
-    <h2>My Profile</h2>
-
     <RouterLink
       v-if="selectedUser"
       :to="{
@@ -46,6 +44,7 @@
     /></RouterLink>
   </header>
   <main>
+    <h1>Profile</h1>
     <div class="MainContainer">
       <img :src="avatarUrl" alt="Avatar" class="ProfileImage" />
 
@@ -90,6 +89,7 @@
     position: relative;
     width: 100%;
   }
+
   span {
     text-decoration: underline;
   }
@@ -104,6 +104,7 @@
     width: 400px;
     height: 500px;
     border-radius: 20px;
+    display: flex;
   }
 
   .ProfileHeader {
