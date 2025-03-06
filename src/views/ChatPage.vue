@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, nextTick } from 'vue'
+  import { ref, nextTick, onMounted } from 'vue'
   import { useRoute } from 'vue-router'
   import ChatBubble from '../components/ChatBubble.vue'
   import NoMatchChat from '../components/NoMatchChat.vue'
@@ -14,18 +14,16 @@
   const chatStore = useChatStore()
 
   const newMessage = ref('')
+  const friendMatch = ref(true)
 
   const sendMessage = () => {
     // chatStore.clearChat()
-    // chatStore.addMessage('Hola! Cómo estás?', false)
-    // chatStore.addMessage('Hej! Jag mår bra, själv?', true)
-    // chatStore.addMessage('Bra! kan lite svenska', false)
     if (newMessage.value.trim() !== '') {
-      chatStore.addMessage(':)', false)
+      chatStore.addMessage(newMessage.value, true)
       newMessage.value = ''
       nextTick(scrollToBottom)
       setTimeout(() => {
-        messages.value.push({ text: ':)', isUser: false })
+        chatStore.addMessage(':)', false)
         nextTick(scrollToBottom)
       }, 1000)
     }
@@ -38,42 +36,54 @@
       }
     })
   }
+
+  onMounted(() => {
+    if (friendName === 'TalkativeTim') {
+      chatStore.loadTimChat()
+    } else if (friendName === null) {
+      //Fix better
+      friendMatch.value = false
+    } else {
+      chatStore.clearChat()
+    }
+  })
+  scrollToBottom()
 </script>
 
 <template>
-  <!-- <NoMatchChat v-if="!friendMatch" />
+  <NoMatchChat v-if="!friendMatch" />
   <div v-else>
-    Link to userStore + add prop/ref for friendMatch? -->
-  <RouterLink
-    :to="{
-      path: '/otherprofile',
-      query: { name: friendName }
-      //Change to userStore update
-    }"
-  >
-    <h3>Learn {{ language }} with {{ friendName }}</h3>
-    <!-- Change to userStore update -->
-  </RouterLink>
-  <div class="chat-container">
-    <div ref="chatBox" class="chat-box">
-      <ChatBubble
-        v-for="(msg, index) in chatStore.messages"
-        :key="index"
-        :message="msg.text"
-        :is-user="msg.isUser"
-      />
-    </div>
+    <!-- Link to userStore + add prop/ref for friendMatch? -->
+    <RouterLink
+      :to="{
+        path: '/otherprofile',
+        query: { name: friendName }
+        //Change to userStore update
+      }"
+    >
+      <h3>Learn {{ language }} with {{ friendName }}</h3>
+      <!-- Change to userStore update -->
+    </RouterLink>
+    <div class="chat-container">
+      <div ref="chatBox" class="chat-box">
+        <ChatBubble
+          v-for="(msg, index) in chatStore.messages"
+          :key="index"
+          :message="msg.text"
+          :is-user="msg.isUser"
+        />
+      </div>
 
-    <div class="tools-section">
-      <p>Verktyg - översättning - AI - ordbok - sparade meddelanden</p>
-    </div>
+      <div class="tools-section">
+        <p>Verktyg - översättning - AI - ordbok - sparade meddelanden</p>
+      </div>
 
-    <div class="input-container">
-      <input v-model="newMessage" type="text" @keyup.enter="sendMessage" />
-      <button @click="sendMessage">Send</button>
+      <div class="input-container">
+        <input v-model="newMessage" type="text" @keyup.enter="sendMessage" />
+        <button @click="sendMessage">Send</button>
+      </div>
     </div>
   </div>
-  <!-- </div> -->
 </template>
 
 <style scoped>
@@ -82,13 +92,12 @@
     flex-direction: column;
     justify-content: space-between;
     height: 85vh;
-    margin: auto;
   }
 
   .chat-box {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 0 10px 20px 10px;
     overflow-y: auto;
     max-height: calc(85vh - 60px);
   }

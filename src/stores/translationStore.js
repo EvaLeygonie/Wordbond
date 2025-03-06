@@ -3,8 +3,8 @@ import { defineStore } from 'pinia'
 export const useTranslationStore = defineStore('translation', {
   actions: {
     async translate(text) {
-      const targetLang = 'sv'
       const sourceLang = 'es'
+      const targetLang = 'sv'
       //Koppla till user & friend language
 
       try {
