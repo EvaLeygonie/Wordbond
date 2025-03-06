@@ -142,11 +142,12 @@
   }
 
   .ProfileImage {
-    width: 180px;
+    width: 150px;
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
   }
 
   .MainContainer {
@@ -193,6 +194,7 @@
 
   .logout-button {
     margin-top: 10px;
+    margin-bottom: 20px;
     border: none;
     border-radius: 4px;
     font-size: 1em;
