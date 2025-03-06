@@ -10,7 +10,7 @@
   const editedUser = ref({ ...profileStore.profile })
 
   const saveChanges = () => {
-    profileStore.updateProfile(editedUser.value)
+    profileStore.update(editedUser.value)
     router.push('/Myprofile') // Navigera tillbaka till profilsidan
     console.log(saveChanges)
   }
@@ -49,10 +49,10 @@
           {{ interest }}
         </label>
       </div>
-      <div class="SaveButtonContainer">
-        <button class="SaveButton" type="submit">Spara</button>
-      </div>
     </form>
+    <div class="SaveButtonContainer">
+      <button class="SaveButton" type="submit">Spara</button>
+    </div>
   </div>
 </template>
 
