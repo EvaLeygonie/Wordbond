@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { useProfileStore } from './profileStore'
 
 export const useLoginStore = defineStore('login', {
   state: () => ({
@@ -10,6 +11,8 @@ export const useLoginStore = defineStore('login', {
     },
     logout() {
       this.loggedIn = false
+      const profileStore = useProfileStore()
+      profileStore.clear()
     }
   }
 })
