@@ -49,11 +49,10 @@
           {{ interest }}
         </label>
       </div>
-
-      <div class="SaveButtonContainer">
-        <button class="SaveButton" type="submit">Spara</button>
-      </div>
     </form>
+    <div class="SaveButtonContainer">
+      <button class="SaveButton" type="submit">Spara</button>
+    </div>
   </div>
 </template>
 
