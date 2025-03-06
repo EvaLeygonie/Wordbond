@@ -56,7 +56,7 @@
         </label>
       </div>
       <div class="SaveButtonContainer">
-        <button class="SaveButton" type="submit">Spara</button>
+        <button class="SaveButton" type="submit">Save</button>
       </div>
     </form>
   </div>
