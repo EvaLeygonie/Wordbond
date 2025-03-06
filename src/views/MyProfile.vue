@@ -186,10 +186,17 @@
     border-radius: 4px;
     font-size: 1em;
     background-color: #fa812f;
-
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .logout-button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #fa812f;
   }
   a {
     color: black;
