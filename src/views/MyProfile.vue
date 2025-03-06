@@ -3,10 +3,19 @@
   import { useProfileStore } from '../stores/profileStore'
   import { useUserStore } from '../stores/userStore'
   import { useFriendStore } from '../stores/friendStore'
+  import { useLoginStore } from '../stores/loginStore'
+  import { useRouter } from 'vue-router'
 
   const friendStore = useFriendStore()
   const selectedUser = ref(null)
   const profileStore = useProfileStore()
+  const loginStore = useLoginStore()
+  const router = useRouter()
+
+  const logout = () => {
+    loginStore.logout()
+    router.push('/')
+  }
   const userStore = useUserStore()
   const avatarUrl = profileStore.profile.avatar
     ? `/src/bilder/${profileStore.profile.avatar}`
@@ -62,6 +71,8 @@
       <div class="EditButton">
         <router-link to="/EditProfile">Edit profile</router-link>
       </div>
+
+      <button class="logout-button" @click="logout">Logout</button>
     </div>
     <main>
       <div>
