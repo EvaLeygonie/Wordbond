@@ -128,6 +128,10 @@
     justify-content: center;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   .ChatText {
     padding-right: 22px;
   }
