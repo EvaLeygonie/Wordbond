@@ -66,7 +66,7 @@
       <span v-if="isTranslated">{{ translatedMessage }}</span>
     </div>
     <img v-if="isUser" alt="Profilbild" src="/src/bilder/avatar_3.png" />
-    <!-- v-bind source to stored user + add prop -->
+    <!-- v-bind source to stored user -->
   </div>
 </template>
 

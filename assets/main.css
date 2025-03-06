@@ -1,7 +1,6 @@
 @font-face {
   font-family: HeaderFont;
-  src: local("Crimson-Pro"),
-    url(/fonts/Crimson-Pro.ttf) format("truetype");
+  src: local("Crimson-Pro"), url(/fonts/Crimson-Pro.ttf) format("truetype");
 }
 
 @font-face {
@@ -12,8 +11,7 @@
 
 @font-face {
   font-family: MyFontItalic;
-  src: local("Inter-Italic"),
-    url(/fonts/Inter-Italic.ttf) format("truetype");
+  src: local("Inter-Italic"), url(/fonts/Inter-Italic.ttf) format("truetype");
 }
 
 * {
@@ -43,7 +41,7 @@ h3 {
   font-family: HeaderFont, serif;
   color: #575555;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 p {
