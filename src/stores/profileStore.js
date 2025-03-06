@@ -8,7 +8,7 @@ const defaultProfile = {
   languageToLearn: 'Spanish',
   languageToTeach: 'English',
   avatar: '',
-  interests: []
+  interests: ['Travel,', 'Music', 'Reading']
 }
 
 export const useProfileStore = defineStore('profile', {

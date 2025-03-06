@@ -1,7 +1,6 @@
 <script setup>
   import { ref, watchEffect } from 'vue'
   import { useProfileStore } from '../stores/profileStore'
-  import { useUserStore } from '../stores/userStore'
   import { useFriendStore } from '../stores/friendStore'
   import { useLoginStore } from '../stores/loginStore'
   import { useRouter } from 'vue-router'
@@ -16,7 +15,7 @@
     loginStore.logout()
     router.push('/')
   }
-  const userStore = useUserStore()
+
   const avatarUrl = profileStore.profile.avatar
     ? `/src/bilder/${profileStore.profile.avatar}`
     : '/src/bilder/avatar_3.png'
