@@ -6,7 +6,6 @@
   const route = useRoute()
   const router = useRouter()
   const username = computed(() => route.query.name)
-  const userData = ref([])
   const selectedUser = ref(null)
   const request = ref('Send friend-request')
   const activeLink = ref(false)
@@ -16,14 +15,13 @@
     router.go(-1)
   }
 
-  fetch('/data/userData.JSON')
-    .then((response) => response.json())
-    .then((result) => {
-      userData.value = result
-      selectedUser.value = userData.value.find(
-        (user) => user.username === username.value
-      )
-    })
+  watchEffect(() => {
+    if (username.value) {
+      friendStore.fetchFriend(username.value).then((result) => {
+        selectedUser.value = result
+      })
+    }
+  })
 
   function confirmation() {
     if (!selectedUser.value) return

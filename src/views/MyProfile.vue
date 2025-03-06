@@ -1,27 +1,32 @@
 <script setup>
-  import { ref, onMounted } from 'vue'
+  import { ref, watchEffect } from 'vue'
   import { useProfileStore } from '../stores/profileStore'
   import { useUserStore } from '../stores/userStore'
   import { useFriendStore } from '../stores/friendStore'
+  import { useLoginStore } from '../stores/loginStore'
+  import { useRouter } from 'vue-router'
 
   const friendStore = useFriendStore()
   const selectedUser = ref(null)
-  const userData = ref([])
   const profileStore = useProfileStore()
+  const loginStore = useLoginStore()
+  const router = useRouter()
+
+  const logout = () => {
+    loginStore.logout()
+    router.push('/')
+  }
   const userStore = useUserStore()
   const avatarUrl = profileStore.profile.avatar
     ? `/src/bilder/${profileStore.profile.avatar}`
     : '/src/bilder/avatar_3.png'
 
-  onMounted(() => {
-    fetch('/data/userData.JSON')
-      .then((response) => response.json())
-      .then((result) => {
-        userData.value = result
-        selectedUser.value = userData.value.find(
-          (user) => user.username === friendStore.currentFriend
-        )
+  watchEffect(() => {
+    if (friendStore.currentFriend) {
+      friendStore.fetchFriend(friendStore.currentFriend).then((result) => {
+        selectedUser.value = result
       })
+    }
   })
 </script>
 
@@ -57,15 +62,17 @@
       </p>
       <p>
         <strong>Language I want to learn</strong>:
-        {{ userStore.user.LearningLanguage }}
+        {{ profileStore.profile.languageToLearn }}
       </p>
       <p>
         <strong>Language I can teach</strong>:
-        {{ userStore.user.TeachingLanguage }}
+        {{ profileStore.profile.languageToTeach }}
       </p>
       <div class="EditButton">
         <router-link to="/EditProfile">Edit profile</router-link>
       </div>
+
+      <button class="logout-button" @click="logout">Logout</button>
     </div>
     <main>
       <div>
@@ -179,10 +186,17 @@
     border-radius: 4px;
     font-size: 1em;
     background-color: #fa812f;
-
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .logout-button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #fa812f;
   }
   a {
     color: black;
