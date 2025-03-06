@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 const defaultProfile = {
   name: 'LinguaLover',
   email: 'lingualover@example.com',
+  age: '30',
   bio: 'Hi! I love learning languages.',
   LearningLanguage: 'Spanish',
   TeachingLanguage: 'English',
