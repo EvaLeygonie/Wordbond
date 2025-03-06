@@ -1,27 +1,23 @@
 <script setup>
-  import { ref, onMounted } from 'vue'
+  import { ref, watchEffect } from 'vue'
   import { useProfileStore } from '../stores/profileStore'
   import { useUserStore } from '../stores/userStore'
   import { useFriendStore } from '../stores/friendStore'
 
   const friendStore = useFriendStore()
   const selectedUser = ref(null)
-  const userData = ref([])
   const profileStore = useProfileStore()
   const userStore = useUserStore()
   const avatarUrl = profileStore.profile.avatar
     ? `/src/bilder/${profileStore.profile.avatar}`
     : '/src/bilder/avatar_3.png'
 
-  onMounted(() => {
-    fetch('/data/userData.JSON')
-      .then((response) => response.json())
-      .then((result) => {
-        userData.value = result
-        selectedUser.value = userData.value.find(
-          (user) => user.username === friendStore.currentFriend
-        )
+  watchEffect(() => {
+    if (friendStore.currentFriend) {
+      friendStore.fetchFriend(friendStore.currentFriend).then((result) => {
+        selectedUser.value = result
       })
+    }
   })
 </script>
 

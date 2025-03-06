@@ -27,17 +27,13 @@
   }
 
   const selectedUser = ref(null)
-  const userData = ref([])
 
   watchEffect(() => {
-    fetch('/data/userData.JSON')
-      .then((response) => response.json())
-      .then((result) => {
-        userData.value = result
-        selectedUser.value = userData.value.find(
-          (user) => user.username === friendStore.currentFriend
-        )
+    if (friendStore.currentFriend) {
+      friendStore.fetchFriend(friendStore.currentFriend).then((result) => {
+        selectedUser.value = result
       })
+    }
   })
 </script>
 
