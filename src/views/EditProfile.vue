@@ -31,9 +31,9 @@
       <label>Biography:</label>
       <textarea v-model="editedUser.bio" />
       <label>Language to learn</label>
-      <input v-model="editedUser.LearningLanguage" type="text" />
+      <input v-model="editedUser.languageToLearn" type="text" />
       <label>Language to teach</label>
-      <input v-model="editedUser.TeachingLanguage" />
+      <input v-model="editedUser.languageToTeach" type="text" />
       <label>Interests:</label>
       <div class="chooseInterests">
         <label

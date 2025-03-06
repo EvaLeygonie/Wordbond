@@ -62,11 +62,11 @@
       </p>
       <p>
         <strong>Language I want to learn</strong>:
-        {{ userStore.user.LearningLanguage }}
+        {{ profileStore.profile.languageToLearn }}
       </p>
       <p>
         <strong>Language I can teach</strong>:
-        {{ userStore.user.TeachingLanguage }}
+        {{ profileStore.profile.languageToTeach }}
       </p>
       <div class="EditButton">
         <router-link to="/EditProfile">Edit profile</router-link>

@@ -13,6 +13,8 @@
   const chosenAvatar = ref('')
   const interests = ref([])
   const dropDown = ref(false)
+  const languageToLearn = ref('')
+  const languageToTeach = ref('')
 
   const avatarPicture = [
     'avatar_1.png',
@@ -33,7 +35,9 @@
         age: age.value,
         bio: bio.value,
         avatar: chosenAvatar.value,
-        interests: interests.value
+        interests: interests.value,
+        languagetoLearn: languageToLearn.value,
+        languageToTeach: languageToTeach.value
       }
       profileStore.use(profileData)
       router.push('/MyProfile')

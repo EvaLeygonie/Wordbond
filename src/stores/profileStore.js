@@ -5,8 +5,8 @@ const defaultProfile = {
   email: 'lingualover@example.com',
   age: '30',
   bio: 'Hi! I love learning languages.',
-  LearningLanguage: 'Spanish',
-  TeachingLanguage: 'English',
+  languageToLearn: 'Spanish',
+  languageToTeach: 'English',
   avatar: '',
   interests: []
 }
