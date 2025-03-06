@@ -28,6 +28,10 @@
 
       <label>Biography:</label>
       <textarea v-model="editedUser.bio" />
+      <label>Language to learn</label>
+      <input v-model="editedUser.LearningLanguage" type="text" />
+      <label>Language to teach</label>
+      <input v-model="editedUser.TeachingLanguage" />
       <label>Interests:</label>
       <div class="chooseInterests">
         <label
@@ -49,10 +53,10 @@
           {{ interest }}
         </label>
       </div>
+      <div class="SaveButtonContainer">
+        <button class="SaveButton" type="submit">Spara</button>
+      </div>
     </form>
-    <div class="SaveButtonContainer">
-      <button class="SaveButton" type="submit">Spara</button>
-    </div>
   </div>
 </template>
 

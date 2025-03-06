@@ -5,9 +5,7 @@ const defaultProfile = {
   email: 'lingualover@example.com',
   bio: 'Hi! I love learning languages.',
   LearningLanguage: 'Spanish',
-  TeachingLanguage: 'English',
-  avatar: '',
-  interests: []
+  TeachingLanguage: 'English'
 }
 
 export const useProfileStore = defineStore('profile', {
