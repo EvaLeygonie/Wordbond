@@ -64,7 +64,7 @@
         {{ userStore.user.TeachingLanguage }}
       </p>
       <div class="EditButton">
-        <router-link to="/EditProfile">Redigera profil</router-link>
+        <router-link to="/EditProfile">Edit profile</router-link>
       </div>
     </div>
     <main>
