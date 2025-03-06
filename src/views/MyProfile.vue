@@ -27,7 +27,7 @@
 
 <template>
   <header>
-    <h2>My Profile</h2>
+    <h1>My Profile</h1>
 
     <RouterLink
       v-if="selectedUser"
@@ -46,27 +46,28 @@
     /></RouterLink>
   </header>
   <main>
-    <img :src="avatarUrl" alt="Avatar" class="ProfileImage" />
+    <div class="MainContainer">
+      <img :src="avatarUrl" alt="Avatar" class="ProfileImage" />
 
-    <p><strong>Username</strong>: {{ profileStore.profile.name }}</p>
-    <p><strong>Age</strong>: {{ profileStore.profile.age }}</p>
-    <p><strong>Biography</strong>: {{ profileStore.profile.bio }}</p>
-    <p>
-      <strong>Interests</strong>:
-      {{ profileStore.profile.interests.join(', ') }}
-    </p>
-    <p>
-      <strong>Language I want to learn</strong>:
-      {{ userStore.user.LearningLanguage }}
-    </p>
-    <p>
-      <strong>Language I can teach</strong>:
-      {{ userStore.user.TeachingLanguage }}
-    </p>
-    <div class="EditButton">
-      <router-link to="/EditProfile">Redigera profil</router-link>
+      <p><strong>Username</strong>: {{ profileStore.profile.name }}</p>
+      <p><strong>Age</strong>: {{ profileStore.profile.age }}</p>
+      <p><strong>Biography</strong>: {{ profileStore.profile.bio }}</p>
+      <p>
+        <strong>Interests</strong>:
+        {{ profileStore.profile.interests.join(', ') }}
+      </p>
+      <p>
+        <strong>Language I want to learn</strong>:
+        {{ userStore.user.LearningLanguage }}
+      </p>
+      <p>
+        <strong>Language I can teach</strong>:
+        {{ userStore.user.TeachingLanguage }}
+      </p>
+      <div class="EditButton">
+        <router-link to="/EditProfile">Redigera profil</router-link>
+      </div>
     </div>
-
     <main>
       <div>
         <!-- <div class="ImageContainer">
@@ -82,24 +83,20 @@
 </template>
 
 <style scoped>
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    margin-top: 30px;
-  }
   span {
     text-decoration: underline;
   }
-
   main {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
-    margin-top: 20px;
+  }
+  .MainContainer {
+    background-color: #fff;
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
   }
 
   .ProfileHeader {
@@ -157,16 +154,6 @@
     justify-content: center;
   }
 
-  .InterestTag {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.2);
-    margin: 5px;
-    padding: 10px;
-    background-color: #fa812f;
-    color: #fef3e2;
-    border-radius: 5px;
-    font-weight: bold;
-    display: inline-block;
-  }
   .EditButton {
     width: 130px;
     padding: 8px;
