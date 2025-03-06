@@ -2,9 +2,11 @@
   import { ref } from 'vue'
   import { useRouter } from 'vue-router'
   import { useProfileStore } from '../stores/profileStore'
+  import { useFriendStore } from '../stores/friendStore'
 
   const router = useRouter()
   const profileStore = useProfileStore()
+  const friendStore = useFriendStore()
 
   const name = ref('')
   const password = ref('')
@@ -41,6 +43,7 @@
       }
       profileStore.use(profileData)
       router.push('/MyProfile')
+      friendStore.removeFriend()
     } else {
       alert('Please fill in everything')
     }

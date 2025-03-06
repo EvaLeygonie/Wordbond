@@ -1,13 +1,14 @@
 <script setup>
-  import { ref, computed, watchEffect } from 'vue'
+  import { ref, computed } from 'vue'
   import { useTranslationStore } from '../stores/translationStore'
-  import { useFriendStore } from '../stores/friendStore'
-
-  const friendStore = useFriendStore()
 
   const props = defineProps({
     message: {
       type: String,
+      required: true
+    },
+    friendData: {
+      type: Object,
       required: true
     },
     isUser: Boolean
@@ -22,34 +23,24 @@
   const isTranslated = ref(false)
 
   const translateMessage = async () => {
+    const langCode = translationStore.convertLang(
+      props.friendData.teaching_language
+    )
     isTranslated.value = true
     translatedMessage.value = await translationStore.translate(props.message)
   }
-
-  const selectedUser = ref(null)
-
-  watchEffect(() => {
-    if (friendStore.currentFriend) {
-      friendStore.fetchFriend(friendStore.currentFriend).then((result) => {
-        selectedUser.value = result
-      })
-    }
-  })
 </script>
 
 <template>
   <div :class="bubbleClass">
     <RouterLink
+      v-if="!isUser && friendData"
       :to="{
         path: '/otherprofile',
-        query: { name: friendStore.currentFriend }
+        query: { name: friendData.username }
       }"
     >
-      <img
-        v-if="!isUser && selectedUser"
-        alt="Profilbild"
-        :src="selectedUser.profile_picture"
-      />
+      <img alt="Profilbild" :src="friendData.profile_picture" />
     </RouterLink>
 
     {{ message }}

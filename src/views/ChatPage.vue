@@ -1,23 +1,21 @@
 <script setup>
-  import { ref, nextTick, onMounted } from 'vue'
-  import { useRoute } from 'vue-router'
+  import { ref, nextTick, onMounted, watch } from 'vue'
+  import { useRouter } from 'vue-router'
+  import { useChatStore } from '../stores/chatStore'
+  import { useFriendStore } from '../stores/friendStore'
   import ChatBubble from '../components/ChatBubble.vue'
   import NoMatchChat from '../components/NoMatchChat.vue'
-  import { useChatStore } from '../stores/chatStore'
 
-  const route = useRoute()
-
-  const friendName = route.query.name
-  const language = route.query.language
-  //Update with userStore
-  const chatBox = ref(null)
+  const router = useRouter()
   const chatStore = useChatStore()
+  const friendStore = useFriendStore()
 
+  const chatBox = ref(null)
   const newMessage = ref('')
   const friendMatch = ref(true)
+  const selectedUser = ref(null)
 
   const sendMessage = () => {
-    // chatStore.clearChat()
     if (newMessage.value.trim() !== '') {
       chatStore.addMessage(newMessage.value, true)
       newMessage.value = ''
@@ -37,32 +35,53 @@
     })
   }
 
-  onMounted(() => {
-    if (friendName === 'TalkativeTim') {
-      chatStore.loadTimChat()
-    } else if (friendName === null) {
-      //Fix better
+  onMounted(async () => {
+    const result = await friendStore.fetchFriend(friendStore.currentFriend)
+
+    if (!result) {
       friendMatch.value = false
+      return
+    }
+
+    selectedUser.value = result
+    friendMatch.value = true
+
+    if (friendStore.currentFriend === 'TalkativeTim') {
+      chatStore.loadTimChat()
+      nextTick(scrollToBottom)
     } else {
       chatStore.clearChat()
+      setTimeout(() => {
+        chatStore.addMessage(selectedUser.value.greeting, false)
+        nextTick(scrollToBottom)
+      }, 1000)
     }
   })
-  scrollToBottom()
+
+  watch(
+    () => friendStore.currentFriend,
+    async (newFriend) => {
+      if (newFriend) {
+        selectedUser.value = await friendStore.fetchFriend(newFriend)
+      }
+    }
+  )
 </script>
 
 <template>
   <NoMatchChat v-if="!friendMatch" />
   <div v-else>
-    <!-- Link to userStore + add prop/ref for friendMatch? -->
     <RouterLink
       :to="{
         path: '/otherprofile',
-        query: { name: friendName }
-        //Change to userStore update
+        query: { name: friendStore.currentFriend }
       }"
     >
-      <h3>Learn {{ language }} with {{ friendName }}</h3>
-      <!-- Change to userStore update -->
+      <h3 v-if="selectedUser">
+        Learn {{ selectedUser.teaching_language }} with
+        {{ selectedUser.username }}
+      </h3>
+      <h3 v-else>Loading...</h3>
     </RouterLink>
     <div class="chat-container">
       <div ref="chatBox" class="chat-box">
@@ -71,11 +90,12 @@
           :key="index"
           :message="msg.text"
           :is-user="msg.isUser"
+          :friend-data="selectedUser"
         />
       </div>
 
       <div class="tools-section">
-        <p>Verktyg - översättning - AI - ordbok - sparade meddelanden</p>
+        <p>Saved messages</p>
       </div>
 
       <div class="input-container">

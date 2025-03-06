@@ -1,4 +1,7 @@
 <script setup>
+  import { useFriendStore } from '../stores/friendStore'
+  const friendStore = useFriendStore()
+
   const logoImage = new URL(
     '../../public/logo/logo-orange.png',
     import.meta.url
@@ -14,6 +17,7 @@
   const login = () => {
     if (email.value && password.value) {
       router.push('/findfriend')
+      friendStore.addFriend('TalkativeTim')
     } else {
       alert('Please enter both Email and Password.')
     }
