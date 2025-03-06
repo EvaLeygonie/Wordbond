@@ -35,7 +35,7 @@
         avatar: chosenAvatar.value,
         interests: interests.value
       }
-      profileStore.useProfile(profileData)
+      profileStore.use(profileData)
       router.push('/MyProfile')
     } else {
       alert('Please fill in everything')

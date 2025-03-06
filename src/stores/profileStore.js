@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
 
 const defaultProfile = {
   name: 'LinguaLover',
@@ -9,24 +8,24 @@ const defaultProfile = {
   TeachingLanguage: 'English'
 }
 
-export const useProfileStore = defineStore('profile', () => {
-  const savedProfile = JSON.parse(localStorage.getItem('profileData'))
-  const profile = ref(savedProfile || { ...defaultProfile })
-
-  function useProfile(profileData) {
-    profile.value = profileData
-    localStorage.setItem('profileData', JSON.stringify(profileData))
+export const useProfileStore = defineStore('profile', {
+  state: () => ({
+    profile: JSON.parse(localStorage.getItem('profileData')) || {
+      ...defaultProfile
+    }
+  }),
+  actions: {
+    use(profileData) {
+      this.profile = profileData
+      localStorage.setItem('profileData', JSON.stringify(profileData))
+    },
+    update(data) {
+      Object.assign(this.profile, data)
+      localStorage.setItem('profileData', JSON.stringify(this.profile))
+    },
+    clear() {
+      this.profile = { ...defaultProfile }
+      localStorage.removeItem('profileData')
+    }
   }
-
-  function updateProfile(updatedProfile) {
-    profile.value = { ...profile.value, ...updatedProfile }
-    localStorage.setItem('profileData', JSON.stringify(profile.value))
-  }
-
-  function clearProfile() {
-    profile.value = { ...defaultProfile }
-    localStorage.removeItem('profileData')
-  }
-
-  return { profile, useProfile, updateProfile, clearProfile }
 })
