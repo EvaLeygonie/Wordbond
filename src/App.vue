@@ -1,6 +1,8 @@
 <script setup>
   import { ref, watch } from 'vue'
   import { useFriendStore } from './stores/friendStore'
+  import { useLoginStore } from './stores/loginStore'
+  import { useRouter } from 'vue-router'
   const logoWhite = new URL('../public/logo/logo-white.png', import.meta.url)
     .href
 
@@ -8,6 +10,15 @@
   let icon = ref('bi bi-list')
 
   const friendStore = useFriendStore()
+  const loginStore = useLoginStore()
+  const router = useRouter()
+
+  const logout = () => {
+    if (loginStore.loggedIn) {
+      loginStore.logout()
+      router.push('/')
+    }
+  }
 
   const selectedUser = ref(null)
 
@@ -55,7 +66,8 @@
   </div>
 
   <nav id="desktop_nav">
-    <RouterLink to="/">Login</RouterLink>
+    <RouterLink v-if="!loginStore.loggedIn" to="/">Login</RouterLink>
+    <button v-if="loginStore.loggedIn" @click="logout">Logout</button>
     <RouterLink to="/findfriend">Find Friend</RouterLink>
     <RouterLink to="/myprofile">My Profile</RouterLink>
     <RouterLink
@@ -116,6 +128,14 @@
 
   #mobile_nav {
     justify-content: space-between;
+  }
+
+  #desktop_nav button {
+    border: none;
+    font-size: 1.2em;
+    background-color: #fef3e2;
+    cursor: pointer;
+    border-radius: 6px;
   }
 
   @media screen and (min-width: 600px) {

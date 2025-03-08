@@ -1,5 +1,8 @@
 <script setup>
   import { useFriendStore } from '../stores/friendStore'
+  import { useLoginStore } from '../stores/loginStore'
+
+  const loginStore = useLoginStore()
   const friendStore = useFriendStore()
 
   const logoImage = new URL(
@@ -16,6 +19,7 @@
 
   const login = () => {
     if (email.value && password.value) {
+      loginStore.loggedIn = true
       router.push('/findfriend')
       friendStore.addFriend('TalkativeTim')
     } else {

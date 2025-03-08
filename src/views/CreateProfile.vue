@@ -3,10 +3,12 @@
   import { useRouter } from 'vue-router'
   import { useProfileStore } from '../stores/profileStore'
   import { useFriendStore } from '../stores/friendStore'
+  import { useLoginStore } from '../stores/loginStore'
 
   const router = useRouter()
   const profileStore = useProfileStore()
   const friendStore = useFriendStore()
+  const loginStore = useLoginStore()
 
   const name = ref('')
   const password = ref('')
@@ -38,10 +40,11 @@
         bio: bio.value,
         avatar: chosenAvatar.value,
         interests: interests.value,
-        languagetoLearn: languageToLearn.value,
+        languageToLearn: languageToLearn.value,
         languageToTeach: languageToTeach.value
       }
       profileStore.use(profileData)
+      loginStore.loggedIn = true
       router.push('/MyProfile')
       friendStore.removeFriend()
     } else {
@@ -98,6 +101,12 @@
         placeholder="Tell me something about yourself :)"
       />
 
+      <label>Language I want to learn:</label>
+      <input type="text" v-model="languageToLearn" required />
+
+      <label>Language I can teach:</label>
+      <input type="text" v-model="languageToTeach" required />
+
       <div class="avatar-dropdown">
         <div class="get-avatar" @click="dropDown = !dropDown">
           <img
@@ -131,6 +140,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin-top: 100px;
   }
 
   .profile-box {
@@ -142,6 +152,8 @@
     align-items: center;
     gap: 10px;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   h2 {
