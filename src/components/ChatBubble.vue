@@ -11,6 +11,10 @@
       type: Object,
       required: true
     },
+    loggedProfile: {
+      type: Object,
+      required: true
+    },
     isUser: Boolean
   })
 
@@ -27,7 +31,10 @@
       props.friendData.teaching_language
     )
     isTranslated.value = true
-    translatedMessage.value = await translationStore.translate(props.message)
+    translatedMessage.value = await translationStore.translateToSwe(
+      props.message,
+      langCode
+    )
   }
 </script>
 
@@ -52,8 +59,16 @@
       </button>
       <span v-if="isTranslated">{{ translatedMessage }}</span>
     </div>
-    <img v-if="isUser" alt="Profilbild" src="/src/bilder/avatar_3.png" />
-    <!-- v-bind source to stored user -->
+    <img
+      v-if="isUser && loggedProfile.name === 'LinguaLover'"
+      alt="Profilbild"
+      src="../bilder/avatar_3.png"
+    />
+    <img
+      v-else-if="isUser && loggedProfile.avatar && loggedProfile.avatar !== ''"
+      alt="Profilbild"
+      :src="'/src//bilder/' + loggedProfile.avatar"
+    />
   </div>
 </template>
 

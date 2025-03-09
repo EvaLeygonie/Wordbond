@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const useTranslationStore = defineStore('translation', {
   state: () => ({
     sourceLang: '',
-    targetLang: 'sv'
+    targetLang: ''
   }),
   actions: {
     convertLang(language) {
@@ -60,13 +60,26 @@ export const useTranslationStore = defineStore('translation', {
         default:
           langCode = 'en'
       }
-      this.sourceLang = langCode
       return langCode
     },
-    async translate(text) {
+    async translateToSwe(text, code) {
+      this.sourceLang = code
       try {
         const res = await fetch(
-          `https://api.mymemory.translated.net/get?q=${text}&langpair=${this.sourceLang}|${this.targetLang}`
+          `https://api.mymemory.translated.net/get?q=${text}&langpair=${this.sourceLang}|sv`
+        )
+
+        const data = await res.json()
+        return data.responseData.translatedText
+      } catch (error) {
+        return 'Translation unavailable'
+      }
+    },
+    async translate(text, code) {
+      this.targetLang = code
+      try {
+        const res = await fetch(
+          `https://api.mymemory.translated.net/get?q=${text}&langpair=sv|${this.targetLang}`
         )
 
         const data = await res.json()

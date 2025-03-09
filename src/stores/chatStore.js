@@ -24,7 +24,8 @@ export const useChatStore = defineStore('chat', {
         isUser: false
       },
       { text: 'Jag kan lite svenska redan! 😊', isUser: false }
-    ]
+    ],
+    translatedText: JSON.parse(localStorage.getItem('translatedText')) || []
   }),
   actions: {
     loadTimChat() {
@@ -37,6 +38,20 @@ export const useChatStore = defineStore('chat', {
     clearChat() {
       this.messages = []
       localStorage.removeItem('chatMessages')
+    },
+    addTransText(originalText, translatedText) {
+      this.translatedText.push({
+        text: originalText,
+        translation: translatedText
+      })
+      localStorage.setItem(
+        'translatedText',
+        JSON.stringify(this.translatedText)
+      )
+    },
+    clearTransText() {
+      this.translatedText = []
+      localStorage.removeItem('translatedText')
     }
   }
 })
