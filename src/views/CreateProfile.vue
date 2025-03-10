@@ -44,7 +44,7 @@
         languageToTeach: languageToTeach.value
       }
       profileStore.use(profileData)
-      loginStore.loggedIn = true
+      loginStore.login()
       router.push('/MyProfile')
       friendStore.removeFriend()
     } else {

@@ -19,7 +19,7 @@
 
   const login = () => {
     if (email.value && password.value) {
-      loginStore.loggedIn = true
+      loginStore.login()
       router.push('/findfriend')
       friendStore.addFriend('TalkativeTim')
     } else {
