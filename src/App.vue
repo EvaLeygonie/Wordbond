@@ -49,10 +49,18 @@
   </nav>
 
   <div id="router_links" :style="{ display: blockOrNone }">
-    <RouterLink to="/" @click="toggleMenu">Login</RouterLink>
-    <RouterLink to="/findfriend" @click="toggleMenu">Find Friend</RouterLink>
-    <RouterLink to="/myprofile" @click="toggleMenu">My Profile</RouterLink>
+    <RouterLink v-if="!loginStore.loggedIn" to="/" @click="toggleMenu"
+      >Login</RouterLink
+    >
+    <button v-if="loginStore.loggedIn" @click="logout">Logout</button>
+    <RouterLink v-if="loginStore.loggedIn" to="/findfriend" @click="toggleMenu"
+      >Find Friend</RouterLink
+    >
+    <RouterLink v-if="loginStore.loggedIn" to="/myprofile" @click="toggleMenu"
+      >My Profile</RouterLink
+    >
     <RouterLink
+      v-if="loginStore.loggedIn"
       :to="{
         path: '/chat',
         query: {
@@ -68,9 +76,14 @@
   <nav id="desktop_nav">
     <RouterLink v-if="!loginStore.loggedIn" to="/">Login</RouterLink>
     <button v-if="loginStore.loggedIn" @click="logout">Logout</button>
-    <RouterLink to="/findfriend">Find Friend</RouterLink>
-    <RouterLink to="/myprofile">My Profile</RouterLink>
+    <RouterLink v-if="loginStore.loggedIn" to="/findfriend"
+      >Find Friend</RouterLink
+    >
+    <RouterLink v-if="loginStore.loggedIn" to="/myprofile"
+      >My Profile</RouterLink
+    >
     <RouterLink
+      v-if="loginStore.loggedIn"
       :to="{
         path: '/chat',
         query: {
