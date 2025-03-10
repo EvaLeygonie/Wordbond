@@ -140,6 +140,8 @@
     height: 500px;
     border-radius: 20px;
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .ProfileHeader {
@@ -201,17 +203,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .InterestTag {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.2);
-    margin: 5px;
-    padding: 10px;
-    background-color: #fa812f;
-    color: #fef3e2;
-    border-radius: 5px;
-    font-weight: bold;
-    display: inline-block;
   }
   .EditButton {
     width: 130px;
