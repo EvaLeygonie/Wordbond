@@ -52,7 +52,6 @@
 
     if (friendStore.currentFriend === 'TalkativeTim') {
       chatStore.loadTimChat()
-      chatStore.clearTransText()
       chatStore.loadTimTransText()
       nextTick(scrollToBottom)
     } else {

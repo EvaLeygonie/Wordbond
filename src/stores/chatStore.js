@@ -36,15 +36,15 @@ export const useChatStore = defineStore('chat', {
   }),
   actions: {
     loadTimChat() {
-      // this.messages = JSON.parse(JSON.stringify(this.timMessages))
-      this.timMessage.forEach((message) => {
-        this.messages.push(message)
-      })
+      this.messages = JSON.parse(JSON.stringify(this.timMessages))
+      localStorage.setItem('chatMessages', JSON.stringify(this.messages))
     },
     loadTimTransText() {
-      this.timTransText.forEach((element) => {
-        this.translatedText.push(element)
-      })
+      this.translatedText = JSON.parse(JSON.stringify(this.timTransText))
+      localStorage.setItem(
+        'translatedText',
+        JSON.stringify(this.translatedText)
+      )
     },
     addMessage(text, isUser) {
       this.messages.push({ text, isUser })
@@ -52,7 +52,7 @@ export const useChatStore = defineStore('chat', {
     },
     clearChat() {
       this.messages = []
-      localStorage.removeItem('chatMessages')
+      localStorage.setItem('chatMessages', JSON.stringify(this.messages))
     },
     addTransText(originalText, translatedText) {
       this.translatedText.push({
@@ -66,7 +66,10 @@ export const useChatStore = defineStore('chat', {
     },
     clearTransText() {
       this.translatedText = []
-      localStorage.removeItem('translatedText')
+      localStorage.setItem(
+        'translatedText',
+        JSON.stringify(this.translatedText)
+      )
     }
   }
 })
