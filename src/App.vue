@@ -52,7 +52,13 @@
     <RouterLink v-if="!loginStore.loggedIn" to="/" @click="toggleMenu"
       >Login</RouterLink
     >
-    <button v-if="loginStore.loggedIn" @click="logout">Logout</button>
+    <RouterLink
+      to="/"
+      v-if="loginStore.loggedIn"
+      @click="logout(), toggleMenu()"
+    >
+      Logout
+    </RouterLink>
     <RouterLink v-if="loginStore.loggedIn" to="/findfriend" @click="toggleMenu"
       >Find Friend</RouterLink
     >
@@ -75,7 +81,9 @@
 
   <nav id="desktop_nav">
     <RouterLink v-if="!loginStore.loggedIn" to="/">Login</RouterLink>
-    <button v-if="loginStore.loggedIn" @click="logout">Logout</button>
+    <RouterLink to="/" v-if="loginStore.loggedIn" @click="logout">
+      Logout
+    </RouterLink>
     <RouterLink v-if="loginStore.loggedIn" to="/findfriend"
       >Find Friend</RouterLink
     >
@@ -120,6 +128,11 @@
     text-decoration: none;
   }
 
+  a:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s 80ms;
+  }
+
   i {
     transform: scale(2.6);
     color: #fef3e2;
@@ -141,14 +154,6 @@
 
   #mobile_nav {
     justify-content: space-between;
-  }
-
-  #desktop_nav button {
-    border: none;
-    font-size: 1.2em;
-    background-color: #fef3e2;
-    cursor: pointer;
-    border-radius: 6px;
   }
 
   @media screen and (min-width: 600px) {

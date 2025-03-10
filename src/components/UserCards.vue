@@ -58,7 +58,7 @@
 
   img:hover {
     transform: scale(1.05);
-    transition: transform 0.5s 150ms;
+    transition: transform 0.5s 100ms;
   }
 
   section {
