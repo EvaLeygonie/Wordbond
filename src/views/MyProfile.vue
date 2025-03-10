@@ -30,7 +30,19 @@
 </script>
 
 <template>
-  <header>
+  <header class="FriendContainer">
+    <RouterLink
+      :to="{
+        path: '/otherprofile',
+        query: { name: friendStore.currentFriend }
+      }"
+    >
+      <img
+        alt="Profilbild"
+        :src="selectedUser.profile_picture"
+        class="ProfileFriend"
+      />
+    </RouterLink>
     <RouterLink
       v-if="selectedUser"
       :to="{
@@ -41,11 +53,8 @@
         }
       }"
     >
-      <img
-        alt="Profilbild"
-        :src="selectedUser.profile_picture"
-        class="ProfileFriend"
-    /></RouterLink>
+      <button class="ChatWithFriendButton">chat with friend</button>
+    </RouterLink>
   </header>
   <main>
     <h1>Profile</h1>
@@ -90,10 +99,29 @@
 <style scoped>
   header {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
-    position: relative;
+
+    position: absolute;
     width: 100%;
+    height: 100px;
+  }
+  .FriendContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+  }
+
+  .FriendContainer a {
+    font-size: 12px;
+  }
+  .ChatWithFriendButton {
+    border: none;
+    margin: 10px;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #fa812f;
   }
 
   span {
@@ -142,6 +170,7 @@
     position: absolute;
     top: 10px;
     right: 20px;
+    margin-right: 10px;
   }
 
   .ProfileImage {
