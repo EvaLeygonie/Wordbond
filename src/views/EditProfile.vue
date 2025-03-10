@@ -20,36 +20,36 @@
   <div class="EditProfile">
     <h2>Edit profile</h2>
     <form @submit.prevent="saveChanges">
-      <label>Username:</label>
+      <label><strong>Username:</strong></label>
       <input placeholder="Name" v-model="editedUser.name" type="text" />
 
-      <label>Password:</label>
+      <label><strong>Password:</strong></label>
       <input
         placeholder="Password"
         v-model="editedUser.password"
         type="password"
       />
-      <label>Age</label>
+      <label><strong>Age:</strong></label>
       <input placeholder="Age" v-model="editedUser.age" type="text" />
 
-      <label>Biography:</label>
+      <label><strong>Biography:</strong></label>
       <textarea
         placeholder="Tell me something about yourself"
         v-model="editedUser.bio"
       />
-      <label>Language to learn</label>
+      <label><strong>Language to learn:</strong></label>
       <input
         placeholder="Language you want to learn"
         v-model="editedUser.languageToLearn"
         type="text"
       />
-      <label>Language to teach</label>
+      <label><strong>Language to teach:</strong></label>
       <input
         placeholder="Language you can teach"
         v-model="editedUser.languageToTeach"
         type="text"
       />
-      <label>Interests:</label>
+      <label><strong>Interests:</strong></label>
       <div class="chooseInterests">
         <label
           v-for="interest in [
@@ -66,8 +66,7 @@
             type="checkbox"
             v-model="editedUser.interests"
             :value="interest"
-          />
-          {{ interest }}
+          /><strong> {{ interest }}</strong>
         </label>
       </div>
       <div class="SaveButtonContainer">
@@ -93,8 +92,21 @@
     flex-direction: column;
   }
 
+  .chooseInterests {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: right;
+  }
   .chooseInterests label {
-    margin: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .chooseInterests input {
+    display: flex;
   }
 
   .SaveButtonContainer {
