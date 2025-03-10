@@ -32,6 +32,7 @@
 <template>
   <header class="FriendContainer">
     <RouterLink
+      v-if="selectedUser"
       :to="{
         path: '/otherprofile',
         query: { name: friendStore.currentFriend }
