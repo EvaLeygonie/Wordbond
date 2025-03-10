@@ -52,6 +52,8 @@
 
     if (friendStore.currentFriend === 'TalkativeTim') {
       chatStore.loadTimChat()
+      chatStore.clearTransText()
+      chatStore.loadTimTransText()
       nextTick(scrollToBottom)
     } else {
       chatStore.clearChat()
@@ -136,7 +138,7 @@
     flex-direction: column;
     padding: 0 10px 20px 10px;
     overflow-y: auto;
-    max-height: calc(85vh - 60px);
+    max-height: calc(85vh - 70px);
   }
 
   .input-container {
@@ -148,10 +150,10 @@
     display: flex;
     gap: 10px;
     padding: 10px;
+    height: 65px;
     border-top: 2px solid #575555;
     input {
       flex: 1;
-      padding: 10px;
       font-size: 16px;
       border-radius: 5px;
     }

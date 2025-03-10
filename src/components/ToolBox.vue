@@ -75,12 +75,12 @@
     outline: 2px solid rgba(250, 64, 50, 0.5);
     margin: 10px;
     border-radius: 10px;
-    max-height: 70vh;
+    max-height: calc(85vh - 85px);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
 
   .text-container {
-    max-height: 57vh;
+    max-height: 60vh;
     overflow-y: auto;
   }
 
