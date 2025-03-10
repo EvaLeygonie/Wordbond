@@ -77,18 +77,17 @@
 <template>
   <NoMatchChat v-if="!friendMatch" />
   <div v-else>
-    <RouterLink
-      :to="{
-        path: '/otherprofile',
-        query: { name: friendStore.currentFriend }
-      }"
-    >
-      <h3 v-if="selectedUser">
-        Learn {{ selectedUser.teaching_language }} with
-        {{ selectedUser.username }}
-      </h3>
-      <h3 v-else>Loading...</h3>
-    </RouterLink>
+    <h3 v-if="selectedUser">
+      Learn {{ selectedUser.teaching_language }} with
+      <RouterLink
+        :to="{
+          path: '/otherprofile',
+          query: { name: friendStore.currentFriend }
+        }"
+        >{{ selectedUser.username }}</RouterLink
+      >
+    </h3>
+    <h3 v-else>Loading...</h3>
     <div class="chat-grid">
       <div class="chat-container">
         <div ref="chatBox" class="chat-box">

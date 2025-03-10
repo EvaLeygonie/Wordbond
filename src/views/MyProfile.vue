@@ -31,6 +31,12 @@
 
 <template>
   <header class="FriendContainer">
+    <img
+      v-if="selectedUser"
+      alt="Profilbild"
+      :src="selectedUser.profile_picture"
+      class="ProfileFriend"
+    />
     <RouterLink
       v-if="selectedUser"
       :to="{
@@ -38,11 +44,9 @@
         query: { name: friendStore.currentFriend }
       }"
     >
-      <img
-        alt="Profilbild"
-        :src="selectedUser.profile_picture"
-        class="ProfileFriend"
-      />
+      <button class="FriendButton">
+        Your friend is {{ friendStore.currentFriend }}
+      </button>
     </RouterLink>
     <RouterLink
       v-if="selectedUser"
@@ -54,7 +58,7 @@
         }
       }"
     >
-      <button class="ChatWithFriendButton">chat with friend</button>
+      <button class="FriendButton">Chat with friend</button>
     </RouterLink>
   </header>
   <main>
@@ -108,6 +112,7 @@
     height: 100px;
   }
   .FriendContainer {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -117,12 +122,13 @@
   .FriendContainer a {
     font-size: 12px;
   }
-  .ChatWithFriendButton {
+  .FriendButton {
     border: none;
     margin: 10px;
     border-radius: 4px;
-    font-size: 1em;
+    font-size: 1.1em;
     background-color: #fa812f;
+    padding: 0.6em;
   }
 
   span {
@@ -167,12 +173,9 @@
   }
 
   .ProfileFriend {
-    width: 50px;
+    width: 80px;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    top: 10px;
-    right: 20px;
     margin-right: 10px;
   }
 
@@ -226,5 +229,10 @@
   }
   a {
     color: black;
+  }
+
+  button:hover,
+  .EditButton:hover {
+    background-color: #fab12f;
   }
 </style>
