@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 
 export const useFriendStore = defineStore('friend', () => {
   const currentFriend = ref(localStorage.getItem('currentFriend') || null)
@@ -27,20 +27,6 @@ export const useFriendStore = defineStore('friend', () => {
         return selectedUser.value
       })
   }
-
-  function syncFriend(event) {
-    if (event.key === 'currentFriend') {
-      currentFriend.value = event.newValue
-    }
-  }
-
-  onMounted(() => {
-    window.addEventListener('storage', syncFriend)
-  })
-
-  onUnmounted(() => {
-    window.removeEventListener('storage', syncFriend)
-  })
 
   return {
     currentFriend,
